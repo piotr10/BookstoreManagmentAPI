@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookstoreManagment.Api</name>
+    </assembly>
+    <members>
+        <member name="M:BookstoreManagment.Api.Controllers.WeatherForecastController.Get">
+            <summary>
+            Get weather forecast
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
