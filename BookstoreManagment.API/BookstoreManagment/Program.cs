@@ -35,6 +35,8 @@ builder.Services.AddSwaggerGen(c =>
 }
 );
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -42,6 +44,8 @@ if (app.Environment.IsDevelopment())
 {
     builder.Services.AddInfrastructure(app.Configuration);
 }
+
+app.UseHealthChecks("/hc");
 
 app.UseSwagger();
 

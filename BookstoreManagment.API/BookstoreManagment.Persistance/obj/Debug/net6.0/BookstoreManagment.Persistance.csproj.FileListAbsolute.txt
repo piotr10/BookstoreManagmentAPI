@@ -1,0 +1,12 @@
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\bin\Debug\net6.0\BookstoreManagment.Persistance.deps.json
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\bin\Debug\net6.0\BookstoreManagment.Persistance.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\bin\Debug\net6.0\BookstoreManagment.Persistance.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagment.Persistance.csproj.AssemblyReference.cache
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagment.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagment.Persistance.AssemblyInfoInputs.cache
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagment.Persistance.AssemblyInfo.cs
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagment.Persistance.csproj.CoreCompileInputs.cache
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagment.Persistance.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\refint\BookstoreManagment.Persistance.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagment.Persistance.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\ref\BookstoreManagment.Persistance.dll

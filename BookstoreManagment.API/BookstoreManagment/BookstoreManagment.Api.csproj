@@ -16,4 +16,8 @@
     <ProjectReference Include="..\BookstoreManagment.Infrastructure\BookstoreManagment.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

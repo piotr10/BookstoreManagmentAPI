@@ -1,0 +1,12 @@
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\bin\Debug\net6.0\BookstoreManagment.Common.deps.json
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\bin\Debug\net6.0\BookstoreManagment.Common.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\bin\Debug\net6.0\BookstoreManagment.Common.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagment.Common.csproj.AssemblyReference.cache
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagment.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagment.Common.AssemblyInfoInputs.cache
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagment.Common.AssemblyInfo.cs
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagment.Common.csproj.CoreCompileInputs.cache
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagment.Common.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\refint\BookstoreManagment.Common.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagment.Common.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\ref\BookstoreManagment.Common.dll
