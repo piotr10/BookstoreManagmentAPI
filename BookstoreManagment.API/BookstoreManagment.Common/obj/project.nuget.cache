@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bmNY+8wwnWB1XzfHnWiY5ytc7C/yTCq3dPgrBwhPx2fQJWO08Mhc7AInVcBkdjp7AQ7jeJNHWfGkUYBkJXs6Dg==",
+  "dgSpecHash": "98d84yM7D/up1bHTJZLCa5E8CbeFc3LVdDL6t0tYECTqLa39MumRizHSW6qsiwur6kXA8vy1Db/6X6rYIcC5yQ==",
   "success": true,
-  "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagment.Common.csproj",
+  "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

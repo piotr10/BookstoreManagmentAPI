@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gjCll/0PJw2gwCetGUjdg/7f+fr9YSU2HhVV3kXzkvbqFFhhUX2FLBPtyb08FXpgVy+CuuU1Rw1t0qDOSQPnjQ==",
+  "dgSpecHash": "/z3i0ZcZ11T6QrHKDu4+/fEbDHwaPIeX6693y9kOooqDlRoXhVFUhvORkRsAcEFifBNXsDr2cPEThY29cphSWw==",
   "success": true,
-  "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagment.Api.csproj",
+  "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\duende.identityserver\\5.2.0\\duende.identityserver.5.2.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "JaJvuS7wprIcJxm8AZ6wNbV2qhP36S/WVea7yaaVudA=",
-  "Source": "BookstoreManagment.Api",
-  "BasePath": "_content/BookstoreManagment.Api",
+  "Hash": "ot0oMb6vKUlCAm5Z2+KgzVaXxxnhyzoDM0NRHImzcUo=",
+  "Source": "BookstoreManagement.Api",
+  "BasePath": "_content/BookstoreManagement.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

@@ -720,7 +720,7 @@
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
-      "BookstoreManagment.Infrastructure/1.0.0": {
+      "BookstoreManagement.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -731,10 +731,10 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "bin/placeholder/BookstoreManagment.Infrastructure.dll": {}
+          "bin/placeholder/BookstoreManagement.Infrastructure.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BookstoreManagment.Infrastructure.dll": {}
+          "bin/placeholder/BookstoreManagement.Infrastructure.dll": {}
         }
       }
     }
@@ -2059,15 +2059,15 @@
         "version.txt"
       ]
     },
-    "BookstoreManagment.Infrastructure/1.0.0": {
+    "BookstoreManagement.Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../BookstoreManagment.Infrastructure/BookstoreManagment.Infrastructure.csproj",
-      "msbuildProject": "../BookstoreManagment.Infrastructure/BookstoreManagment.Infrastructure.csproj"
+      "path": "../BookstoreManagment.Infrastructure/BookstoreManagement.Infrastructure.csproj",
+      "msbuildProject": "../BookstoreManagment.Infrastructure/BookstoreManagement.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BookstoreManagment.Infrastructure >= 1.0.0",
+      "BookstoreManagement.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -2077,9 +2077,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagment.Api.csproj",
-      "projectName": "BookstoreManagment.Api",
-      "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagment.Api.csproj",
+      "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
+      "projectName": "BookstoreManagement.Api",
+      "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\obj\\",
       "projectStyle": "PackageReference",
@@ -2098,8 +2098,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagment.Infrastructure.csproj": {
-              "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagment.Infrastructure.csproj"
+            "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
+              "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj"
             }
           }
         }
