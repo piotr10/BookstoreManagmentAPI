@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-namespace BookstoreManagment.Infrastructure;
+namespace BookstoreManagement.Infrastructure;
 
 public static class DependencyInjection
 {

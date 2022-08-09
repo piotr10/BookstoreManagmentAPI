@@ -802,7 +802,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "BookstoreManagement.Application": "1.0.0",
-          "BookstoreManagement.Domain": "1.0.0"
+          "BookstoreManagement.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.7"
         },
         "compile": {
           "bin/placeholder/BookstoreManagement.Persistance.dll": {}
