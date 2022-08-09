@@ -648,6 +648,29 @@
         "runtime": {
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
+      },
+      "BookstoreManagement.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookstoreManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookstoreManagement.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookstoreManagement.Application.dll": {}
+        }
+      },
+      "BookstoreManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BookstoreManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookstoreManagement.Domain.dll": {}
+        }
       }
     }
   },
@@ -1845,10 +1868,21 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BookstoreManagement.Application/1.0.0": {
+      "type": "project",
+      "path": "../BookstoreManagment.Application/BookstoreManagement.Application.csproj",
+      "msbuildProject": "../BookstoreManagment.Application/BookstoreManagement.Application.csproj"
+    },
+    "BookstoreManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BookstoreManagment.Domain/BookstoreManagement.Domain.csproj",
+      "msbuildProject": "../BookstoreManagment.Domain/BookstoreManagement.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BookstoreManagement.Application >= 1.0.0",
       "Microsoft.AspNetCore.ApiAuthorization.IdentityServer >= 6.0.7",
       "Microsoft.Extensions.Configuration.Abstractions >= 6.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0",
@@ -1882,7 +1916,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
+              "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

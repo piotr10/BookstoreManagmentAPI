@@ -720,10 +720,34 @@
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
+      "BookstoreManagement.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookstoreManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookstoreManagement.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookstoreManagement.Application.dll": {}
+        }
+      },
+      "BookstoreManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BookstoreManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookstoreManagement.Domain.dll": {}
+        }
+      },
       "BookstoreManagement.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "BookstoreManagement.Application": "1.0.0",
           "Microsoft.AspNetCore.ApiAuthorization.IdentityServer": "6.0.7",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
@@ -735,6 +759,20 @@
         },
         "runtime": {
           "bin/placeholder/BookstoreManagement.Infrastructure.dll": {}
+        }
+      },
+      "BookstoreManagement.Persistance/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BookstoreManagement.Application": "1.0.0",
+          "BookstoreManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BookstoreManagement.Persistance.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookstoreManagement.Persistance.dll": {}
         }
       }
     }
@@ -2059,15 +2097,31 @@
         "version.txt"
       ]
     },
+    "BookstoreManagement.Application/1.0.0": {
+      "type": "project",
+      "path": "../BookstoreManagment.Application/BookstoreManagement.Application.csproj",
+      "msbuildProject": "../BookstoreManagment.Application/BookstoreManagement.Application.csproj"
+    },
+    "BookstoreManagement.Domain/1.0.0": {
+      "type": "project",
+      "path": "../BookstoreManagment.Domain/BookstoreManagement.Domain.csproj",
+      "msbuildProject": "../BookstoreManagment.Domain/BookstoreManagement.Domain.csproj"
+    },
     "BookstoreManagement.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../BookstoreManagment.Infrastructure/BookstoreManagement.Infrastructure.csproj",
       "msbuildProject": "../BookstoreManagment.Infrastructure/BookstoreManagement.Infrastructure.csproj"
+    },
+    "BookstoreManagement.Persistance/1.0.0": {
+      "type": "project",
+      "path": "../BookstoreManagment.Persistance/BookstoreManagement.Persistance.csproj",
+      "msbuildProject": "../BookstoreManagment.Persistance/BookstoreManagement.Persistance.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "BookstoreManagement.Infrastructure >= 1.0.0",
+      "BookstoreManagement.Persistance >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -2100,6 +2154,9 @@
           "projectReferences": {
             "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
               "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj"
+            },
+            "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj": {
+              "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj"
             }
           }
         }

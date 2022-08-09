@@ -11,4 +11,8 @@
     <Folder Include="Directors\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BookstoreManagment.Domain\BookstoreManagement.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
