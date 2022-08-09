@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HQv54rg5lRqVC1I8k9Jg6sJBgOCUrlBoc2BvSl5XN/kMDI9hQej+noPYTkH15vAqCtNHWyKKZnqumGQWf59qbg==",
+  "dgSpecHash": "fi21bFf4Yb4ahpbWyYsRQGHo051gt7szUT0pHW7FrydURivDkHz5+xxT5PwHiHtk09pELCdmK8ZYeYwoODuKGw==",
   "success": true,
   "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,9 @@
     "C:\\Users\\User\\.nuget\\packages\\duende.identityserver.entityframework.storage\\5.2.0\\duende.identityserver.entityframework.storage.5.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\duende.identityserver.storage\\5.2.0\\duende.identityserver.storage.5.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\identitymodel\\5.1.0\\identitymodel.5.1.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.apiauthorization.identityserver\\6.0.7\\microsoft.aspnetcore.apiauthorization.identityserver.6.0.7.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.7\\microsoft.aspnetcore.authentication.jwtbearer.6.0.7.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.0\\microsoft.aspnetcore.authentication.openidconnect.5.0.0.nupkg.sha512",

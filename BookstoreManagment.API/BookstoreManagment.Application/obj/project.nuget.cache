@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "pzTlxtAIo7m5Np1/DofXakrqDoe7LG9EP9p9i9ZYuj8eUw7PQRYH5Q/A7JO/wu493ojrxykZZVhBhBaKIxTUqQ==",
+  "dgSpecHash": "SlOMkvEpWxyVGWiGlU8pXOAWGv91WuUyXew0sSLR8qTto/1J+ODBOk1oJVJIWjAGxkMwJ1edmR/CNhJH2eHTCg==",
   "success": true,
   "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
