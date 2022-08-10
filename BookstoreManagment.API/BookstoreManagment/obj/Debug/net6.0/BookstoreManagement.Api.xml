@@ -4,6 +4,26 @@
         <name>BookstoreManagement.Api</name>
     </assembly>
     <members>
+        <member name="T:BookstoreManagement.Api.Controllers.AuthorController">
+            <summary>
+            CRUD Author
+            </summary>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.BookController">
+            <summary>
+            CRUD Book
+            </summary>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.CustomerController">
+            <summary>
+            CRUD Customer
+            </summary>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.OrderController">
+            <summary>
+            CRUD Order
+            </summary>
+        </member>
         <member name="M:BookstoreManagment.Api.Controllers.WeatherForecastController.Get">
             <summary>
             Get weather forecast

@@ -57,3 +57,12 @@ D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\obj\Debug\net
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\obj\Debug\net6.0\BookstoreManagement.Api.pdb
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\obj\Debug\net6.0\BookstoreManagement.Api.genruntimeconfig.cache
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\obj\Debug\net6.0\ref\BookstoreManagement.Api.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\MediatR.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\MediatR.Contracts.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\BookstoreManagement.Application.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\BookstoreManagement.Domain.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\BookstoreManagement.Persistance.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\BookstoreManagement.Persistance.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\BookstoreManagement.Application.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\BookstoreManagement.Domain.pdb
