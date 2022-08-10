@@ -1,4 +1,4 @@
-using BookstoreManagment.Infrastructure;
+using BookstoreManagement.Infrastructure;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

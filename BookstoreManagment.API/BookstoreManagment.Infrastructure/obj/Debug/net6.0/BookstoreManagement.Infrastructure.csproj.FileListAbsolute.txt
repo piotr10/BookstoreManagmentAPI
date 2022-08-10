@@ -10,3 +10,8 @@ D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructur
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\obj\Debug\net6.0\refint\BookstoreManagement.Infrastructure.dll
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\obj\Debug\net6.0\BookstoreManagement.Infrastructure.pdb
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\obj\Debug\net6.0\ref\BookstoreManagement.Infrastructure.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\bin\Debug\net6.0\BookstoreManagement.Application.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\bin\Debug\net6.0\BookstoreManagement.Domain.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\bin\Debug\net6.0\BookstoreManagement.Application.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\bin\Debug\net6.0\BookstoreManagement.Domain.pdb
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Infrastructure\obj\Debug\net6.0\BookstoreManagement.Infrastructure.csproj.CopyComplete
