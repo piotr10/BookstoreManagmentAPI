@@ -1,8 +1,9 @@
-﻿namespace BookstoreManagement.Domain.Entities.Author;
+﻿using BookstoreManagement.Domain.Common;
 
-public class AuthorContactDetail
+namespace BookstoreManagement.Domain.Entities.Author;
+
+public class AuthorContactDetail : AuditableEntity
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public int AuthorId { get; set; }
     public Author Author { get; set; }

@@ -1,8 +1,9 @@
-﻿namespace BookstoreManagement.Domain.Entities.Customer;
+﻿using BookstoreManagement.Domain.Common;
 
-public class CustomerDetailType
+namespace BookstoreManagement.Domain.Entities.Customer;
+
+public class CustomerDetailType : AuditableEntity
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public int CustomerDetailId { get; set; }
     public CustomerDetail CustomerDetail { get; set; }

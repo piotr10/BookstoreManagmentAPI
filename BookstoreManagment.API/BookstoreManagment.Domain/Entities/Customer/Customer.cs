@@ -1,8 +1,9 @@
-﻿namespace BookstoreManagement.Domain.Entities.Customer;
+﻿using BookstoreManagement.Domain.Common;
 
-public class Customer
+namespace BookstoreManagement.Domain.Entities.Customer;
+
+public class Customer : AuditableEntity
 {
-    public int Id { get; set; }
     public ICollection<Book.Book> Books { get; set; }
     public CustomerDetail CustomerDetail { get; set; }
     public ICollection<Order.Order> Orders { get; set; }

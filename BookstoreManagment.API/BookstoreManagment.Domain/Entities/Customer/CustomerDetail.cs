@@ -1,10 +1,10 @@
-﻿using BookstoreManagement.Domain.ValueObjects;
+﻿using BookstoreManagement.Domain.Common;
+using BookstoreManagement.Domain.ValueObjects;
 
 namespace BookstoreManagement.Domain.Entities.Customer;
 
-public class CustomerDetail
+public class CustomerDetail : AuditableEntity
 {
-    public int Id { get; set; }
     public PersonName CustomerName { get; set; }
     public int CustomerId { get; set; }
     public Customer Customer { get; set; }

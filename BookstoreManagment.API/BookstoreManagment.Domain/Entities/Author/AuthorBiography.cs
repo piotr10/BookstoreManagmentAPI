@@ -1,8 +1,9 @@
-﻿namespace BookstoreManagement.Domain.Entities.Author;
+﻿using BookstoreManagement.Domain.Common;
 
-public class AuthorBiography
+namespace BookstoreManagement.Domain.Entities.Author;
+
+public class AuthorBiography : AuditableEntity
 {
-    public int Id { get; set; }
     public string Country { get; set; }
     public DateTime DateOfBirth { get; set; }
     public string PlaceOfBirth { get; set; }
