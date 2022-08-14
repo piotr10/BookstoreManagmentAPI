@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BookstoreManagment.Domain",
+    "\\BookstoreManagment.Domain\\ValueObjects",
+    "\\BookstoreManagment.Infrastructure"
+  ],
+  "SelectedNode": "\\BookstoreManagment.Domain\\ValueObjects\\Email.cs",
+  "PreviewInSolutionExplorer": false
+}

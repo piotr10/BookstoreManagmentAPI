@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj": {}
+    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj": {}
   },
   "projects": {
-    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
+    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj",
+        "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj",
         "projectName": "BookstoreManagement.Application",
-        "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\obj\\",
+        "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj",
+        "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
+        "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj": {
-                "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj"
+              "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj": {
+                "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj"
               }
             }
           }
@@ -72,17 +72,17 @@
         }
       }
     },
-    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj": {
+    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
+        "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
         "projectName": "BookstoreManagement.Domain",
-        "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\obj\\",
+        "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
+        "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
+        "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,21 +122,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
+    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
         "projectName": "BookstoreManagement.Infrastructure",
-        "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\obj\\",
+        "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
+        "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -150,8 +150,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
-                "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj"
+              "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
+                "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj"
               }
             }
           }
@@ -206,17 +206,17 @@
         }
       }
     },
-    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj": {
+    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj",
+        "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj",
         "projectName": "BookstoreManagement.Persistance",
-        "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\obj\\",
+        "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj",
+        "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
+        "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -230,11 +230,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
-                "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj"
+              "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
+                "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj"
               },
-              "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj": {
-                "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj"
+              "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj": {
+                "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj"
               }
             }
           }
@@ -273,17 +273,17 @@
         }
       }
     },
-    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj": {
+    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
+        "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
         "projectName": "BookstoreManagement.Api",
-        "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\obj\\",
+        "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
+        "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
+        "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -297,11 +297,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
-                "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj"
+              "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
+                "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj"
               },
-              "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj": {
-                "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj"
+              "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj": {
+                "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj"
               }
             }
           }
@@ -339,7 +339,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
