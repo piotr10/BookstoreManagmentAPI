@@ -1,4 +1,5 @@
 using BookstoreManagement.Infrastructure;
+using BookstoreManagement.Persistance;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -49,6 +50,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     builder.Services.AddInfrastructure(app.Configuration);
+    builder.Services.AddPersistance(app.Configuration);
 }
 
 app.UseHealthChecks("/hc");
