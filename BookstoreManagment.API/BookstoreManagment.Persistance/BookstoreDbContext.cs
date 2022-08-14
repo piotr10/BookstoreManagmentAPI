@@ -14,7 +14,6 @@ public class BookstoreDbContext : DbContext
         
     }
 
-    #region DbSets
     public DbSet<Author> Authors { get; set; }
     public DbSet<AuthorBiography> AuthorBiographies { get; set; }
     public DbSet<AuthorContactDetail> AuthorContactDetails { get; set; }
@@ -29,12 +28,10 @@ public class BookstoreDbContext : DbContext
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderTransportType> OrderTransportTypes { get; set; }
     public DbSet<PaymentMethod> PaymentMethods { get; set; }
-    #endregion
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Author>().OwnsOne(p => p.AuthorName);
-        modelBuilder.Entity<CustomerDetail>().OwnsOne(p => p.CustomerName);
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

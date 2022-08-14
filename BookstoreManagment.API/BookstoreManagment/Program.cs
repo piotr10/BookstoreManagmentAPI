@@ -1,18 +1,21 @@
 using BookstoreManagement.Infrastructure;
+using BookstoreManagement.Persistance;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddPersistance(builder.Configuration);
+builder.Services.AddControllers();
+
 //origins/policy/cors
 builder.Services.AddCors(options =>
-        options.AddPolicy(name: "MyAllowSpecificOrigins", // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
-    builder =>
-    {
-        builder.WithOrigins("https://localhost:example"); //podajemy port (np. 11223) drugiego origin, który bêdzie potrzebny do po³¹czenia CORS miêdzy dwoma aplikacjami
-    }));
-
-// Add services to the container.
-builder.Services.AddControllers();
+    options.AddPolicy(name: "MyAllowSpecificOrigins", // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:example"); //podajemy port (np. 11223) drugiego origin, który bêdzie potrzebny do po³¹czenia CORS miêdzy dwoma aplikacjami
+        }));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -48,14 +51,15 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    builder.Services.AddInfrastructure(app.Configuration);
+    //builder.Services.AddInfrastructure(app.Configuration);
+    //builder.Services.AddPersistance(app.Configuration);
 }
-
-app.UseHealthChecks("/hc");
 
 app.UseSwagger();
 
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bookstore Management"));
+
+app.UseHealthChecks("/hc");
 
 app.UseHttpsRedirection();
 

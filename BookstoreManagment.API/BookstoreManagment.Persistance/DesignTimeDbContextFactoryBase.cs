@@ -1,17 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using System.IO;
+using System;
 
 namespace BookstoreManagement.Persistance;
 
-public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbContextFactory<TContext> where TContext : DbContext
+public abstract class DesignTimeDbContextFactoryBase<TContext> :
+    IDesignTimeDbContextFactory<TContext> where TContext : DbContext
 {
     private const string ConnectionStringName = "BookstoreDatabase";
     private const string AspNetCoreEnvironment = "ASPNETCORE_ENVIRONMENT";
 
     public TContext CreateDbContext(string[] args)
     {
-        var basePath = Directory.GetCurrentDirectory() + string.Format("{0}..{0}BookstoreManagement", Path.DirectorySeparatorChar);
+        var basePath = Directory.GetCurrentDirectory() + string.Format("{0}..{0}BookstoreManagment", Path.DirectorySeparatorChar);
         return Create(basePath, Environment.GetEnvironmentVariable(AspNetCoreEnvironment));
     }
 
