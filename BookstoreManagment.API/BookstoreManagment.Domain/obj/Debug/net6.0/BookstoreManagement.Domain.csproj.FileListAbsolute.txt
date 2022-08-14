@@ -10,3 +10,15 @@ D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Domain\obj\De
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\refint\BookstoreManagement.Domain.dll
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.pdb
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\ref\BookstoreManagement.Domain.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\bin\Debug\net6.0\BookstoreManagement.Domain.deps.json
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\bin\Debug\net6.0\BookstoreManagement.Domain.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\bin\Debug\net6.0\BookstoreManagement.Domain.pdb
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.csproj.AssemblyReference.cache
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.AssemblyInfoInputs.cache
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.AssemblyInfo.cs
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\refint\BookstoreManagement.Domain.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\BookstoreManagement.Domain.pdb
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Domain\obj\Debug\net6.0\ref\BookstoreManagement.Domain.dll

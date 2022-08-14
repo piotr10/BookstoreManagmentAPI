@@ -10,3 +10,15 @@ D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\De
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\refint\BookstoreManagement.Common.dll
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.pdb
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\ref\BookstoreManagement.Common.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\bin\Debug\net6.0\BookstoreManagement.Common.deps.json
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\bin\Debug\net6.0\BookstoreManagement.Common.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\bin\Debug\net6.0\BookstoreManagement.Common.pdb
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.csproj.AssemblyReference.cache
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.AssemblyInfoInputs.cache
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.AssemblyInfo.cs
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.csproj.CoreCompileInputs.cache
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\refint\BookstoreManagement.Common.dll
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\BookstoreManagement.Common.pdb
+C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Common\obj\Debug\net6.0\ref\BookstoreManagement.Common.dll

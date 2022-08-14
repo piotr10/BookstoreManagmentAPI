@@ -1,10 +1,10 @@
-﻿using BookstoreManagement.Domain.ValueObjects;
+﻿using BookstoreManagement.Domain.Common;
+using BookstoreManagement.Domain.ValueObjects;
 
 namespace BookstoreManagement.Domain.Entities.Author;
 
-public class Author
+public class Author : AuditableEntity
 {
-    public int Id { get; set; }
     public PersonName AuthorName { get; set; }
     public AuthorBiography AuthorBiography { get; set; }
     public ICollection<AuthorContactDetail> AuthorContactDetails { get; set; }

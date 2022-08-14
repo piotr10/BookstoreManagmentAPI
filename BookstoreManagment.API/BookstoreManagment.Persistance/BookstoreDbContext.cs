@@ -1,4 +1,8 @@
 ﻿using BookstoreManagement.Domain.Common;
+using BookstoreManagement.Domain.Entities.Author;
+using BookstoreManagement.Domain.Entities.Book;
+using BookstoreManagement.Domain.Entities.Customer;
+using BookstoreManagement.Domain.Entities.Order;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookstoreManagement.Persistance;
@@ -8,6 +12,29 @@ public class BookstoreDbContext : DbContext
     public BookstoreDbContext(DbContextOptions<BookstoreDbContext> options) : base(options)
     {
         
+    }
+
+    #region DbSets
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<AuthorBiography> AuthorBiographies { get; set; }
+    public DbSet<AuthorContactDetail> AuthorContactDetails { get; set; }
+    public DbSet<AuthorContactDetailType> AuthorContactDetailTypes { get; set; }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<Genre> Genres { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<CustomerAddress> CustomerAddresses { get; set; }
+    public DbSet<CustomerAddressType> CustomerAddressTypes { get; set; }
+    public DbSet<CustomerDetail> CustomerDetails { get; set; }
+    public DbSet<CustomerDetailType> CustomerDetailTypes { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderTransportType> OrderTransportTypes { get; set; }
+    public DbSet<PaymentMethod> PaymentMethods { get; set; }
+    #endregion
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Author>().OwnsOne(p => p.AuthorName);
+        modelBuilder.Entity<CustomerDetail>().OwnsOne(p => p.CustomerName);
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

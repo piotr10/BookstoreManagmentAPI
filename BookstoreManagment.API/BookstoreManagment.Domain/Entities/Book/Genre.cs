@@ -1,8 +1,9 @@
-﻿namespace BookstoreManagement.Domain.Entities.Book;
+﻿using BookstoreManagement.Domain.Common;
 
-public class Genre
+namespace BookstoreManagement.Domain.Entities.Book;
+
+public class Genre : AuditableEntity
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public ICollection<Book> Books { get; set; }
 }

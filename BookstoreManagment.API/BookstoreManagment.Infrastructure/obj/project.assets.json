@@ -1970,19 +1970,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\eczer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
       "projectName": "BookstoreManagement.Infrastructure",
-      "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\obj\\",
+      "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
+      "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1996,8 +1996,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
-              "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj"
+            "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj": {
+              "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Application\\BookstoreManagement.Application.csproj"
             }
           }
         }

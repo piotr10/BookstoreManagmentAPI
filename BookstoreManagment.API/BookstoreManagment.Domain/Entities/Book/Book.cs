@@ -1,8 +1,9 @@
-﻿namespace BookstoreManagement.Domain.Entities.Book;
+﻿using BookstoreManagement.Domain.Common;
 
-public class Book
+namespace BookstoreManagement.Domain.Entities.Book;
+
+public class Book : AuditableEntity
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public DateTime PublishedBookDate { get; set; }
     public decimal Price { get; set; }

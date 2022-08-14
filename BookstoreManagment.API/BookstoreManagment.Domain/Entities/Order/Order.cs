@@ -1,6 +1,8 @@
-﻿namespace BookstoreManagement.Domain.Entities.Order;
+﻿using BookstoreManagement.Domain.Common;
 
-public class Order
+namespace BookstoreManagement.Domain.Entities.Order;
+
+public class Order : AuditableEntity
 {
     public DateTime DeliveryDate { get; set; }
     public DateTime OrderDate { get; set; }

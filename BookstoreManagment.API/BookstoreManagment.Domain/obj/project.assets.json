@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\eczer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
+      "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
       "projectName": "BookstoreManagement.Domain",
-      "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain\\obj\\",
+      "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\BookstoreManagement.Domain.csproj",
+      "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
+      "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
