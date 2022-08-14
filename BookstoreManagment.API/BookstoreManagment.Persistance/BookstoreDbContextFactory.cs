@@ -2,7 +2,7 @@
 
 namespace BookstoreManagement.Persistance;
 
-public class MovieDbContextFactory : DesignTimeDbContextFactoryBase<BookstoreDbContext>
+public class BookstoreDbContextFactory : DesignTimeDbContextFactoryBase<BookstoreDbContext>
 {
     protected override BookstoreDbContext CreateNewInstance(DbContextOptions<BookstoreDbContext> options)
     {

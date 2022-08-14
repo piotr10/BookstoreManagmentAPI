@@ -10,6 +10,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<BookstoreDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("BookstoreDatabase")));
+
         return services;
     }
 }
