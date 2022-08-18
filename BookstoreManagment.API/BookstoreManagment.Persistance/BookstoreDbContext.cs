@@ -41,6 +41,8 @@ public class BookstoreDbContext : DbContext
         modelBuilder.Entity<Order>()
             .Property(p => p.OrderPrice)
             .HasColumnType("decimal(18,4)");
+
+        modelBuilder.SeedData();
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
