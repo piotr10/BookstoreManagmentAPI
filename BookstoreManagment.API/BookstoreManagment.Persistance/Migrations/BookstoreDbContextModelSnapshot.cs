@@ -22,19 +22,19 @@ namespace BookstoreManagement.Persistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("BookGenre", b =>
+            modelBuilder.Entity("BookDetailGenre", b =>
                 {
-                    b.Property<int>("BooksId")
+                    b.Property<int>("BookDetailsId")
                         .HasColumnType("int");
 
                     b.Property<int>("GenresId")
                         .HasColumnType("int");
 
-                    b.HasKey("BooksId", "GenresId");
+                    b.HasKey("BookDetailsId", "GenresId");
 
                     b.HasIndex("GenresId");
 
-                    b.ToTable("BookGenre");
+                    b.ToTable("BookDetailGenre");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.Author", b =>
@@ -136,6 +136,9 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("AuthorContactDetailTypeId")
+                        .HasColumnType("int");
+
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
@@ -169,6 +172,8 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthorContactDetailTypeId");
+
                     b.HasIndex("AuthorId");
 
                     b.ToTable("AuthorContactDetails");
@@ -182,40 +187,11 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AuthorContactDetailId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("AuthorContactDetailId");
 
                     b.ToTable("AuthorContactDetailTypes");
                 });
@@ -238,9 +214,6 @@ namespace BookstoreManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("Inactivated")
                         .HasColumnType("datetime2");
 
@@ -255,16 +228,6 @@ namespace BookstoreManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("PublishedBookDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("StatusId")
                         .HasColumnType("int");
 
@@ -272,9 +235,35 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("CustomerId");
-
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.BookDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<DateTime>("PublishedBookDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.ToTable("BookDetails");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Genre", b =>
@@ -285,33 +274,9 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -381,6 +346,9 @@ namespace BookstoreManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CustomerAddressTypeId")
+                        .HasColumnType("int");
+
                     b.Property<int>("CustomerDetailId")
                         .HasColumnType("int");
 
@@ -414,6 +382,8 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CustomerAddressTypeId");
+
                     b.HasIndex("CustomerDetailId");
 
                     b.ToTable("CustomerAddresses");
@@ -427,40 +397,11 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerAddressId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerAddressId");
 
                     b.ToTable("CustomerAddressTypes");
                 });
@@ -479,6 +420,9 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerDetailTypeId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
@@ -510,8 +454,9 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId")
-                        .IsUnique();
+                    b.HasIndex("CustomerDetailTypeId");
+
+                    b.HasIndex("CustomerId");
 
                     b.ToTable("CustomerDetails");
                 });
@@ -524,40 +469,11 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CustomerDetailId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerDetailId");
 
                     b.ToTable("CustomerDetailTypes");
                 });
@@ -569,6 +485,9 @@ namespace BookstoreManagement.Persistance.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -601,7 +520,13 @@ namespace BookstoreManagement.Persistance.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("OrderPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<int>("OrderTransportTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PaymentMethodId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -611,7 +536,13 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookId");
+
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("OrderTransportTypeId");
+
+                    b.HasIndex("PaymentMethodId");
 
                     b.ToTable("Orders");
                 });
@@ -624,40 +555,11 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderTransportTypes");
                 });
@@ -670,49 +572,20 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("PaymentMethods");
                 });
 
-            modelBuilder.Entity("BookGenre", b =>
+            modelBuilder.Entity("BookDetailGenre", b =>
                 {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Book.Book", null)
+                    b.HasOne("BookstoreManagement.Domain.Entities.Book.BookDetail", null)
                         .WithMany()
-                        .HasForeignKey("BooksId")
+                        .HasForeignKey("BookDetailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -763,6 +636,12 @@ namespace BookstoreManagement.Persistance.Migrations
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.AuthorContactDetail", b =>
                 {
+                    b.HasOne("BookstoreManagement.Domain.Entities.Author.AuthorContactDetailType", "AuthorContactDetailType")
+                        .WithMany("AuthorContactDetails")
+                        .HasForeignKey("AuthorContactDetailTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookstoreManagement.Domain.Entities.Author.Author", "Author")
                         .WithMany("AuthorContactDetails")
                         .HasForeignKey("AuthorId")
@@ -770,17 +649,8 @@ namespace BookstoreManagement.Persistance.Migrations
                         .IsRequired();
 
                     b.Navigation("Author");
-                });
 
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.AuthorContactDetailType", b =>
-                {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Author.AuthorContactDetail", "AuthorContactDetail")
-                        .WithMany("AuthorContactDetailTypes")
-                        .HasForeignKey("AuthorContactDetailId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AuthorContactDetail");
+                    b.Navigation("AuthorContactDetailType");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Book", b =>
@@ -791,92 +661,91 @@ namespace BookstoreManagement.Persistance.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookstoreManagement.Domain.Entities.Customer.Customer", "Customer")
-                        .WithMany("Books")
-                        .HasForeignKey("CustomerId")
+                    b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.BookDetail", b =>
+                {
+                    b.HasOne("BookstoreManagement.Domain.Entities.Book.Book", "Book")
+                        .WithMany("BookDetails")
+                        .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Author");
-
-                    b.Navigation("Customer");
+                    b.Navigation("Book");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddress", b =>
                 {
+                    b.HasOne("BookstoreManagement.Domain.Entities.Customer.CustomerAddressType", "CustomerAddressType")
+                        .WithMany("CustomerAddresses")
+                        .HasForeignKey("CustomerAddressTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", "CustomerDetail")
                         .WithMany("CustomerAddresses")
                         .HasForeignKey("CustomerDetailId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("CustomerAddressType");
+
                     b.Navigation("CustomerDetail");
-                });
-
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddressType", b =>
-                {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Customer.CustomerAddress", "CustomerAddress")
-                        .WithMany("CustomerAddressTypes")
-                        .HasForeignKey("CustomerAddressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CustomerAddress");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", b =>
                 {
+                    b.HasOne("BookstoreManagement.Domain.Entities.Customer.CustomerDetailType", "CustomerDetailType")
+                        .WithMany("CustomerDetails")
+                        .HasForeignKey("CustomerDetailTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookstoreManagement.Domain.Entities.Customer.Customer", "Customer")
-                        .WithOne("CustomerDetail")
-                        .HasForeignKey("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", "CustomerId")
+                        .WithMany("CustomerDetails")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Customer");
-                });
 
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetailType", b =>
-                {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", "CustomerDetail")
-                        .WithMany("CustomerDetailTypes")
-                        .HasForeignKey("CustomerDetailId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CustomerDetail");
+                    b.Navigation("CustomerDetailType");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.Order", b =>
                 {
+                    b.HasOne("BookstoreManagement.Domain.Entities.Book.Book", "Book")
+                        .WithMany("Orders")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookstoreManagement.Domain.Entities.Customer.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BookstoreManagement.Domain.Entities.Order.OrderTransportType", "OrderTransportType")
+                        .WithMany("Orders")
+                        .HasForeignKey("OrderTransportTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookstoreManagement.Domain.Entities.Order.PaymentMethod", "PaymentMethod")
+                        .WithMany("Orders")
+                        .HasForeignKey("PaymentMethodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
                     b.Navigation("Customer");
-                });
 
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.OrderTransportType", b =>
-                {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Order.Order", "Order")
-                        .WithMany("OrderTransportTypes")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("OrderTransportType");
 
-                    b.Navigation("Order");
-                });
-
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.PaymentMethod", b =>
-                {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Order.Order", "Order")
-                        .WithMany("PaymentMethods")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
+                    b.Navigation("PaymentMethod");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.Author", b =>
@@ -889,38 +758,48 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.Navigation("Books");
                 });
 
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.AuthorContactDetail", b =>
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.AuthorContactDetailType", b =>
                 {
-                    b.Navigation("AuthorContactDetailTypes");
+                    b.Navigation("AuthorContactDetails");
                 });
 
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.Customer", b =>
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Book", b =>
                 {
-                    b.Navigation("Books");
-
-                    b.Navigation("CustomerDetail")
-                        .IsRequired();
+                    b.Navigation("BookDetails");
 
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddress", b =>
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.Customer", b =>
                 {
-                    b.Navigation("CustomerAddressTypes");
+                    b.Navigation("CustomerDetails");
+
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddressType", b =>
+                {
+                    b.Navigation("CustomerAddresses");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", b =>
                 {
                     b.Navigation("CustomerAddresses");
-
-                    b.Navigation("CustomerDetailTypes");
                 });
 
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.Order", b =>
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetailType", b =>
                 {
-                    b.Navigation("OrderTransportTypes");
+                    b.Navigation("CustomerDetails");
+                });
 
-                    b.Navigation("PaymentMethods");
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.OrderTransportType", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.PaymentMethod", b =>
+                {
+                    b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618
         }
