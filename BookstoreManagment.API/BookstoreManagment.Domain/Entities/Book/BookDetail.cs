@@ -8,5 +8,6 @@ public class BookDetail
     public decimal Price { get; set; }
     public int BookId { get; set; }
     public Book Book { get; set; }
-    public ICollection<Genre> Genres { get; set; }
+    public int GenreId { get; set; }
+    public Genre Genre { get; set; }
 }
