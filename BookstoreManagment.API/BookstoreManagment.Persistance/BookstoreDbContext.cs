@@ -20,6 +20,7 @@ public class BookstoreDbContext : DbContext
     public DbSet<AuthorContactDetailType> AuthorContactDetailTypes { get; set; }
     public DbSet<Book> Books { get; set; }
     public DbSet<Genre> Genres { get; set; }
+    public DbSet<BookDetail> BookDetails { get; set; }
     public DbSet<Customer> Customers { get; set; }
     public DbSet<CustomerAddress> CustomerAddresses { get; set; }
     public DbSet<CustomerAddressType> CustomerAddressTypes { get; set; }

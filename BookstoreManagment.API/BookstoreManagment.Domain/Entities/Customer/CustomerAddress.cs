@@ -12,5 +12,6 @@ public class CustomerAddress : AuditableEntity
     public string ZipCode { get; set; }
     public int CustomerDetailId { get; set; }
     public CustomerDetail CustomerDetail { get; set; }
-    public ICollection<CustomerAddressType> CustomerAddressTypes { get; set; }
+    public int CustomerAddressTypeId { get; set; }
+    public CustomerAddressType CustomerAddressType { get; set; }
 }

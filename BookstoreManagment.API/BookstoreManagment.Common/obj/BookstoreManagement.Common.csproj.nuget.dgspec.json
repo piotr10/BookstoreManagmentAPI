@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj": {}
+    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj": {}
   },
   "projects": {
-    "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj": {
+    "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj",
+        "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj",
         "projectName": "BookstoreManagement.Common",
-        "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj",
-        "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
-        "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Common\\obj\\",
+        "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

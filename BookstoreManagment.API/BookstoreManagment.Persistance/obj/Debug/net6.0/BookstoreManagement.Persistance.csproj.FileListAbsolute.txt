@@ -34,3 +34,5 @@ C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.
 C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\ref\BookstoreManagement.Persistance.dll
 C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Persistance\bin\Debug\net6.0\BookstoreManagement.Persistance.runtimeconfig.json
 C:\Piotrek\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagement.Persistance.genruntimeconfig.cache
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\bin\Debug\net6.0\BookstoreManagement.Persistance.runtimeconfig.json
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment.Persistance\obj\Debug\net6.0\BookstoreManagement.Persistance.genruntimeconfig.cache
