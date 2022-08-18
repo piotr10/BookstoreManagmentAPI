@@ -3386,19 +3386,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eczer\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
+      "projectUniqueName": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
       "projectName": "BookstoreManagement.Api",
-      "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
-      "packagesPath": "C:\\Users\\eczer\\.nuget\\packages\\",
-      "outputPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment\\obj\\",
+      "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\eczer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3412,11 +3412,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
-              "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj"
+            "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj": {
+              "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure\\BookstoreManagement.Infrastructure.csproj"
             },
-            "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj": {
-              "projectPath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj"
+            "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj": {
+              "projectPath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj"
             }
           }
         }
@@ -3464,8 +3464,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

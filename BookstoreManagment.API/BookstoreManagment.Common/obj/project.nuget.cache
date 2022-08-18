@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yWXDtyXIWdqvFkuKlX+SoRGoX9SgB/U1DsUCA11Vxu7E/eav6BOtcNXJ9jKwDwkpElo/WBnLt2fqriqyiK3FGg==",
+  "dgSpecHash": "K4NzXS1m0XsOgpTt2j/vJIQHh5YYMXDM1sdG5CfLN6ObdmrU3CVMixCVk6qHb5YcNW2kAePqziD/WV+fgGhGvg==",
   "success": true,
-  "projectFilePath": "C:\\Piotrek\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj",
+  "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Common\\BookstoreManagement.Common.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
