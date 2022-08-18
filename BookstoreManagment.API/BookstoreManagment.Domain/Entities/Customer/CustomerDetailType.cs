@@ -2,9 +2,9 @@
 
 namespace BookstoreManagement.Domain.Entities.Customer;
 
-public class CustomerDetailType : AuditableEntity
+public class CustomerDetailType
 {
+    public int Id { get; set; }
     public string Name { get; set; }
-    public int CustomerDetailId { get; set; }
-    public CustomerDetail CustomerDetail { get; set; }
+    public ICollection<CustomerDetail> CustomerDetails { get; set; }
 }
