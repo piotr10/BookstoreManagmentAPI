@@ -33,6 +33,14 @@ public class BookstoreDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Author>().OwnsOne(p => p.AuthorName);
+
+        modelBuilder.Entity<BookDetail>()
+            .Property(p => p.Price)
+            .HasColumnType("decimal(18,4)");
+
+        modelBuilder.Entity<Order>()
+            .Property(p => p.OrderPrice)
+            .HasColumnType("decimal(18,4)");
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
