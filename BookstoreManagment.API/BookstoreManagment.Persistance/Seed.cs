@@ -17,15 +17,23 @@ public static class Seed
                 {
                     Id = 1,
                     StatusId = 1,
-                    Created = DateTime.Now
+                    Created = DateTime.Now,
+                    CreatedBy = string.Empty,
+                    InactivatedBy = string.Empty,
+                    ModifiedBy = string.Empty
                 });
-                d.OwnsOne(d => d.AuthorName).HasData(new { DirectorId = 1, FirstName = "Henryk", LastName = "Sienkiewicz" });
+                d.OwnsOne(d => d.AuthorName).HasData(new { AuthorId = 1, FirstName = "Henryk", LastName = "Sienkiewicz" });
             }
                 );
 
             modelBuilder.Entity<AuthorBiography>().HasData(
                 new AuthorBiography() { Id = 1,
                     AuthorId = 1,
+                    StatusId = 1,
+                    Created = DateTime.Now,
+                    CreatedBy = string.Empty,
+                    InactivatedBy = string.Empty,
+                    ModifiedBy = string.Empty,
                     Country = "Poland",
                     DateOfBirth = new DateTime(1846, 5, 5),
                     PlaceOfBirth = "Wola Okrzejska"
@@ -39,11 +47,11 @@ public static class Seed
             );
 
             modelBuilder.Entity<AuthorContactDetail>().HasData(
-                new AuthorContactDetail() { Id = 1, AuthorId = 1, AuthorContactDetailTypeId = 1, Name = "No contacts" }
+                new AuthorContactDetail() { Id = 1, AuthorId = 1, AuthorContactDetailTypeId = 1, Name = "No contacts", StatusId = 1, Created = DateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty }
             );
 
             modelBuilder.Entity<Book>().HasData(
-            new Book() { Id = 1, AuthorId = 1 }
+            new Book() { Id = 1, AuthorId = 1, StatusId = 1, Created = DateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty }
             );
 
             modelBuilder.Entity<Genre>().HasData(
@@ -61,8 +69,8 @@ public static class Seed
             );
 
             modelBuilder.Entity<Customer>().HasData(
-            new Customer() { Id = 1 },
-            new Customer() { Id = 2 }
+            new Customer() { Id = 1, StatusId = 1, Created = DateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty },
+            new Customer() { Id = 2, StatusId = 1, Created = DateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty }
             );
 
             modelBuilder.Entity<CustomerDetailType>().HasData(
@@ -71,7 +79,7 @@ public static class Seed
             );
 
             modelBuilder.Entity<CustomerDetail>().HasData(
-            new CustomerDetail() { Id = 1, CustomerId = 1, CustomerDetailTypeId = 1, FirstName = "Piotr", LastName = "Cz" }
+            new CustomerDetail() { Id = 1, CustomerId = 1, CustomerDetailTypeId = 1, FirstName = "Piotr", LastName = "Cz", StatusId = 1, Created = DateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty }
             );
 
             modelBuilder.Entity<CustomerAddressType>().HasData(
@@ -85,6 +93,11 @@ public static class Seed
                 Id = 1,
                 CustomerDetailId = 1,
                 CustomerAddressTypeId = 1,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty,
                 ApartmentNumber = 12,
                 City = "Warsaw",
                 Country = "Poland",
@@ -109,8 +122,14 @@ public static class Seed
                 {
                     Id = 1,
                     CustomerId = 1,
+                    BookId = 1,
                     OrderTransportTypeId = 1,
                     PaymentMethodId = 1,
+                    StatusId = 1,
+                    Created = DateTime.Now,
+                    CreatedBy = string.Empty,
+                    InactivatedBy = string.Empty,
+                    ModifiedBy = string.Empty,
                     DeliveryDate = new DateTime(2022, 1, 1),
                     OrderPrice = 22,
                     Quantity = 1

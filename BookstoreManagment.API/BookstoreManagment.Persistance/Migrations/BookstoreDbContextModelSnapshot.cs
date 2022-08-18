@@ -22,21 +22,6 @@ namespace BookstoreManagement.Persistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("BookDetailGenre", b =>
-                {
-                    b.Property<int>("BookDetailsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GenresId")
-                        .HasColumnType("int");
-
-                    b.HasKey("BookDetailsId", "GenresId");
-
-                    b.HasIndex("GenresId");
-
-                    b.ToTable("BookDetailGenre");
-                });
-
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.Author", b =>
                 {
                     b.Property<int>("Id")
@@ -72,6 +57,17 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(622),
+                            CreatedBy = "",
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            StatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.AuthorBiography", b =>
@@ -126,6 +122,21 @@ namespace BookstoreManagement.Persistance.Migrations
                         .IsUnique();
 
                     b.ToTable("AuthorBiographies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthorId = 1,
+                            Country = "Poland",
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(926),
+                            CreatedBy = "",
+                            DateOfBirth = new DateTime(1846, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            PlaceOfBirth = "Wola Okrzejska",
+                            StatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.AuthorContactDetail", b =>
@@ -177,6 +188,20 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasIndex("AuthorId");
 
                     b.ToTable("AuthorContactDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthorContactDetailTypeId = 1,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(962),
+                            CreatedBy = "",
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            Name = "No contacts",
+                            StatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.AuthorContactDetailType", b =>
@@ -194,6 +219,23 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AuthorContactDetailTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Phone"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Email"
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Book", b =>
@@ -236,6 +278,18 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasIndex("AuthorId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(974),
+                            CreatedBy = "",
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            StatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.BookDetail", b =>
@@ -247,6 +301,9 @@ namespace BookstoreManagement.Persistance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GenreId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -263,7 +320,56 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.HasIndex("BookId");
 
+                    b.HasIndex("GenreId");
+
                     b.ToTable("BookDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookId = 1,
+                            GenreId = 3,
+                            Name = "Ogniem i Mieczem",
+                            Price = 10m,
+                            PublishedBookDate = new DateTime(1884, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BookId = 1,
+                            GenreId = 3,
+                            Name = "Potop",
+                            Price = 15m,
+                            PublishedBookDate = new DateTime(1886, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BookId = 1,
+                            GenreId = 3,
+                            Name = "Pan Wołodyjowski",
+                            Price = 11m,
+                            PublishedBookDate = new DateTime(1888, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BookId = 1,
+                            GenreId = 3,
+                            Name = "Quo Vadis",
+                            Price = 12m,
+                            PublishedBookDate = new DateTime(1896, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BookId = 1,
+                            GenreId = 3,
+                            Name = "Krzyżacy",
+                            Price = 14m,
+                            PublishedBookDate = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Genre", b =>
@@ -281,6 +387,23 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Biography"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Drama"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Historical Novel"
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.Customer", b =>
@@ -318,6 +441,26 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1067),
+                            CreatedBy = "",
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            StatusId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1069),
+                            CreatedBy = "",
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            StatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddress", b =>
@@ -387,6 +530,25 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasIndex("CustomerDetailId");
 
                     b.ToTable("CustomerAddresses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ApartmentNumber = 12,
+                            City = "Warsaw",
+                            Country = "Poland",
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1126),
+                            CreatedBy = "",
+                            CustomerAddressTypeId = 1,
+                            CustomerDetailId = 1,
+                            HouseNumber = 12,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            StatusId = 1,
+                            Street = "Warszawska",
+                            ZipCode = "01-001"
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddressType", b =>
@@ -404,6 +566,18 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CustomerAddressTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Address of residence"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Residences"
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", b =>
@@ -459,6 +633,21 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasIndex("CustomerId");
 
                     b.ToTable("CustomerDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1097),
+                            CreatedBy = "",
+                            CustomerDetailTypeId = 1,
+                            CustomerId = 1,
+                            FirstName = "Piotr",
+                            InactivatedBy = "",
+                            LastName = "Cz",
+                            ModifiedBy = "",
+                            StatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetailType", b =>
@@ -476,6 +665,18 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CustomerDetailTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Private person"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Entrepreneur"
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.Order", b =>
@@ -545,6 +746,25 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasIndex("PaymentMethodId");
 
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookId = 1,
+                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1162),
+                            CreatedBy = "",
+                            CustomerId = 1,
+                            DeliveryDate = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            OrderDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            OrderPrice = 22m,
+                            OrderTransportTypeId = 1,
+                            PaymentMethodId = 1,
+                            Quantity = 1,
+                            StatusId = 1
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.OrderTransportType", b =>
@@ -562,6 +782,18 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrderTransportTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Paczkomat"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Kurier"
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Order.PaymentMethod", b =>
@@ -579,21 +811,18 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PaymentMethods");
-                });
 
-            modelBuilder.Entity("BookDetailGenre", b =>
-                {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Book.BookDetail", null)
-                        .WithMany()
-                        .HasForeignKey("BookDetailsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BookstoreManagement.Domain.Entities.Book.Genre", null)
-                        .WithMany()
-                        .HasForeignKey("GenresId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Mobile payments"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Electronic bank transfers"
+                        });
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Author.Author", b =>
@@ -617,6 +846,14 @@ namespace BookstoreManagement.Persistance.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("AuthorId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    AuthorId = 1,
+                                    FirstName = "Henryk",
+                                    LastName = "Sienkiewicz"
+                                });
                         });
 
                     b.Navigation("AuthorName")
@@ -672,7 +909,15 @@ namespace BookstoreManagement.Persistance.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("BookstoreManagement.Domain.Entities.Book.Genre", "Genre")
+                        .WithMany("BookDetails")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Book");
+
+                    b.Navigation("Genre");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddress", b =>
@@ -768,6 +1013,11 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.Navigation("BookDetails");
 
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Genre", b =>
+                {
+                    b.Navigation("BookDetails");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.Customer", b =>
