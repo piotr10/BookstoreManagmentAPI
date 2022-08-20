@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Directors\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>
