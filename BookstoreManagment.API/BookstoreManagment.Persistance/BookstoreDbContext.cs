@@ -1,4 +1,6 @@
-﻿using BookstoreManagement.Domain.Common;
+﻿using System.Reflection;
+using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Common;
 using BookstoreManagement.Domain.Entities.Author;
 using BookstoreManagement.Domain.Entities.Book;
 using BookstoreManagement.Domain.Entities.Customer;
@@ -9,9 +11,16 @@ namespace BookstoreManagement.Persistance;
 
 public class BookstoreDbContext : DbContext
 {
+    private readonly IDateTime _dateTime;
+
     public BookstoreDbContext(DbContextOptions<BookstoreDbContext> options) : base(options)
     {
         
+    }
+
+    public BookstoreDbContext(DbContextOptions<BookstoreDbContext> options, IDateTime dateTime) : base(options)
+    {
+        _dateTime = dateTime;
     }
 
     public DbSet<Author> Authors { get; set; }
@@ -32,17 +41,8 @@ public class BookstoreDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Author>().OwnsOne(p => p.AuthorName);
-
-        modelBuilder.Entity<BookDetail>()
-            .Property(p => p.Price)
-            .HasColumnType("decimal(18,4)");
-
-        modelBuilder.Entity<Order>()
-            .Property(p => p.OrderPrice)
-            .HasColumnType("decimal(18,4)");
-
-        modelBuilder.SeedData();
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        modelBuilder.SeedData(_dateTime);
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
@@ -53,17 +53,17 @@ public class BookstoreDbContext : DbContext
             {
                 case EntityState.Added:
                     entry.Entity.CreatedBy = string.Empty;
-                    entry.Entity.Created = DateTime.Now;
+                    entry.Entity.Created = _dateTime.Now;
                     entry.Entity.StatusId = 1;
                     break;
                 case EntityState.Modified:
                     entry.Entity.ModifiedBy = string.Empty;
-                    entry.Entity.Modified = DateTime.Now;
+                    entry.Entity.Modified = _dateTime.Now;
                     break;
                 case EntityState.Deleted:
                     entry.Entity.ModifiedBy = string.Empty;
-                    entry.Entity.Modified = DateTime.Now;
-                    entry.Entity.Inactivated = DateTime.Now;
+                    entry.Entity.Modified = _dateTime.Now;
+                    entry.Entity.Inactivated = _dateTime.Now;
                     entry.Entity.InactivatedBy = string.Empty;
                     entry.Entity.StatusId = 0;
                     entry.State = EntityState.Modified;

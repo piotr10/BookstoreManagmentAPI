@@ -62,7 +62,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(622),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(47),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -83,7 +83,8 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.Property<string>("Country")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -111,7 +112,8 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.Property<string>("PlaceOfBirth")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("StatusId")
                         .HasColumnType("int");
@@ -129,7 +131,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             AuthorId = 1,
                             Country = "Poland",
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(926),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(338),
                             CreatedBy = "",
                             DateOfBirth = new DateTime(1846, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InactivatedBy = "",
@@ -176,7 +178,8 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("StatusId")
                         .HasColumnType("int");
@@ -195,7 +198,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             AuthorContactDetailTypeId = 1,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(962),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(371),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -284,7 +287,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(974),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(384),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -446,7 +449,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1067),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(429),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -455,7 +458,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1069),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(431),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -472,15 +475,18 @@ namespace BookstoreManagement.Persistance.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("ApartmentNumber")
+                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
 
                     b.Property<string>("Country")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -496,6 +502,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("HouseNumber")
+                        .HasMaxLength(15)
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Inactivated")
@@ -517,11 +524,13 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.Property<string>("Street")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(60)
+                        .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("ZipCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("Id");
 
@@ -538,7 +547,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             ApartmentNumber = 12,
                             City = "Warsaw",
                             Country = "Poland",
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1126),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(472),
                             CreatedBy = "",
                             CustomerAddressTypeId = 1,
                             CustomerDetailId = 1,
@@ -603,7 +612,8 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("Inactivated")
                         .HasColumnType("datetime2");
@@ -614,7 +624,8 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("Modified")
                         .HasColumnType("datetime2");
@@ -638,7 +649,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1097),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(452),
                             CreatedBy = "",
                             CustomerDetailTypeId = 1,
                             CustomerId = 1,
@@ -752,7 +763,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 1,
                             BookId = 1,
-                            Created = new DateTime(2022, 8, 19, 0, 41, 22, 98, DateTimeKind.Local).AddTicks(1162),
+                            Created = new DateTime(2022, 8, 20, 14, 40, 28, 747, DateTimeKind.Local).AddTicks(505),
                             CreatedBy = "",
                             CustomerId = 1,
                             DeliveryDate = new DateTime(2022, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -834,11 +845,13 @@ namespace BookstoreManagement.Persistance.Migrations
 
                             b1.Property<string>("FirstName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("FirstName");
 
                             b1.Property<string>("LastName")
                                 .IsRequired()
-                                .HasColumnType("nvarchar(max)");
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("LastName");
 
                             b1.HasKey("AuthorId");
 

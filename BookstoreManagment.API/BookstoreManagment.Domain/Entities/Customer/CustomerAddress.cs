@@ -4,7 +4,7 @@ namespace BookstoreManagement.Domain.Entities.Customer;
 
 public class CustomerAddress : AuditableEntity
 {
- public int ApartmentNumber { get; set; }
+    public int ApartmentNumber { get; set; }
     public string City { get; set; }
     public string Country { get; set; }
     public int HouseNumber { get; set; }

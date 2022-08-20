@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="EternalAPI\" />
     <Folder Include="Identity\" />
+    <Folder Include="FileStore\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
