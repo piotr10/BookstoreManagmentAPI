@@ -1,4 +1,4 @@
-﻿using BookstoreManagement.Application.Interfaces;
+﻿using BookstoreManagement.Application.Common.Interfaces;
 using BookstoreManagement.Domain.Entities.Author;
 using BookstoreManagement.Domain.Entities.Book;
 using BookstoreManagement.Domain.Entities.Customer;

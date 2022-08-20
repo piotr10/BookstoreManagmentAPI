@@ -1,4 +1,4 @@
-﻿using BookstoreManagement.Application.Interfaces;
+﻿using BookstoreManagement.Application.Common.Interfaces;
 
 namespace BookstoreManagement.Infrastructure.Services;
 
