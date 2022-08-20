@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Domain.Common;
+﻿using System.Reflection;
+using BookstoreManagement.Domain.Common;
 using BookstoreManagement.Domain.Entities.Author;
 using BookstoreManagement.Domain.Entities.Book;
 using BookstoreManagement.Domain.Entities.Customer;
@@ -32,16 +33,7 @@ public class BookstoreDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Author>().OwnsOne(p => p.AuthorName);
-
-        modelBuilder.Entity<BookDetail>()
-            .Property(p => p.Price)
-            .HasColumnType("decimal(18,4)");
-
-        modelBuilder.Entity<Order>()
-            .Property(p => p.OrderPrice)
-            .HasColumnType("decimal(18,4)");
-
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         modelBuilder.SeedData();
     }
 
