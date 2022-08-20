@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="EternalAPI\" />
+    <Folder Include="EternalAPI\GoogleBooksAPI\" />
     <Folder Include="Identity\" />
     <Folder Include="FileStore\" />
     <Folder Include="Services\" />

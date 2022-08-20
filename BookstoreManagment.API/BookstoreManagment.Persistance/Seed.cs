@@ -9,7 +9,7 @@ namespace BookstoreManagement.Persistance;
 
 public static class Seed
 {
-    public static void SeedData(this ModelBuilder modelBuilder, IDateTime dateTime)
+    public static void SeedData(this ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Author>(d =>
         {
@@ -17,7 +17,7 @@ public static class Seed
             {
                 Id = 1,
                 StatusId = 1,
-                Created = dateTime.Now,
+                Created = DateTime.Now,
                 CreatedBy = string.Empty,
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
@@ -32,7 +32,7 @@ public static class Seed
                 Id = 1,
                 AuthorId = 1,
                 StatusId = 1,
-                Created = dateTime.Now,
+                Created = DateTime.Now,
                 CreatedBy = string.Empty,
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty,
@@ -54,7 +54,7 @@ public static class Seed
                 AuthorContactDetailTypeId = 1, 
                 Name = "No contacts", 
                 StatusId = 1, 
-                Created = dateTime.Now, 
+                Created = DateTime.Now, 
                 CreatedBy = string.Empty, 
                 InactivatedBy = string.Empty, 
                 ModifiedBy = string.Empty }
@@ -64,7 +64,7 @@ public static class Seed
         new Book() { Id = 1, 
             AuthorId = 1, 
             StatusId = 1, 
-            Created = dateTime.Now, 
+            Created = DateTime.Now, 
             CreatedBy = string.Empty, 
             InactivatedBy = string.Empty, 
             ModifiedBy = string.Empty }
@@ -85,8 +85,8 @@ public static class Seed
         );
 
         modelBuilder.Entity<Customer>().HasData(
-        new Customer() { Id = 1, StatusId = 1, Created = dateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty },
-        new Customer() { Id = 2, StatusId = 1, Created = dateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty }
+        new Customer() { Id = 1, StatusId = 1, Created = DateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty },
+        new Customer() { Id = 2, StatusId = 1, Created = DateTime.Now, CreatedBy = string.Empty, InactivatedBy = string.Empty, ModifiedBy = string.Empty }
         );
 
         modelBuilder.Entity<CustomerDetailType>().HasData(
@@ -101,7 +101,7 @@ public static class Seed
             FirstName = "Piotr", 
             LastName = "Cz", 
             StatusId = 1, 
-            Created = dateTime.Now, 
+            Created = DateTime.Now, 
             CreatedBy = string.Empty, 
             InactivatedBy = string.Empty, 
             ModifiedBy = string.Empty }
@@ -119,7 +119,7 @@ public static class Seed
             CustomerDetailId = 1,
             CustomerAddressTypeId = 1,
             StatusId = 1,
-            Created = dateTime.Now,
+            Created = DateTime.Now,
             CreatedBy = string.Empty,
             InactivatedBy = string.Empty,
             ModifiedBy = string.Empty,
@@ -151,7 +151,7 @@ public static class Seed
                 OrderTransportTypeId = 1,
                 PaymentMethodId = 1,
                 StatusId = 1,
-                Created = dateTime.Now,
+                Created = DateTime.Now,
                 CreatedBy = string.Empty,
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty,
