@@ -12,12 +12,20 @@ namespace BookstoreManagement.Api.Controllers
     [EnableCors("MyAllowSpecificOrigins")]
     public class OrderController : BaseController
     {
+        /// <summary>
+        /// Get Order detalis
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult> GetDetails()
         {
             return null;
         }
 
+        /// <summary>
+        /// Create new Order
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create()
         {

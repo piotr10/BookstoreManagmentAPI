@@ -5,10 +5,17 @@ using ErrorModel = BookstoreManagment.Api.Models.ErrorModel;
 
 namespace BookstoreManagment.Api.Controllers
 {
+    /// <summary>
+    /// Checking controller
+    /// </summary>
     [Route("api/hc")]
     [ApiController]
     public class HealthChecksController : ControllerBase
     {
+        /// <summary>
+        /// Healthy response
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

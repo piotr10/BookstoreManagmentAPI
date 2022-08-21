@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookstoreManagement.Persistance;
 
-public class BookstoreDbContext : DbContext
+public class BookstoreDbContext : DbContext, IBookstoreDbContext
 {
     private readonly IDateTime _dateTime;
 
@@ -42,7 +42,7 @@ public class BookstoreDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-        modelBuilder.SeedData(_dateTime);
+        modelBuilder.SeedData();
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

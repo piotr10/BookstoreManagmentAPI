@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Directors\" />
+    <Folder Include="Author\Queries\GetAuthorDetail\" />
+    <Folder Include="Author\Queries\GetAuthors\" />
+    <Folder Include="Book\Queries\GetBooks\" />
     <Folder Include="Common\Interfaces\" />
+    <Folder Include="Customer\Queries\GetCustomers\" />
+    <Folder Include="Order\Queries\GetOrders\" />
   </ItemGroup>
 
   <ItemGroup>

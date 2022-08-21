@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BookstoreManagement.Application.Common.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +11,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<BookstoreDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("BookstoreDatabase1")));
-
+        services.AddScoped<IBookstoreDbContext, BookstoreDbContext>();
         return services;
     }
 }

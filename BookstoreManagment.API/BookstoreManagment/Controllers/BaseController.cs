@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookstoreManagement.Api.Controllers
 {
+    /// <summary>
+    /// Base controller
+    /// </summary>
     [ApiController]
     public class BaseController : ControllerBase
     {
