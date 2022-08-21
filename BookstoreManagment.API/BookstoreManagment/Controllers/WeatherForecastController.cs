@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookstoreManagment.Api.Controllers
 {
+    /// <summary>
+    /// Weather forecast controller
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     [EnableCors("MyAllowSpecificOrigins")]

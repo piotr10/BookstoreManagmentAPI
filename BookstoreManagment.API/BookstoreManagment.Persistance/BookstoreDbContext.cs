@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookstoreManagement.Persistance;
 
-public class BookstoreDbContext : DbContext
+public class BookstoreDbContext : DbContext, IBookstoreDbContext
 {
     private readonly IDateTime _dateTime;
 
