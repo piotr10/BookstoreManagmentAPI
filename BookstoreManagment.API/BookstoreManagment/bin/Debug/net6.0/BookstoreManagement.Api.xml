@@ -9,19 +9,88 @@
             CRUD Author
             </summary>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetDetails">
+            <summary>
+            Get Author detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.Create">
+            <summary>
+            Create new Author
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.BaseController">
+            <summary>
+            Base controller
+            </summary>
+        </member>
         <member name="T:BookstoreManagement.Api.Controllers.BookController">
             <summary>
             CRUD Book
             </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.GetDetails">
+            <summary>
+            Get Book detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.Create">
+            <summary>
+            Create new Book
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:BookstoreManagement.Api.Controllers.CustomerController">
             <summary>
             CRUD Customer
             </summary>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.GetDetails">
+            <summary>
+            Get Customer detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.Create">
+            <summary>
+            Create new Customer
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BookstoreManagement.Api.Controllers.OrderController">
             <summary>
             CRUD Order
+            </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetDetails">
+            <summary>
+            Get Order detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.Create">
+            <summary>
+            Create new Order
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagment.Api.Controllers.HealthChecksController">
+            <summary>
+            Checking controller
+            </summary>
+        </member>
+        <member name="M:BookstoreManagment.Api.Controllers.HealthChecksController.GetAsync">
+            <summary>
+            Healthy response
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagment.Api.Controllers.WeatherForecastController">
+            <summary>
+            Weather forecast controller
             </summary>
         </member>
         <member name="M:BookstoreManagment.Api.Controllers.WeatherForecastController.Get">
