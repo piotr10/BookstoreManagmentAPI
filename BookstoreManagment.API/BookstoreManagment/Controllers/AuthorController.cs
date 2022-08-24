@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +8,7 @@ namespace BookstoreManagement.Api.Controllers
     /// <summary>
     /// CRUD Author
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/authors")]
     [ApiController]
     [EnableCors("MyAllowSpecificOrigins")]
     public class AuthorController : BaseController
@@ -17,9 +18,10 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetDetails()
+        public async Task<ActionResult<AuthorDetailVm>> GetDetails(int id)
         {
-            return null;
+            var vm = await Mediator.Send(new GetAuthorDetailQuery() {AuthorId = id});
+            return vm;
         }
 
         /// <summary>

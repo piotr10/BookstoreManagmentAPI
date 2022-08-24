@@ -21,6 +21,7 @@ public class GetBookDetailQueryHandler : IRequestHandler<GetBookDetailQuery, Boo
         var bookVm = new BookDetailVm()
         {
 
-        }
+        };
+        return bookVm;
     }
 }

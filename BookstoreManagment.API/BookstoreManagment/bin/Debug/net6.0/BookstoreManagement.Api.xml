@@ -9,7 +9,7 @@
             CRUD Author
             </summary>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetDetails">
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetDetails(System.Int32)">
             <summary>
             Get Author detalis
             </summary>
