@@ -21,6 +21,7 @@ public class GetCustomerDetailQueryHandler : IRequestHandler<GetCustomerDetailQu
         var customerVm = new CustomerDetailVm()
         {
 
-        }
+        };
+        return customerVm;
     }
 }

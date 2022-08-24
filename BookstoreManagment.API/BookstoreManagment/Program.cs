@@ -1,3 +1,4 @@
+using BookstoreManagement.Application;
 using BookstoreManagement.Infrastructure;
 using BookstoreManagement.Persistance;
 using Microsoft.OpenApi.Models;
@@ -5,6 +6,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddPersistance(builder.Configuration);
 builder.Services.AddControllers();

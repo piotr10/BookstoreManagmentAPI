@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Application.Common.Interfaces;
+﻿using AutoMapper;
+using BookstoreManagement.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,29 +8,45 @@ namespace BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
 public class GetAuthorDetailQueryHandler : IRequestHandler<GetAuthorDetailQuery, AuthorDetailVm>
 {
     private readonly IBookstoreDbContext _bookstoreDbContext;
+    private readonly IMapper _mapper;
 
-    public GetAuthorDetailQueryHandler(IBookstoreDbContext bookstoreDbContext)
+    public GetAuthorDetailQueryHandler(IBookstoreDbContext bookstoreDbContext, IMapper mapper)
     {
         _bookstoreDbContext = bookstoreDbContext;
+        _mapper = mapper;
     }
 
     public async Task<AuthorDetailVm> Handle(GetAuthorDetailQuery request, CancellationToken cancellationToken)
     {
-        var author = await _bookstoreDbContext.Authors.Where(p => p.Id == request.AuthorId)
+        var author = await _bookstoreDbContext.Authors.Include(p => p.AuthorContactDetails).Where(p => p.Id == request.AuthorId)
             .FirstOrDefaultAsync(cancellationToken);
 
-        var authorVm = new AuthorDetailVm()
+        /*var contactDetail = await _bookstoreDbContext.AuthorContactDetails.Where(p => p.Id == request.ContactDetailId)
+            .FirstOrDefaultAsync(cancellationToken);*/
+        
+        #region old method
+        /*var authorVm = new AuthorDetailVm()
         {
             AuthorDateOfBirth = author.AuthorBiography.DateOfBirth,
             AuthorPlaceOfBirth = author.AuthorBiography.PlaceOfBirth,
             AuthorFullName = author.AuthorName.ToString(),
             HomeCountry = author.AuthorBiography.Country,
-            Contact = author.AuthorContactDetails.FirstOrDefault(p => p.AuthorId == ).Name.ToString(), // DO ZMIANY WSZYSTKIE ENTITIES, KTÓRE POSIADAJĄ ICollection
-                                                                                                       //Ponieważ nie tworzy się lista i nie ma wyboru properties
-                                                                                                       //i zrobić tak jak w projekcie
-                                                                                                       //FoodStore + skoczyłeś na Lekcja 5 Queries czas: 12:26
-                                                                                                       // + dodać migrację ponieważ dodałeś jedno entity w 
-                                                                                                       //CustomreDetail > DetailContact
-        }
+            Contact = author.AuthorContactDetails.Select(p =>p.Name).ToString(),
+            ContactDetailType = author.AuthorContactDetails.Select(p => p.AuthorContactDetailType.Name).ToString()
+
+            //Contact = contactDetail.Name, TEST
+            //ContactDetailType = contactDetail.AuthorContactDetailType.Name TEST
+
+            // DO ZMIANY WSZYSTKIE ENTITIES, KTÓRE POSIADAJĄ ICollection
+            //Ponieważ nie tworzy się lista i nie ma wyboru properties
+            //i zrobić tak jak w projekcie
+            //FoodStore + skoczyłeś na Lekcja 5 Queries czas: 12:26
+            // + dodać migrację ponieważ dodałeś jedno entity w 
+            //CustomreDetail > DetailContact
+        };*/
+        #endregion
+
+        var authorVm = _mapper.Map<AuthorDetailVm>(author);
+        return authorVm;
     }
 }

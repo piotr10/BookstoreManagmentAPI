@@ -7,15 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Author\Commands\CreateAuthor\" />
+    <Folder Include="Author\Commands\DeleteAuthor\" />
+    <Folder Include="Author\Commands\UpdateAuthor\" />
     <Folder Include="Author\Queries\GetAuthorDetail\" />
-    <Folder Include="Author\Queries\GetAuthors\" />
     <Folder Include="Book\Queries\GetBooks\" />
     <Folder Include="Common\Interfaces\" />
+    <Folder Include="Common\Mappings\" />
     <Folder Include="Customer\Queries\GetCustomers\" />
     <Folder Include="Order\Queries\GetOrders\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />

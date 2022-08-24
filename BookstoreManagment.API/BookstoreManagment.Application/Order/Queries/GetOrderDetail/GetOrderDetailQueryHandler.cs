@@ -21,6 +21,7 @@ public class GetOrderDetailQueryHandler : IRequestHandler<GetOrderDetailQuery, O
         var orderVm = new OrderDetailVm()
         {
 
-        }
+        };
+        return orderVm;
     }
 }
