@@ -51,7 +51,7 @@ public static class Seed
         modelBuilder.Entity<AuthorContactDetail>().HasData(
             new AuthorContactDetail() { Id = 1, 
                 AuthorId = 1, 
-                AuthorContactDetailTypeId = 1, 
+                AuthorContactDetailTypeId = 2, 
                 Name = "No contacts", 
                 StatusId = 1, 
                 Created = DateTime.Now, 

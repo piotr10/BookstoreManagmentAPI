@@ -18,12 +18,12 @@ public class GetAuthorDetailQueryHandler : IRequestHandler<GetAuthorDetailQuery,
 
     public async Task<AuthorDetailVm> Handle(GetAuthorDetailQuery request, CancellationToken cancellationToken)
     {
-        var author = await _bookstoreDbContext.Authors.Include(p => p.AuthorContactDetails).Where(p => p.Id == request.AuthorId)
+        var author = await _bookstoreDbContext.Authors
+            .Include(p => p.AuthorContactDetails)
+            .ThenInclude(p=>p.AuthorContactDetailType)
+            .Where(p => p.Id == request.AuthorId)
             .FirstOrDefaultAsync(cancellationToken);
 
-        /*var contactDetail = await _bookstoreDbContext.AuthorContactDetails.Where(p => p.Id == request.ContactDetailId)
-            .FirstOrDefaultAsync(cancellationToken);*/
-        
         #region old method
         /*var authorVm = new AuthorDetailVm()
         {

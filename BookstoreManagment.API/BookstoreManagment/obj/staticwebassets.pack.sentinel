@@ -105,5 +105,25 @@
 2.0
 2.0
 2.0
+<<<<<<< HEAD
 =======
 >>>>>>> 8894a24 (Changed entites and properties in this entities)
+=======
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+2.0
+>>>>>>> ac2776d (Added first migration with nested mapping AuthorDetailType)
