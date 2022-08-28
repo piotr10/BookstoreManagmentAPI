@@ -7,7 +7,7 @@ namespace BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
 public class AuthorDetailVm : IMapFrom<Domain.Entities.Author.Author>
 {
     public int AuthorDetailId { get; set; }
-    //public DateTime AuthorDateOfBirth { get; set; } //AuthorBiography>DateOfBirth
+    public DateTime AuthorDateOfBirth { get; set; } //AuthorBiography>DateOfBirth
     // public string? AuthorPlaceOfBirth { get; set; } //AuthorBiography>PlaceOfBirth
     public string? AuthorFullName { get; set; } //Author>AuthorName
                                                 // public string? HomeCountry { get; set; } //AuthorBiography>Country
@@ -20,8 +20,8 @@ public class AuthorDetailVm : IMapFrom<Domain.Entities.Author.Author>
         profile.CreateMap<Domain.Entities.Author.Author, AuthorDetailVm>()
             .ForMember(d => d.AuthorDetailId, map
                 => map.MapFrom(src => src.Id))
-            // .ForMember(d => d.AuthorDateOfBirth, map
-            //     => map.MapFrom(src => src.AuthorBiography.DateOfBirth))
+            .ForMember(d => d.AuthorDateOfBirth, map
+                 => map.MapFrom(src => src.AuthorBiography.DateOfBirth))
             //  .ForMember(d => d.AuthorPlaceOfBirth, map
             //      => map.MapFrom(src => src.AuthorBiography.PlaceOfBirth))
             .ForMember(d => d.AuthorFullName, map
