@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using BookstoreManagement.Application.Book.Queries.GetBookDetail;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +8,7 @@ namespace BookstoreManagement.Api.Controllers
     /// <summary>
     /// CRUD Book
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/books")]
     [ApiController]
     [EnableCors("MyAllowSpecificOrigins")]
     public class BookController : BaseController
@@ -17,9 +18,10 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetDetails()
+        public async Task<ActionResult<BookDetailVm>> GetDetails(int id)
         {
-            return null;
+            var vm = await Mediator.Send(new GetBookDetailQuery() { BookDetailId = id });
+            return vm;
         }
 
         /// <summary>
