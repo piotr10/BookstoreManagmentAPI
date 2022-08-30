@@ -6,5 +6,5 @@ public class CustomerAddressType
 {
     public int Id { get; set; }
     public string Name { get; set; }
-    public ICollection<CustomerAddress> CustomerAddresses { get; set; }
+    public ICollection<CustomerDetail> CustomerDetails { get; set; }
 }

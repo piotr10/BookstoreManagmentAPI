@@ -7,11 +7,11 @@ namespace BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
 public class AuthorDetailVm : IMapFrom<Domain.Entities.Author.Author>
 {
     public int AuthorDetailId { get; set; }
-    public DateTime AuthorDateOfBirth { get; set; } //AuthorBiography>DateOfBirth
-    // public string? AuthorPlaceOfBirth { get; set; } //AuthorBiography>PlaceOfBirth
-    public string? AuthorFullName { get; set; } //Author>AuthorName
-                                                // public string? HomeCountry { get; set; } //AuthorBiography>Country
-    public string? Contact { get; set; } //AuthorContactDetail>Name
+    public DateTime AuthorDateOfBirth { get; set; }
+    public string? AuthorPlaceOfBirth { get; set; }
+    public string? AuthorFullName { get; set; }
+    public string? HomeCountry { get; set; }
+    public string? Contact { get; set; }
     public string? AuthorContactType { get; set; }
 
 
@@ -21,16 +21,15 @@ public class AuthorDetailVm : IMapFrom<Domain.Entities.Author.Author>
             .ForMember(d => d.AuthorDetailId, map
                 => map.MapFrom(src => src.Id))
             .ForMember(d => d.AuthorDateOfBirth, map
-                 => map.MapFrom(src => src.AuthorBiography.DateOfBirth))
-            //  .ForMember(d => d.AuthorPlaceOfBirth, map
-            //      => map.MapFrom(src => src.AuthorBiography.PlaceOfBirth))
+                 => map.MapFrom(src => src.AuthorBiography.DateOfBirth.Date))
+              .ForMember(d => d.AuthorPlaceOfBirth, map
+                  => map.MapFrom(src => src.AuthorBiography.PlaceOfBirth))
             .ForMember(d => d.AuthorFullName, map
                 => map.MapFrom(src => src.AuthorName.ToString()))
-            //  .ForMember(d => d.HomeCountry, map
-            //      => map.MapFrom(src => src.AuthorBiography.Country))
+              .ForMember(d => d.HomeCountry, map
+                 => map.MapFrom(src => src.AuthorBiography.Country))
             .ForMember(d => d.Contact, map
                 => map.MapFrom<ContactDetailResolver>())
-
             .ForMember(d => d.AuthorContactType, map
                 => map.MapFrom<ContactDetailTypeResolver>())
 

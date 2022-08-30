@@ -21,6 +21,7 @@ public class GetAuthorDetailQueryHandler : IRequestHandler<GetAuthorDetailQuery,
         var author = await _bookstoreDbContext.Authors
             .Include(p => p.AuthorContactDetails)
             .ThenInclude(p=>p.AuthorContactDetailType)
+            .Include(p=>p.AuthorBiography)
             .Where(p => p.Id == request.AuthorId)
             .FirstOrDefaultAsync(cancellationToken);
 

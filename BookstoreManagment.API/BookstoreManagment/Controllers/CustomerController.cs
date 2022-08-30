@@ -1,4 +1,5 @@
-﻿using BookstoreManagment.Api;
+﻿using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
+using BookstoreManagment.Api;
 using BookstoreManagment.Api.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -19,9 +20,10 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetDetails()
+        public async Task<ActionResult<CustomerDetailVm>> GetDetails(int id)
         {
-            return null;
+            var vm = await Mediator.Send(new GetCustomerDetailQuery() { CustomerDetailId = id });
+            return vm;
         }
 
         /// <summary>

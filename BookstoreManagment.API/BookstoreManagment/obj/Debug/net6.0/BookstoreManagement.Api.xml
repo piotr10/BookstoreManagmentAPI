@@ -31,7 +31,7 @@
             CRUD Book
             </summary>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.BookController.GetDetails">
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.GetDetails(System.Int32)">
             <summary>
             Get Book detalis
             </summary>
@@ -48,7 +48,7 @@
             CRUD Customer
             </summary>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.GetDetails">
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.GetDetails(System.Int32)">
             <summary>
             Get Customer detalis
             </summary>

@@ -10,7 +10,9 @@ public class CustomerDetail : AuditableEntity
     public string DetailContact { get; set; }
     public int CustomerId { get; set; }
     public Customer Customer { get; set; }
-    public ICollection<CustomerAddress> CustomerAddresses { get; set; }
+    public Adres Adres { get; set; }
     public int CustomerDetailTypeId { get; set; }
     public CustomerDetailType CustomerDetailType { get; set; }
+    public int CustomerAddressTypeId { get; set; }
+    public CustomerAddressType CustomerAddressType { get; set; }
 }

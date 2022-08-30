@@ -1,4 +1,5 @@
 ﻿using BookstoreManagement.Domain.Common;
+using BookstoreManagement.Domain.ValueObjects;
 
 namespace BookstoreManagement.Domain.Entities.Customer;
 
