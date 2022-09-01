@@ -45,6 +45,7 @@ public class CustomerDetailVm : IMapFrom<CustomerDetail>
             .ForMember(x => x.PostCode, map
                 => map.MapFrom(src => src.Adres.ZipCode))
             .ForMember(x => x.AddressTypeName, map
-                => map.MapFrom(src => src.CustomerAddressType.Name.ToString()));
+                => map.MapFrom(src => src.CustomerAddressType.Name.ToString()))
+            .ForAllOtherMembers(d => d.Ignore());
     }
 }
