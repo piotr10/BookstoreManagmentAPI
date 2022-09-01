@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
+﻿using BookstoreManagement.Application.Author.Queries.GetAllAuthors;
+using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,17 @@ namespace BookstoreManagement.Api.Controllers
         public async Task<ActionResult<AuthorDetailVm>> GetDetails(int id)
         {
             var vm = await Mediator.Send(new GetAuthorDetailQuery() {AuthorId = id});
+            return vm;
+        }
+
+        /// <summary>
+        /// Get all Authors
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<AuthorsVm>> GetAllAuthors()
+        {
+            var vm = await Mediator.Send(new GetAuthorsQuery() { });
             return vm;
         }
 

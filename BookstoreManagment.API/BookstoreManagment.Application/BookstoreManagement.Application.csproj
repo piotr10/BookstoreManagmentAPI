@@ -13,8 +13,8 @@
     <Folder Include="Book\Queries\GetBooks\" />
     <Folder Include="Common\Interfaces\" />
     <Folder Include="Common\Mappings\" />
-    <Folder Include="Customer\Queries\GetCustomers\" />
-    <Folder Include="Order\Queries\GetOrders\" />
+    <Folder Include="Customer\Queries\GetAllCustomers\" />
+    <Folder Include="Order\Queries\GetAllOrders\" />
   </ItemGroup>
 
   <ItemGroup>

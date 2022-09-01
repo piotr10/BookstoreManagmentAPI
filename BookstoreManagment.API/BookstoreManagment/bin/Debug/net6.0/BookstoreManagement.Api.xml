@@ -15,6 +15,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetAllAuthors">
+            <summary>
+            Get all Authors
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BookstoreManagement.Api.Controllers.AuthorController.Create">
             <summary>
             Create new Author
@@ -37,6 +43,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.GetAllBooks">
+            <summary>
+            Get all Books
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BookstoreManagement.Api.Controllers.BookController.Create">
             <summary>
             Create new Book
@@ -54,6 +66,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.GetAllCustomers">
+            <summary>
+            Get all Customers
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:BookstoreManagement.Api.Controllers.CustomerController.Create">
             <summary>
             Create new Customer
@@ -68,6 +86,12 @@
         <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetDetails(System.Int32,System.Int32,System.Int32)">
             <summary>
             Get Order detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetAllOrders">
+            <summary>
+            Get all Orders
             </summary>
             <returns></returns>
         </member>

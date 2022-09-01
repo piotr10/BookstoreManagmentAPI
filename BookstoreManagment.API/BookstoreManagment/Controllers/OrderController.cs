@@ -1,5 +1,5 @@
 ﻿using BookstoreManagement.Application.Book.Queries.GetBookDetail;
-using BookstoreManagement.Application.Order.Queries.GetAllBooks;
+using BookstoreManagement.Application.Order.Queries.GetAllOrders;
 using BookstoreManagement.Application.Order.Queries.GetOrderDetail;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -24,6 +24,17 @@ namespace BookstoreManagement.Api.Controllers
         {
             var vm = await Mediator.Send(new GetOrderDetailQuery() { OrderId = id, BookDetailId = bookId, CustomerDetailId = customerId});
 
+            return vm;
+        }
+
+        /// <summary>
+        /// Get all Orders
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<OrdersVm>> GetAllOrders()
+        {
+            var vm = await Mediator.Send(new GetOrdersQuery() { });
             return vm;
         }
 

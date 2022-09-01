@@ -4,7 +4,7 @@ using BookstoreManagement.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace BookstoreManagement.Application.Order.Queries.GetAllBooks;
+namespace BookstoreManagement.Application.Book.Queries.GetAllBooks;
 
 public class GetBookDetailsHandler : IRequestHandler<GetBookDetailsQuery, BookDetailsVm>
 {

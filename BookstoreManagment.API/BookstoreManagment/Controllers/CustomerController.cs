@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
+﻿using BookstoreManagement.Application.Customer.Queries.GetAllCustomers;
+using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
 using BookstoreManagment.Api;
 using BookstoreManagment.Api.Models;
 using Microsoft.AspNetCore.Cors;
@@ -23,6 +24,17 @@ namespace BookstoreManagement.Api.Controllers
         public async Task<ActionResult<CustomerDetailVm>> GetDetails(int id)
         {
             var vm = await Mediator.Send(new GetCustomerDetailQuery() { CustomerDetailId = id });
+            return vm;
+        }
+
+        /// <summary>
+        /// Get all Customers
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<CustomersVm>> GetAllCustomers()
+        {
+            var vm = await Mediator.Send(new GetCustomersQuery() { });
             return vm;
         }
 
