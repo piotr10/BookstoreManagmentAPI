@@ -1,4 +1,6 @@
-﻿namespace BookstoreManagement.Domain.Common;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BookstoreManagement.Domain.Common;
 
 public class AuditableEntity
 {
