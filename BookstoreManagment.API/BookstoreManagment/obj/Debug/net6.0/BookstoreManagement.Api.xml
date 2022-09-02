@@ -21,7 +21,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.CreateAuthor(BookstoreManagement.Application.Author.Commands.CreateAuthor.CreateAuthorCommand)">
             <summary>
             Create new Author
             </summary>

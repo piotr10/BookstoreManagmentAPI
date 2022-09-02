@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Application.Author.Queries.GetAllAuthors;
+﻿using BookstoreManagement.Application.Author.Commands.CreateAuthor;
+using BookstoreManagement.Application.Author.Queries.GetAllAuthors;
 using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -41,9 +42,11 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> CreateAuthor([FromBody] CreateAuthorCommand command)
         {
-            return Ok();
+            var vm = command;
+            var result = await Mediator.Send(vm);
+            return Ok(result);
         }
     }
 }
