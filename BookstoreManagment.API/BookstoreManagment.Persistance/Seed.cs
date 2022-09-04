@@ -305,7 +305,9 @@ public static class Seed
                     DeliveryDate = new DateTime(2022, 1, 15),
                     OrderDate = new DateTime(2022, 1, 1),
                     OrderPrice = 22,
-                    Quantity = 1
+                    Quantity = 1,
+                    Name = "Ogniem i Mieczem",
+                    BookPrice = 10
                 },
                 new Order()
                 {
@@ -322,7 +324,9 @@ public static class Seed
                     DeliveryDate = new DateTime(2022, 1, 15),
                     OrderDate = new DateTime(2022, 1, 1),
                     OrderPrice = 33,
-                    Quantity = 2
+                    Quantity = 2,
+                    Name = "Potop",
+                    BookPrice = 15
                 }
             );
         });

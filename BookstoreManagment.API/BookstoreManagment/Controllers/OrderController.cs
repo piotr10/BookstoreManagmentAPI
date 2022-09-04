@@ -1,4 +1,5 @@
 ﻿using BookstoreManagement.Application.Book.Queries.GetBookDetail;
+using BookstoreManagement.Application.Order.Commands.CreateOrder;
 using BookstoreManagement.Application.Order.Queries.GetAllOrders;
 using BookstoreManagement.Application.Order.Queries.GetOrderDetail;
 using Microsoft.AspNetCore.Cors;
@@ -43,9 +44,10 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(CreateOrderCommand command)
         {
-            return Ok();
+            var createNewOrder = await Mediator.Send(command);
+            return Ok(createNewOrder);
         }
     }
 }

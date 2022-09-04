@@ -95,7 +95,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.OrderController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.Create(BookstoreManagement.Application.Order.Commands.CreateOrder.CreateOrderCommand)">
             <summary>
             Create new Order
             </summary>

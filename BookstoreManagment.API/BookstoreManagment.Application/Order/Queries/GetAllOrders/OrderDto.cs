@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Mappings;
+using BookstoreManagement.Domain.Entities.Book;
 
 namespace BookstoreManagement.Application.Order.Queries.GetAllOrders;
 
@@ -62,11 +63,38 @@ public class OrderDto : IMapFrom<Domain.Entities.Order.Order>
             .ForMember(x => x.PostCode, map
                 => map.MapFrom(src => src.Customer.CustomerDetails.FirstOrDefault().Adres.ZipCode))
 
-            .ForMember(x => x.BookName, map
-                => map.MapFrom(src => src.Book.BookDetails.FirstOrDefault().Name.ToString()))
+
+            .ForMember(d => d.BookName, map
+                => map.MapFrom(src=>src.Name))
             .ForMember(x => x.BookPrice, map
-                => map.MapFrom(src => src.Book.BookDetails.FirstOrDefault().Price))
+                => map.MapFrom(src => src.BookPrice))
 
             .ForAllOtherMembers(d => d.Ignore());
     }
+    /*
+    private class BookDetailResolver : IValueResolver<Domain.Entities.Order.Order, object, decimal>
+    {
+        public decimal Resolve(Domain.Entities.Order.Order source, object destination, decimal destMember, ResolutionContext context)
+        {
+            if (source.Book.BookDetails is not null && source.Book.BookDetails.Any())
+            {
+                var bookDetails = source.Book.BookDetails.ToList();
+
+                
+                foreach (var detail in bookDetails)
+                {
+                    if (expr)
+                    {
+                        
+                    }
+                }
+
+                bookDetails.Select(x => x.Price);
+
+            if (bookDetails != null) return  bookDetails;
+            }
+
+            return 0;
+        }
+    }*/
 }
