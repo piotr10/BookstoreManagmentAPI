@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Application.Customer.Queries.GetAllCustomers;
+﻿using BookstoreManagement.Application.Customer.Commands.CreateCustomer;
+using BookstoreManagement.Application.Customer.Queries.GetAllCustomers;
 using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
 using BookstoreManagment.Api;
 using BookstoreManagment.Api.Models;
@@ -43,9 +44,10 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(CreateCustomerCommand command)
         {
-            return Ok();
+            var createNewCustomer = await Mediator.Send(command);
+            return Ok(createNewCustomer);
         }
     }
 }

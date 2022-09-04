@@ -72,7 +72,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.Create(BookstoreManagement.Application.Customer.Commands.CreateCustomer.CreateCustomerCommand)">
             <summary>
             Create new Customer
             </summary>
