@@ -21,9 +21,9 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderDetailVm>> GetDetails(int id, int bookId, int customerId)
+        public async Task<ActionResult<OrderDetailVm>> GetDetails(int id)
         {
-            var vm = await Mediator.Send(new GetOrderDetailQuery() { OrderId = id, BookDetailId = bookId, CustomerDetailId = customerId});
+            var vm = await Mediator.Send(new GetOrderDetailQuery() { OrderId = id});
 
             return vm;
         }

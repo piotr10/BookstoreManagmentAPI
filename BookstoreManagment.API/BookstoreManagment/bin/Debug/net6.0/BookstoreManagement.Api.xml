@@ -83,7 +83,7 @@
             CRUD Order
             </summary>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetDetails(System.Int32,System.Int32,System.Int32)">
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetDetails(System.Int32)">
             <summary>
             Get Order detalis
             </summary>

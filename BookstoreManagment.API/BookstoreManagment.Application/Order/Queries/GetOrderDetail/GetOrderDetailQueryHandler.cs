@@ -29,25 +29,8 @@ public class GetOrderDetailQueryHandler : IRequestHandler<GetOrderDetailQuery, O
             .ThenInclude(p=>p.BookDetails)
             .Where(p => p.Id == request.OrderId)
             .FirstOrDefaultAsync(cancellationToken);
-       
-        var book = new BookDetail();
-
-        book = await _bookstoreDbContext.BookDetails
-            .Where(p => p.Id == request.BookDetailId)
-            .FirstOrDefaultAsync(cancellationToken);
-
-        var customer = new CustomerDetail();
-
-        customer = await _bookstoreDbContext.CustomerDetails
-            .Where(p => p.Id == request.CustomerDetailId)
-            .FirstOrDefaultAsync(cancellationToken);
 
         var orderVm = _mapper.Map<OrderDetailVm>(order);
-        orderVm.BookName = book.Name;
-        orderVm.BookPrice = book.Price;
-        orderVm.CustomerName = customer.FirstName;
-        orderVm.CustomerSurname = customer.LastName;
-
         return orderVm;
     }
 }

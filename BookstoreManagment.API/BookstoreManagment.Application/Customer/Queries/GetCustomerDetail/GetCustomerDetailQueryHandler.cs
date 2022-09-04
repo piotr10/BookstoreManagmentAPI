@@ -23,7 +23,6 @@ public class GetCustomerDetailQueryHandler : IRequestHandler<GetCustomerDetailQu
             .Include(p => p.Customer)
             .Include(p => p.CustomerAddressType)
             .Include(p => p.CustomerDetailType)
-
             .Where(p => p.Id == request.CustomerDetailId)
             .FirstOrDefaultAsync(cancellationToken);
 

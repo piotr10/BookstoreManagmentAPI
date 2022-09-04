@@ -16,6 +16,7 @@ public class OrderDetailVm : IMapFrom<Domain.Entities.Order.Order>
     //Customer
     public string? CustomerName { get; set; }
     public string? CustomerSurname { get; set; }
+
     //Customer Address
     public int ApartmentNumber { get; set; }
     public string? City { get; set; }
@@ -63,9 +64,9 @@ public class OrderDetailVm : IMapFrom<Domain.Entities.Order.Order>
                 => map.MapFrom(src => src.Customer.CustomerDetails.FirstOrDefault().Adres.ZipCode))
 
             .ForMember(x => x.BookName, map
-                => map.MapFrom(src => src.Book.BookDetails.FirstOrDefault().Name.ToString()))
+                => map.MapFrom(src => src.Name))
             .ForMember(x => x.BookPrice, map
-                => map.MapFrom(src => src.Book.BookDetails.FirstOrDefault().Price))
+                => map.MapFrom(src => src.BookPrice))
 
             .ForAllOtherMembers(d => d.Ignore());
     }
