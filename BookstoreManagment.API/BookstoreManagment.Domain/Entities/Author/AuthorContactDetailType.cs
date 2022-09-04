@@ -1,4 +1,5 @@
-﻿using BookstoreManagement.Domain.Common;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using BookstoreManagement.Domain.Common;
 
 namespace BookstoreManagement.Domain.Entities.Author;
 

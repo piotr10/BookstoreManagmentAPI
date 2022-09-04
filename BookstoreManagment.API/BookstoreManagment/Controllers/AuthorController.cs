@@ -1,4 +1,6 @@
-﻿using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
+﻿using BookstoreManagement.Application.Author.Commands.CreateAuthor;
+using BookstoreManagement.Application.Author.Queries.GetAllAuthors;
+using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -25,13 +27,25 @@ namespace BookstoreManagement.Api.Controllers
         }
 
         /// <summary>
+        /// Get all Authors
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<AuthorsVm>> GetAllAuthors()
+        {
+            var vm = await Mediator.Send(new GetAuthorsQuery() { });
+            return vm;
+        }
+
+        /// <summary>
         /// Create new Author
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> CreateAuthor(CreateAuthorCommand command)
         {
-            return Ok();
+            var createNewAuthor = await Mediator.Send(command);
+            return Ok(createNewAuthor);
         }
     }
 }

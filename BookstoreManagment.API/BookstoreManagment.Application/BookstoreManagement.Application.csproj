@@ -10,11 +10,14 @@
     <Folder Include="Author\Commands\CreateAuthor\" />
     <Folder Include="Author\Commands\DeleteAuthor\" />
     <Folder Include="Author\Commands\UpdateAuthor\" />
+    <Folder Include="Book\Commands\CreateBook\" />
     <Folder Include="Book\Queries\GetBooks\" />
     <Folder Include="Common\Interfaces\" />
     <Folder Include="Common\Mappings\" />
-    <Folder Include="Customer\Queries\GetCustomers\" />
-    <Folder Include="Order\Queries\GetOrders\" />
+    <Folder Include="Customer\Commands\CreateCustomer\" />
+    <Folder Include="Customer\Queries\GetAllCustomers\" />
+    <Folder Include="Order\Commands\CreateOrder\" />
+    <Folder Include="Order\Queries\GetAllOrders\" />
   </ItemGroup>
 
   <ItemGroup>

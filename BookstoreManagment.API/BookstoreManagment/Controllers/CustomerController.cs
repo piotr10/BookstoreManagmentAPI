@@ -1,4 +1,6 @@
-﻿using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
+﻿using BookstoreManagement.Application.Customer.Commands.CreateCustomer;
+using BookstoreManagement.Application.Customer.Queries.GetAllCustomers;
+using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
 using BookstoreManagment.Api;
 using BookstoreManagment.Api.Models;
 using Microsoft.AspNetCore.Cors;
@@ -27,13 +29,25 @@ namespace BookstoreManagement.Api.Controllers
         }
 
         /// <summary>
+        /// Get all Customers
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<CustomersVm>> GetAllCustomers()
+        {
+            var vm = await Mediator.Send(new GetCustomersQuery() { });
+            return vm;
+        }
+
+        /// <summary>
         /// Create new Customer
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(CreateCustomerCommand command)
         {
-            return Ok();
+            var createNewCustomer = await Mediator.Send(command);
+            return Ok(createNewCustomer);
         }
     }
 }

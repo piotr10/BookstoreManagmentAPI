@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using BookstoreManagement.Application.Book.Queries.GetBookDetail;
+using BookstoreManagement.Application.Order.Commands.CreateOrder;
+using BookstoreManagement.Application.Order.Queries.GetAllOrders;
+using BookstoreManagement.Application.Order.Queries.GetOrderDetail;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +21,22 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetDetails()
+        public async Task<ActionResult<OrderDetailVm>> GetDetails(int id)
         {
-            return null;
+            var vm = await Mediator.Send(new GetOrderDetailQuery() { OrderId = id});
+
+            return vm;
+        }
+
+        /// <summary>
+        /// Get all Orders
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<ActionResult<OrdersVm>> GetAllOrders()
+        {
+            var vm = await Mediator.Send(new GetOrdersQuery() { });
+            return vm;
         }
 
         /// <summary>
@@ -27,9 +44,10 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(CreateOrderCommand command)
         {
-            return Ok();
+            var createNewOrder = await Mediator.Send(command);
+            return Ok(createNewOrder);
         }
     }
 }

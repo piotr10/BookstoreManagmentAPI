@@ -51,15 +51,6 @@ public class BookstoreDbContext : DbContext, IBookstoreDbContext
         {
             switch (entry.State)
             {
-                case EntityState.Added:
-                    entry.Entity.CreatedBy = string.Empty;
-                    entry.Entity.Created = _dateTime.Now;
-                    entry.Entity.StatusId = 1;
-                    break;
-                case EntityState.Modified:
-                    entry.Entity.ModifiedBy = string.Empty;
-                    entry.Entity.Modified = _dateTime.Now;
-                    break;
                 case EntityState.Deleted:
                     entry.Entity.ModifiedBy = string.Empty;
                     entry.Entity.Modified = _dateTime.Now;
@@ -67,6 +58,20 @@ public class BookstoreDbContext : DbContext, IBookstoreDbContext
                     entry.Entity.InactivatedBy = string.Empty;
                     entry.Entity.StatusId = 0;
                     entry.State = EntityState.Modified;
+                    break;
+                case EntityState.Modified:
+                    entry.Entity.ModifiedBy = string.Empty;
+                    entry.Entity.Modified = _dateTime.Now;
+                    break;
+                case EntityState.Added:
+                    entry.Entity.ModifiedBy = string.Empty;
+                    entry.Entity.Modified = null;
+                    entry.Entity.Inactivated = null;
+                    entry.Entity.InactivatedBy = string.Empty;
+
+                    entry.Entity.CreatedBy = string.Empty;
+                    entry.Entity.Created = _dateTime.Now;
+                    entry.Entity.StatusId = 1;
                     break;
             }
         }

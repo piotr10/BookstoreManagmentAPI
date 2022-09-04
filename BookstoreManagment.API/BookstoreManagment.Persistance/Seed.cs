@@ -222,6 +222,34 @@ public static class Seed
                 ZipCode = "01-001"
             });
 
+            d.HasData(new CustomerDetail()
+            {
+                Id = 2,
+                CustomerId = 2,
+                CustomerDetailTypeId = 2,
+                CustomerAddressTypeId = 2,
+                FirstName = "Ola",
+                LastName = "Sa",
+                DetailContact = "olaSa@example.com",
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
+            });
+            d.OwnsOne(d => d.Adres).HasData(new
+            {
+                CustomerDetailId = 2,
+                ApartmentNumber = 10,
+                City = "Cracow",
+                Country = "Poland",
+                HouseNumber = 10,
+                Street = "Krakowska",
+                ZipCode = "01-001"
+            });
+
+
+
 
             modelBuilder.Entity<CustomerAddressType>().HasData(
                 new CustomerAddressType() {Id = 1, Name = "Address of residence"}, // Adres zamieszkania
@@ -232,6 +260,16 @@ public static class Seed
                 new CustomerAddress()
                 {
                     Id = 1,
+                    StatusId = 1,
+                    Created = DateTime.Now,
+                    CreatedBy = string.Empty,
+                    InactivatedBy = string.Empty,
+                    ModifiedBy = string.Empty,
+
+                },
+                new CustomerAddress()
+                {
+                    Id = 2,
                     StatusId = 1,
                     Created = DateTime.Now,
                     CreatedBy = string.Empty,
@@ -267,7 +305,28 @@ public static class Seed
                     DeliveryDate = new DateTime(2022, 1, 15),
                     OrderDate = new DateTime(2022, 1, 1),
                     OrderPrice = 22,
-                    Quantity = 1
+                    Quantity = 1,
+                    Name = "Ogniem i Mieczem",
+                    BookPrice = 10
+                },
+                new Order()
+                {
+                    Id = 2,
+                    CustomerId = 2,
+                    BookId = 2,
+                    OrderTransportTypeId = 2,
+                    PaymentMethodId = 1,
+                    StatusId = 1,
+                    Created = DateTime.Now,
+                    CreatedBy = string.Empty,
+                    InactivatedBy = string.Empty,
+                    ModifiedBy = string.Empty,
+                    DeliveryDate = new DateTime(2022, 1, 15),
+                    OrderDate = new DateTime(2022, 1, 1),
+                    OrderPrice = 33,
+                    Quantity = 2,
+                    Name = "Potop",
+                    BookPrice = 15
                 }
             );
         });

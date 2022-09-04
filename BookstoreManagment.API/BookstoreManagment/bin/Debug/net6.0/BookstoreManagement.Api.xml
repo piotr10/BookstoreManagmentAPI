@@ -15,7 +15,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetAllAuthors">
+            <summary>
+            Get all Authors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.CreateAuthor(BookstoreManagement.Application.Author.Commands.CreateAuthor.CreateAuthorCommand)">
             <summary>
             Create new Author
             </summary>
@@ -37,7 +43,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.BookController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.GetAllBooks">
+            <summary>
+            Get all Books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.Create(BookstoreManagement.Application.Book.Commands.CreateBook.CreateBookCommand)">
             <summary>
             Create new Book
             </summary>
@@ -54,7 +66,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.GetAllCustomers">
+            <summary>
+            Get all Customers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.Create(BookstoreManagement.Application.Customer.Commands.CreateCustomer.CreateCustomerCommand)">
             <summary>
             Create new Customer
             </summary>
@@ -65,13 +83,19 @@
             CRUD Order
             </summary>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetDetails">
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetDetails(System.Int32)">
             <summary>
             Get Order detalis
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.OrderController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetAllOrders">
+            <summary>
+            Get all Orders
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.Create(BookstoreManagement.Application.Order.Commands.CreateOrder.CreateOrderCommand)">
             <summary>
             Create new Order
             </summary>

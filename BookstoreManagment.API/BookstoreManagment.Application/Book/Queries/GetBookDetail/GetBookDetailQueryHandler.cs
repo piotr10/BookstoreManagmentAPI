@@ -18,15 +18,6 @@ public class GetBookDetailQueryHandler : IRequestHandler<GetBookDetailQuery, Boo
 
     public async Task<BookDetailVm> Handle(GetBookDetailQuery request, CancellationToken cancellationToken)
     {
-        /*
-        var book = await _bookstoreDbContext.Books
-            .Include(p => p.BookDetails)
-            .ThenInclude(p => p.Genre)
-            .Include(p=>p.Author)
-            .Where(p => p.Id == request.BookDetailId)
-            .FirstOrDefaultAsync(cancellationToken);
-        */
-
         var bookDetail = await _bookstoreDbContext.BookDetails
             .Include(p=>p.Book)
             .ThenInclude(p=>p.Author)
