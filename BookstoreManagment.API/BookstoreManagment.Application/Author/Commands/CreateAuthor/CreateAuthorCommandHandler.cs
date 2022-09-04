@@ -18,6 +18,7 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
         _bookstoreDbContext = bookstoreDbContext;
         _mapper = mapper;
     }
+
     public async Task<int> Handle(CreateAuthorCommand request, CancellationToken cancellationToken)
     {
         #region Bez mapowania
@@ -29,6 +30,7 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
                 LastName = request.LastName
             }
         };
+
         _bookstoreDbContext.Authors.Add(author);
         await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
 
@@ -52,7 +54,6 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
         };
 
         _bookstoreDbContext.AuthorContactDetails.Add(contactDetail);
-        
         await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
 
         return author.Id;

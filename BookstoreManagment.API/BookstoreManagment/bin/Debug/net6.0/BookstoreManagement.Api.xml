@@ -49,7 +49,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.BookController.Create">
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.Create(BookstoreManagement.Application.Book.Commands.CreateBook.CreateBookCommand)">
             <summary>
             Create new Book
             </summary>

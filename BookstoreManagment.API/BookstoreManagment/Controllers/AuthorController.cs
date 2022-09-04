@@ -44,8 +44,8 @@ namespace BookstoreManagement.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAuthor(CreateAuthorCommand command)
         {
-            var result = await Mediator.Send(command);
-            return Ok(result);
+            var createNewAuthor = await Mediator.Send(command);
+            return Ok(createNewAuthor);
         }
     }
 }

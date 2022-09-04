@@ -1,4 +1,6 @@
-﻿namespace BookstoreManagement.Domain.Entities.Book;
+﻿using System.Text.Json.Serialization;
+
+namespace BookstoreManagement.Domain.Entities.Book;
 
 public class BookDetail
 {
@@ -7,8 +9,10 @@ public class BookDetail
     public DateTime PublishedBookDate { get; set; }
     public decimal Price { get; set; }
     public int BookId { get; set; }
+    [JsonIgnore]
     public Book Book { get; set; }
     public int GenreId { get; set; }
+    [JsonIgnore]
     public Genre Genre { get; set; }
 
 }

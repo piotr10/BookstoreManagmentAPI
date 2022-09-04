@@ -12,15 +12,12 @@ public class CreateAuthorCommand : IRequest<int>//, IMapFrom<CreateAuthorCommand
     public string? LastName { get; set; }
     //Biography
     public int AuthorId { get; set; }
-    
     //ContactDetail
     public int AuthorContactDetailTypeId { get; set; }
     public DateTime AuthorDateOfBirth { get; set; }
     public string? AuthorPlaceOfBirth { get; set; }
     public string? Country { get; set; }
     public string? Contact { get; set; }
-
-
 
     #region mapowanie
 
