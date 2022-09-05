@@ -47,7 +47,8 @@ public class CreateCustomerCommandHandler :IRequestHandler<CreateCustomerCommand
         CustomerContactDetail contactDetail = new CustomerContactDetail()
         {
             ContactName = request.DetailContact,
-            CustomerContactDetailTypeId = request.CustomerContactDetailTypeId
+            CustomerContactDetailTypeId = request.CustomerContactDetailTypeId,
+            Customer = customerId
         };
         _bookstoreDbContext.CustomerContactDetails.Add(contactDetail);
 

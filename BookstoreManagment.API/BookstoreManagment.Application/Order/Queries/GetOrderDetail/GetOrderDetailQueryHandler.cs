@@ -26,7 +26,7 @@ public class GetOrderDetailQueryHandler : IRequestHandler<GetOrderDetailQuery, O
             .Include(p => p.Customer)
             .ThenInclude(p=>p.CustomerDetails)
             .Include(p => p.Book)
-            .Where(p => p.Id == request.OrderId)
+            .Where(p => p.Id == request.OrderId && p.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
 
         var orderVm = _mapper.Map<OrderDetailVm>(order);

@@ -19,11 +19,14 @@ public class GetCustomerDetailQueryHandler : IRequestHandler<GetCustomerDetailQu
     public async Task<CustomerDetailVm> Handle(GetCustomerDetailQuery request, CancellationToken cancellationToken)
     {
 
-        var customer = await _bookstoreDbContext.CustomerDetails
-            .Include(p => p.Customer)
-            .Include(p => p.CustomerAddressType)
-            .Include(p => p.CustomerDetailType)
-            .Where(p => p.Id == request.CustomerDetailId)
+        var customer = await _bookstoreDbContext.Customers
+            .Include(p => p.CustomerDetails)
+            .ThenInclude(p => p.CustomerDetailType)
+            .Include(p => p.CustomerDetails)
+            .ThenInclude(p => p.CustomerAddressType)
+            .Include(p => p.CustomerContactDetails)
+            .ThenInclude(p => p.CustomerContactDetailType)
+            .Where(p => p.Id == request.CustomerDetailId && p.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
 
         var customerVm = _mapper.Map<CustomerDetailVm>(customer);

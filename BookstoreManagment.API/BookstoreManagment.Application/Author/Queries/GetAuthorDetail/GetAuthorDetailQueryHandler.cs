@@ -22,7 +22,7 @@ public class GetAuthorDetailQueryHandler : IRequestHandler<GetAuthorDetailQuery,
             .Include(p => p.AuthorContactDetails)
             .ThenInclude(p=>p.AuthorContactDetailType)
             .Include(p=>p.AuthorBiography)
-            .Where(p => p.Id == request.AuthorId)
+            .Where(p => p.Id == request.AuthorId && p.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
 
         #region old method

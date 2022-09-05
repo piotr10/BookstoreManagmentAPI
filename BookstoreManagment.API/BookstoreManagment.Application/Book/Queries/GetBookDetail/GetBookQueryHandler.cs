@@ -21,7 +21,7 @@ public class GetBookQueryHandler : IRequestHandler<GetBookQuery, BookVm>
         var book = await _bookstoreDbContext.Books
             .Include(p=>p.Author)
             .Include(p=>p.Genre)
-            .Where(p => p.Id == request.BookId)
+            .Where(p => p.Id == request.BookId && p.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
 
         var bookVm = _mapper.Map<BookVm>(book);
