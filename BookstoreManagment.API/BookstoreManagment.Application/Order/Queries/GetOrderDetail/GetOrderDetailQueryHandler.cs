@@ -26,7 +26,6 @@ public class GetOrderDetailQueryHandler : IRequestHandler<GetOrderDetailQuery, O
             .Include(p => p.Customer)
             .ThenInclude(p=>p.CustomerDetails)
             .Include(p => p.Book)
-            .ThenInclude(p=>p.BookDetails)
             .Where(p => p.Id == request.OrderId)
             .FirstOrDefaultAsync(cancellationToken);
 

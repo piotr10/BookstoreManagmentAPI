@@ -20,24 +20,15 @@ public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, int>
         var authorId = await _bookstoreDbContext.Authors.FindAsync(request.AuthorId);
         Domain.Entities.Book.Book book = new Domain.Entities.Book.Book()
         {
-            Author = authorId
+            Author = authorId,
+            Name = request.Name,
+            PublishedBookDate = request.PublishedBookDate,
+            Price = request.Price,
+            GenreId = request.GenreId,
+            
         };
 
         _bookstoreDbContext.Books.Add(book);
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
-
-        var bookId = await _bookstoreDbContext.Books.FindAsync(request.BookId);
-
-        BookDetail bookDetail = new BookDetail()
-        {
-            Name = request.Name,
-            PublishedBookDate =request.PublishedBookDate,
-            Price = request.Price,
-            GenreId = request.GenreId,
-            Book = bookId
-        };
-
-        _bookstoreDbContext.BookDetails.Add(bookDetail);
         await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
 
         return book.Id;

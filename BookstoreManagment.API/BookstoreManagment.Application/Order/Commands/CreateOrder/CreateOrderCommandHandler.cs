@@ -19,8 +19,6 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int
     {
         var bookId = await _bookstoreDbContext.Books.FindAsync(request.BookId);
         var customerId = await _bookstoreDbContext.Customers.FindAsync(request.CustomerId);
-        //var bookPrice = await _bookstoreDbContext.BookDetails.FindAsync(request.BookId);
-        var bookDetailId = await _bookstoreDbContext.BookDetails.FirstOrDefaultAsync(x=>x.Id == request.BookDetailId);
 
         Domain.Entities.Order.Order order = new Domain.Entities.Order.Order()
         {
@@ -31,9 +29,9 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int
             DeliveryDate = request.DeliveryDate,
             OrderDate = request.OrderDate,
             Quantity = request.Quantity,
-            OrderPrice = bookDetailId.Price * request.Quantity,
-            Name = bookDetailId.Name,
-            BookPrice = bookDetailId.Price
+            OrderPrice = bookId.Price * request.Quantity,
+            Name = bookId.Name,
+            BookPrice = bookId.Price
         };
 
         _bookstoreDbContext.Orders.Add(order);

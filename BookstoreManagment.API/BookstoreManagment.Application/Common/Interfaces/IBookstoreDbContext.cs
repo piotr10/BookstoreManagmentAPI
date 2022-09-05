@@ -14,9 +14,7 @@ public interface IBookstoreDbContext
     DbSet<AuthorContactDetailType> AuthorContactDetailTypes { get; set; }
     DbSet<Domain.Entities.Book.Book> Books { get; set; }
     DbSet<Genre> Genres { get; set; }
-    DbSet<BookDetail> BookDetails { get; set; }
     DbSet<Domain.Entities.Customer.Customer> Customers { get; set; }
-    DbSet<CustomerAddress> CustomerAddresses { get; set; }
     DbSet<CustomerAddressType> CustomerAddressTypes { get; set; }
     DbSet<CustomerDetail> CustomerDetails { get; set; }
     DbSet<CustomerDetailType> CustomerDetailTypes { get; set; }

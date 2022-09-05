@@ -21,9 +21,9 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<ActionResult<BookDetailVm>> GetDetails(int id)
+        public async Task<ActionResult<BookVm>> GetDetails(int id)
         {
-            var vm = await Mediator.Send(new GetBookDetailQuery() {BookDetailId = id});
+            var vm = await Mediator.Send(new GetBookQuery() {BookId = id});
             return vm;
         }
 
@@ -32,9 +32,9 @@ namespace BookstoreManagement.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<BookDetailsVm>> GetAllBooks()
+        public async Task<ActionResult<BooksVm>> GetAllBooks()
         {
-            var vm = await Mediator.Send(new GetBookDetailsQuery() { });
+            var vm = await Mediator.Send(new GetBooksQuery() { });
             return vm;
         }
 

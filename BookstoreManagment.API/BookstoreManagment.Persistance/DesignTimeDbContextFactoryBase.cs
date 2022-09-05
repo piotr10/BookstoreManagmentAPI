@@ -9,7 +9,7 @@ namespace BookstoreManagement.Persistance;
 public abstract class DesignTimeDbContextFactoryBase<TContext> :
     IDesignTimeDbContextFactory<TContext> where TContext : DbContext
 {
-    private const string ConnectionStringName = "BookstoreDatabase1";
+    private const string ConnectionStringName = "BookstoreDatabase2";
     private const string AspNetCoreEnvironment = "ASPNETCORE_ENVIRONMENT";
 
     public TContext CreateDbContext(string[] args)

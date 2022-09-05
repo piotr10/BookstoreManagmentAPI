@@ -102,40 +102,17 @@ public static class Seed
             }
         );
 
-        modelBuilder.Entity<Book>().HasData(
-            new Book()
-            {
-                Id = 1,
-                AuthorId = 1,
-                StatusId = 1,
-                Created = DateTime.Now,
-                CreatedBy = string.Empty,
-                InactivatedBy = string.Empty,
-                ModifiedBy = string.Empty
-            },
-
-            new Book()
-            {
-                Id = 2,
-                AuthorId = 2,
-                StatusId = 1,
-                Created = DateTime.Now,
-                CreatedBy = string.Empty,
-                InactivatedBy = string.Empty,
-                ModifiedBy = string.Empty
-            }
-        );
-
         modelBuilder.Entity<Genre>().HasData(
             new Genre() {Id = 1, Name = "Biography"},
             new Genre() {Id = 2, Name = "Drama"},
             new Genre() {Id = 3, Name = "Historical Novel"}
         );
 
-        modelBuilder.Entity<BookDetail>().HasData(
-            new BookDetail()
+        modelBuilder.Entity<Book>().HasData(
+            new Book()
             {
-                Id = 1, BookId = 1, Name = "Ogniem i Mieczem", PublishedBookDate = new DateTime(1884, 1, 1), Price = 10,
+                Id = 1,
+                AuthorId = 1, Name = "Ogniem i Mieczem", PublishedBookDate = new DateTime(1884, 1, 1), Price = 10,
                 GenreId = 1,
                 StatusId = 1,
                 Created = DateTime.Now,
@@ -143,9 +120,10 @@ public static class Seed
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
             },
-            new BookDetail()
+            new Book()
             {
-                Id = 2, BookId = 1, Name = "Potop", PublishedBookDate = new DateTime(1886, 1, 1), Price = 15,
+                Id = 2,
+                AuthorId = 1, Name = "Potop", PublishedBookDate = new DateTime(1886, 1, 1), Price = 15,
                 GenreId = 2,
                 StatusId = 1,
                 Created = DateTime.Now,
@@ -153,9 +131,10 @@ public static class Seed
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
             },
-            new BookDetail()
+            new Book()
             {
-                Id = 3, BookId = 1, Name = "Pan Wołodyjowski", PublishedBookDate = new DateTime(1888, 1, 1), Price = 11,
+                Id = 3,
+                AuthorId = 1, Name = "Pan Wołodyjowski", PublishedBookDate = new DateTime(1888, 1, 1), Price = 11,
                 GenreId = 3,
                 StatusId = 1,
                 Created = DateTime.Now,
@@ -163,9 +142,10 @@ public static class Seed
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
             },
-            new BookDetail()
+            new Book()
             {
-                Id = 4, BookId = 1, Name = "Quo Vadis", PublishedBookDate = new DateTime(1896, 1, 1), Price = 12,
+                Id = 4,
+                AuthorId = 1, Name = "Quo Vadis", PublishedBookDate = new DateTime(1896, 1, 1), Price = 12,
                 GenreId = 1,
                 StatusId = 1,
                 Created = DateTime.Now,
@@ -173,9 +153,10 @@ public static class Seed
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
             },
-            new BookDetail()
+            new Book()
             {
-                Id = 5, BookId = 1, Name = "Krzyżacy", PublishedBookDate = new DateTime(1900, 1, 1), Price = 14,
+                Id = 5,
+                AuthorId = 1, Name = "Krzyżacy", PublishedBookDate = new DateTime(1900, 1, 1), Price = 14,
                 GenreId = 1,
                 StatusId = 1,
                 Created = DateTime.Now,
@@ -183,31 +164,36 @@ public static class Seed
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
             },
-
-            new BookDetail()
+            new Book()
             {
-                Id = 6, BookId = 2, Name = "Wejście na orbitę", PublishedBookDate = new DateTime(1962, 1, 1),
-                Price = 14, GenreId = 1,
+                Id = 6,
+                AuthorId = 1, Name = "Wejście na orbitę", PublishedBookDate = new DateTime(1962, 1, 1),
+                Price = 14, 
+                GenreId = 1,
                 StatusId = 1,
                 Created = DateTime.Now,
                 CreatedBy = string.Empty,
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
             },
-            new BookDetail()
+            new Book()
             {
-                Id = 7, BookId = 2, Name = "Summa technologiae", PublishedBookDate = new DateTime(1964, 1, 1),
-                Price = 14, GenreId = 2,
+                Id = 7,
+                AuthorId = 2, Name = "Summa technologiae", PublishedBookDate = new DateTime(1964, 1, 1),
+                Price = 14, 
+                GenreId = 2,
                 StatusId = 1,
                 Created = DateTime.Now,
                 CreatedBy = string.Empty,
                 InactivatedBy = string.Empty,
                 ModifiedBy = string.Empty
             },
-            new BookDetail()
+            new Book()
             {
-                Id = 8, BookId = 2, Name = "Filozofia przypadku", PublishedBookDate = new DateTime(1968, 1, 1),
-                Price = 14, GenreId = 3,
+                Id = 8,
+                AuthorId = 2, Name = "Filozofia przypadku", PublishedBookDate = new DateTime(1968, 1, 1),
+                Price = 14, 
+                GenreId = 3,
                 StatusId = 1,
                 Created = DateTime.Now,
                 CreatedBy = string.Empty,

@@ -18,12 +18,23 @@ public class DeleteAuthorCommandHandler : IRequestHandler<DeleteAuthorCommand>
 
     public async Task<Unit> Handle(DeleteAuthorCommand request, CancellationToken cancellationToken)
     {
+        //Remove author all books
+        var book = await _bookstoreDbContext.Books
+            .Where(x => x.AuthorId == request.AuthorId && x.StatusId == 1)
+            .ToListAsync(cancellationToken);
+
+        foreach (var detail in book)
+        {
+            _bookstoreDbContext.Books.Remove(detail);
+        }
+
+        //Remove author
         var author = await _bookstoreDbContext.Authors
             .Where(x => x.Id == request.AuthorId && x.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
-
         _bookstoreDbContext.Authors.Remove(author);
 
+        //Remove author details
         var authorDetail = await _bookstoreDbContext.AuthorContactDetails
             .Where(x => x.AuthorId == request.AuthorId && x.StatusId == 1)
             .ToListAsync(cancellationToken);
@@ -33,6 +44,7 @@ public class DeleteAuthorCommandHandler : IRequestHandler<DeleteAuthorCommand>
             _bookstoreDbContext.AuthorContactDetails.Remove(authorContactDetail);
         }
 
+        //Remove author biography
         var authorBiography = await _bookstoreDbContext.AuthorBiographies
             .Where(x => x.AuthorId == request.AuthorId && x.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
