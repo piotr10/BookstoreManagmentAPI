@@ -21,8 +21,7 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
 
     public async Task<int> Handle(CreateAuthorCommand request, CancellationToken cancellationToken)
     {
-        #region Bez mapowania
-        Domain.Entities.Author.Author author = new ()
+        Domain.Entities.Author.Author author = new()
         {
             AuthorName = new PersonName()
             {
@@ -36,7 +35,7 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
 
         var authorId = await _bookstoreDbContext.Authors.FindAsync(request.AuthorId);
 
-        AuthorBiography authorBiography = new ()
+        AuthorBiography authorBiography = new()
         {
             Country = request.Country,
             DateOfBirth = request.AuthorDateOfBirth,
@@ -46,7 +45,7 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
 
         _bookstoreDbContext.AuthorBiographies.Add(authorBiography);
 
-        AuthorContactDetail contactDetail = new ()
+        AuthorContactDetail contactDetail = new()
         {
             Name = request.Contact,
             AuthorContactDetailTypeId = request.AuthorContactDetailTypeId,
@@ -57,24 +56,5 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
         await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
 
         return author.Id;
-        #endregion
-
-        #region Mapowanie
-        /*
-          var author = _mapper.Map<Domain.Entities.Author.Author>(request.AuthorId);
-          await _bookstoreDbContext.Authors.AddAsync(author);
-  
-          
-          var authorBiography = _mapper.Map<AuthorBiography>(request);
-          authorBiography.AuthorId = author.Id;
-  
-          var authorContactDetail = _mapper.Map<AuthorContactDetail>(request);
-          authorBiography.AuthorId = author.Id;
-  
-          await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
-  
-          return author.Id;
-          */
-        #endregion
     }
 }

@@ -274,35 +274,9 @@ public static class Seed
                 ZipCode = "01-001"
             });
 
-
-
-
             modelBuilder.Entity<CustomerAddressType>().HasData(
                 new CustomerAddressType() {Id = 1, Name = "Address of residence"}, // Adres zamieszkania
                 new CustomerAddressType() {Id = 2, Name = "Residences"} //Adres pobytu
-            );
-
-            modelBuilder.Entity<CustomerAddress>().HasData(
-                new CustomerAddress()
-                {
-                    Id = 1,
-                    StatusId = 1,
-                    Created = DateTime.Now,
-                    CreatedBy = string.Empty,
-                    InactivatedBy = string.Empty,
-                    ModifiedBy = string.Empty,
-
-                },
-                new CustomerAddress()
-                {
-                    Id = 2,
-                    StatusId = 1,
-                    Created = DateTime.Now,
-                    CreatedBy = string.Empty,
-                    InactivatedBy = string.Empty,
-                    ModifiedBy = string.Empty,
-
-                }
             );
 
             modelBuilder.Entity<OrderTransportType>().HasData(

@@ -62,7 +62,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 171, DateTimeKind.Local).AddTicks(9845),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6569),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -71,7 +71,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6766),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -140,7 +140,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             AuthorId = 1,
                             Country = "Poland",
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(92),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6872),
                             CreatedBy = "",
                             DateOfBirth = new DateTime(1846, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InactivatedBy = "",
@@ -153,7 +153,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 2,
                             AuthorId = 2,
                             Country = "Poland",
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(99),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6878),
                             CreatedBy = "",
                             DateOfBirth = new DateTime(1921, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InactivatedBy = "",
@@ -220,7 +220,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             AuthorContactDetailTypeId = 2,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(131),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6910),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -232,7 +232,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 2,
                             AuthorContactDetailTypeId = 3,
                             AuthorId = 2,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(134),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6913),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -336,7 +336,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(162),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6943),
                             CreatedBy = "",
                             GenreId = 1,
                             InactivatedBy = "",
@@ -350,7 +350,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 2,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(165),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6946),
                             CreatedBy = "",
                             GenreId = 2,
                             InactivatedBy = "",
@@ -364,7 +364,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 3,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(168),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6948),
                             CreatedBy = "",
                             GenreId = 3,
                             InactivatedBy = "",
@@ -378,7 +378,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 4,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(170),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6951),
                             CreatedBy = "",
                             GenreId = 1,
                             InactivatedBy = "",
@@ -392,7 +392,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 5,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(173),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6954),
                             CreatedBy = "",
                             GenreId = 1,
                             InactivatedBy = "",
@@ -406,7 +406,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 6,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(175),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6958),
                             CreatedBy = "",
                             GenreId = 1,
                             InactivatedBy = "",
@@ -420,7 +420,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 7,
                             AuthorId = 2,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(179),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6961),
                             CreatedBy = "",
                             GenreId = 2,
                             InactivatedBy = "",
@@ -434,7 +434,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         {
                             Id = 8,
                             AuthorId = 2,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(181),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6963),
                             CreatedBy = "",
                             GenreId = 3,
                             InactivatedBy = "",
@@ -520,7 +520,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(199),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6980),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -529,64 +529,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(238),
-                            CreatedBy = "",
-                            InactivatedBy = "",
-                            ModifiedBy = "",
-                            StatusId = 1
-                        });
-                });
-
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddress", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CustomerAddress");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(8997),
-                            CreatedBy = "",
-                            InactivatedBy = "",
-                            ModifiedBy = "",
-                            StatusId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(9011),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(6983),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -692,7 +635,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(270),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(7011),
                             CreatedBy = "",
                             CustomerAddressTypeId = 1,
                             CustomerDetailTypeId = 1,
@@ -707,7 +650,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(652),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(7114),
                             CreatedBy = "",
                             CustomerAddressTypeId = 2,
                             CustomerDetailTypeId = 2,
@@ -831,7 +774,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             BookId = 1,
                             BookPrice = 10m,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(9135),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(7289),
                             CreatedBy = "",
                             CustomerId = 1,
                             DeliveryDate = new DateTime(2022, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -850,7 +793,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 2,
                             BookId = 2,
                             BookPrice = 15m,
-                            Created = new DateTime(2022, 9, 5, 22, 18, 35, 172, DateTimeKind.Local).AddTicks(9142),
+                            Created = new DateTime(2022, 9, 5, 22, 50, 3, 477, DateTimeKind.Local).AddTicks(7296),
                             CreatedBy = "",
                             CustomerId = 2,
                             DeliveryDate = new DateTime(2022, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),

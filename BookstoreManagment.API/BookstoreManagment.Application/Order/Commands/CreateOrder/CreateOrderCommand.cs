@@ -6,7 +6,6 @@ public class CreateOrderCommand : IRequest<int>
 {
     //Order
     public int BookId { get; set; }
-    public int BookDetailId { get; set; }
     public int CustomerId { get; set; }
     //BookDetail
     public int OrderTransportTypeId { get; set; }

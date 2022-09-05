@@ -24,8 +24,7 @@ public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, int>
             Name = request.Name,
             PublishedBookDate = request.PublishedBookDate,
             Price = request.Price,
-            GenreId = request.GenreId,
-            
+            GenreId = request.GenreId
         };
 
         _bookstoreDbContext.Books.Add(book);
