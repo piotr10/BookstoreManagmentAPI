@@ -31,6 +31,8 @@ public class BookstoreDbContext : DbContext, IBookstoreDbContext
     public DbSet<Genre> Genres { get; set; }
     public DbSet<Customer> Customers { get; set; }
     public DbSet<CustomerAddressType> CustomerAddressTypes { get; set; }
+    public DbSet<CustomerContactDetail> CustomerContactDetails { get; set; }
+    public DbSet<CustomerContactDetailType> CustomerContactDetailTypes { get; set; }
     public DbSet<CustomerDetail> CustomerDetails { get; set; }
     public DbSet<CustomerDetailType> CustomerDetailTypes { get; set; }
     public DbSet<Order> Orders { get; set; }

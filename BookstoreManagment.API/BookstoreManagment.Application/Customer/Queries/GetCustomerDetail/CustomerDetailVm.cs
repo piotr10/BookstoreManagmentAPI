@@ -28,7 +28,7 @@ public class CustomerDetailVm : IMapFrom<CustomerDetail>
             .ForMember(x => x.Surname, map
                 => map.MapFrom(src => src.LastName))
             .ForMember(x => x.DetailContact, map
-                => map.MapFrom(src => src.DetailContact))
+                => map.MapFrom<CustomerContactDetailResolver>())
             .ForMember(x => x.DetailType, map
                 => map.MapFrom(src => src.CustomerDetailType.Name.ToString()))
 
@@ -47,5 +47,18 @@ public class CustomerDetailVm : IMapFrom<CustomerDetail>
             .ForMember(x => x.AddressTypeName, map
                 => map.MapFrom(src => src.CustomerAddressType.Name.ToString()))
             .ForAllOtherMembers(d => d.Ignore());
+    }
+
+    private class CustomerContactDetailResolver : IValueResolver<CustomerDetail, object, string>
+    {
+        public string Resolve(CustomerDetail source, object destination, string destMember, ResolutionContext context)
+        {
+            if (source.Customer is not null)
+            {
+                var contactDetail = source.Customer.CustomerContactDetails.FirstOrDefault()?.ContactName;
+                if (contactDetail != null) return contactDetail.ToString();
+            }
+            return string.Empty;
+        }
     }
 }

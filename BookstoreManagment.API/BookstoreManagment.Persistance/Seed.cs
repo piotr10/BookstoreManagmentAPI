@@ -230,7 +230,6 @@ public static class Seed
                 CustomerAddressTypeId = 1,
                 FirstName = "Piotr",
                 LastName = "Cz",
-                DetailContact = "piotrCz@example.com",
                 StatusId = 1,
                 Created = DateTime.Now,
                 CreatedBy = string.Empty,
@@ -256,7 +255,6 @@ public static class Seed
                 CustomerAddressTypeId = 2,
                 FirstName = "Ola",
                 LastName = "Sa",
-                DetailContact = "olaSa@example.com",
                 StatusId = 1,
                 Created = DateTime.Now,
                 CreatedBy = string.Empty,
@@ -274,9 +272,42 @@ public static class Seed
                 ZipCode = "01-001"
             });
 
+            modelBuilder.Entity<CustomerContactDetail>().HasData(
+                new CustomerContactDetail()
+                {
+                    Id = 1, 
+                    ContactName = "piotrCz@example.com",
+                    CustomerContactDetailTypeId = 2,
+                    CustomerId = 1,
+                    StatusId = 1,
+                    Created = DateTime.Now,
+                    CreatedBy = string.Empty,
+                    InactivatedBy = string.Empty,
+                    ModifiedBy = string.Empty
+                },
+                new CustomerContactDetail()
+                {
+                    Id = 2, 
+                    ContactName = "olaSa@example.coms",
+                    CustomerContactDetailTypeId = 2,
+                    CustomerId = 2,
+                    StatusId = 1,
+                    Created = DateTime.Now,
+                    CreatedBy = string.Empty,
+                    InactivatedBy = string.Empty,
+                    ModifiedBy = string.Empty
+                }
+            );
+
+            modelBuilder.Entity<CustomerContactDetailType>().HasData(
+                new CustomerContactDetailType() { Id = 1, Name = "None" },
+                new CustomerContactDetailType() { Id = 2, Name = "Email" },
+                new CustomerContactDetailType() { Id = 3, Name = "Phone" }
+            );
+
             modelBuilder.Entity<CustomerAddressType>().HasData(
-                new CustomerAddressType() {Id = 1, Name = "Address of residence"}, // Adres zamieszkania
-                new CustomerAddressType() {Id = 2, Name = "Residences"} //Adres pobytu
+                new CustomerAddressType() { Id = 1, Name = "Address of residence" }, // Adres zamieszkania
+                new CustomerAddressType() { Id = 2, Name = "Residences" } //Adres pobytu
             );
 
             modelBuilder.Entity<OrderTransportType>().HasData(

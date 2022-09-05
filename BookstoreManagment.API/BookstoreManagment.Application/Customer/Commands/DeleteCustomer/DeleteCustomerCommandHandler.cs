@@ -23,6 +23,13 @@ public class DeleteCustomerCommandHandler : IRequestHandler<DeleteCustomerComman
             .FirstOrDefaultAsync(cancellationToken);
 
         _bookstoreDbContext.Customers.Remove(customer);
+
+        var customerDetail = await _bookstoreDbContext.CustomerDetails
+            .Where(x => x.CustomerId == request.CustomerId && x.StatusId == 1)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        _bookstoreDbContext.CustomerDetails.Remove(customerDetail);
+
         await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
 
         return Unit.Value;

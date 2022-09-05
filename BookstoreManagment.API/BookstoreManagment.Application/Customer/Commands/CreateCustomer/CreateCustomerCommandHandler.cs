@@ -28,7 +28,6 @@ public class CreateCustomerCommandHandler :IRequestHandler<CreateCustomerCommand
         {
             FirstName = request.FirstName,
             LastName = request.LastName,
-            DetailContact = request.DetailContact,
             CustomerDetailTypeId = request.CustomerDetailTypeId,
             CustomerAddressTypeId = request.CustomerAddressTypeId,
             Customer = customerId,
@@ -43,8 +42,15 @@ public class CreateCustomerCommandHandler :IRequestHandler<CreateCustomerCommand
                 ZipCode = request.ZipCode
             }
         };
-
         _bookstoreDbContext.CustomerDetails.Add(customerDetail);
+
+        CustomerContactDetail contactDetail = new CustomerContactDetail()
+        {
+            ContactName = request.DetailContact,
+            CustomerContactDetailTypeId = request.CustomerContactDetailTypeId
+        };
+        _bookstoreDbContext.CustomerContactDetails.Add(contactDetail);
+
         await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
         return customer.Id;
     }

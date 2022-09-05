@@ -8,7 +8,6 @@ public class CustomerDetail : AuditableEntity
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string DetailContact { get; set; }
     public int CustomerId { get; set; }
     [JsonIgnore]
     public Customer Customer { get; set; }
