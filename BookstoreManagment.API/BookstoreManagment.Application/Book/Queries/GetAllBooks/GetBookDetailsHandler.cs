@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using BookstoreManagement.Application.Book.Queries.GetAllBooks;
 using BookstoreManagement.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +19,7 @@ public class GetBookDetailsHandler : IRequestHandler<GetBookDetailsQuery, BookDe
 
     public async Task<BookDetailsVm> Handle(GetBookDetailsQuery request, CancellationToken cancellationToken)
     {
-        var books = await _context.BookDetails.AsNoTracking().ProjectTo<BookDetailDto>(_mapper.ConfigurationProvider).ToListAsync();
+        var books = await _context.BookDetails.Where(x => x.StatusId == 1).AsNoTracking().ProjectTo<BookDetailDto>(_mapper.ConfigurationProvider).ToListAsync();
 
         return new BookDetailsVm() { BookDetails = books};
     }

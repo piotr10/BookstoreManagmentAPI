@@ -1,5 +1,6 @@
 ﻿using BookstoreManagement.Application.Book.Queries.GetBookDetail;
 using BookstoreManagement.Application.Order.Commands.CreateOrder;
+using BookstoreManagement.Application.Order.Commands.DeleteOrder;
 using BookstoreManagement.Application.Order.Queries.GetAllOrders;
 using BookstoreManagement.Application.Order.Queries.GetOrderDetail;
 using Microsoft.AspNetCore.Cors;
@@ -23,7 +24,7 @@ namespace BookstoreManagement.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<OrderDetailVm>> GetDetails(int id)
         {
-            var vm = await Mediator.Send(new GetOrderDetailQuery() { OrderId = id});
+            var vm = await Mediator.Send(new GetOrderDetailQuery() { OrderId = id });
 
             return vm;
         }
@@ -48,6 +49,20 @@ namespace BookstoreManagement.Api.Controllers
         {
             var createNewOrder = await Mediator.Send(command);
             return Ok(createNewOrder);
+        }
+
+        /// <summary>
+        /// Delete Order
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            var response = await Mediator.Send(new DeleteOrderCommand()
+            {
+                OrderId = id
+            });
+            return NoContent();
         }
     }
 }

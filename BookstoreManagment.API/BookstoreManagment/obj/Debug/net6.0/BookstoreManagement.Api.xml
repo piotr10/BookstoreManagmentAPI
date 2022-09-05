@@ -27,6 +27,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.DeleteAuthor(System.Int32)">
+            <summary>
+            Delete Author
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BookstoreManagement.Api.Controllers.BaseController">
             <summary>
             Base controller
@@ -55,6 +61,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.DeleteBook(System.Int32)">
+            <summary>
+            Delete Book
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BookstoreManagement.Api.Controllers.CustomerController">
             <summary>
             CRUD Customer
@@ -78,6 +90,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.DeleteCustomer(System.Int32)">
+            <summary>
+            Delete Customer
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BookstoreManagement.Api.Controllers.OrderController">
             <summary>
             CRUD Order
@@ -98,6 +116,12 @@
         <member name="M:BookstoreManagement.Api.Controllers.OrderController.Create(BookstoreManagement.Application.Order.Commands.CreateOrder.CreateOrderCommand)">
             <summary>
             Create new Order
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.DeleteOrder(System.Int32)">
+            <summary>
+            Delete Order
             </summary>
             <returns></returns>
         </member>

@@ -1,4 +1,5 @@
 ﻿using BookstoreManagement.Application.Customer.Commands.CreateCustomer;
+using BookstoreManagement.Application.Customer.Commands.DeleteCustomer;
 using BookstoreManagement.Application.Customer.Queries.GetAllCustomers;
 using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
 using BookstoreManagment.Api;
@@ -24,7 +25,7 @@ namespace BookstoreManagement.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<CustomerDetailVm>> GetDetails(int id)
         {
-            var vm = await Mediator.Send(new GetCustomerDetailQuery() { CustomerDetailId = id });
+            var vm = await Mediator.Send(new GetCustomerDetailQuery() {CustomerDetailId = id});
             return vm;
         }
 
@@ -48,6 +49,20 @@ namespace BookstoreManagement.Api.Controllers
         {
             var createNewCustomer = await Mediator.Send(command);
             return Ok(createNewCustomer);
+        }
+
+        /// <summary>
+        /// Delete Customer
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCustomer(int id)
+        {
+            var response = await Mediator.Send(new DeleteCustomerCommand()
+            {
+                CustomerId = id
+            });
+            return NoContent();
         }
     }
 }

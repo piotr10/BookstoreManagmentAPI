@@ -18,7 +18,7 @@ public class GetCustomersQueryHandler : IRequestHandler<GetCustomersQuery, Custo
     }
     public async Task<CustomersVm> Handle(GetCustomersQuery request, CancellationToken cancellationToken)
     {
-        var customers = await _bookstoreDbContext.CustomerDetails.AsNoTracking().ProjectTo<CutomerDto>(_mapper.ConfigurationProvider).ToListAsync();
+        var customers = await _bookstoreDbContext.CustomerDetails.Where(x => x.StatusId == 1).AsNoTracking().ProjectTo<CutomerDto>(_mapper.ConfigurationProvider).ToListAsync();
 
         return new CustomersVm() { Cutomers = customers };
     }

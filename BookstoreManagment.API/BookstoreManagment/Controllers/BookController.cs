@@ -1,4 +1,5 @@
 ﻿using BookstoreManagement.Application.Book.Commands.CreateBook;
+using BookstoreManagement.Application.Book.Commands.DeleteBook;
 using BookstoreManagement.Application.Book.Queries.GetAllBooks;
 using BookstoreManagement.Application.Book.Queries.GetBookDetail;
 using Microsoft.AspNetCore.Cors;
@@ -22,7 +23,7 @@ namespace BookstoreManagement.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<BookDetailVm>> GetDetails(int id)
         {
-            var vm = await Mediator.Send(new GetBookDetailQuery() { BookDetailId = id });
+            var vm = await Mediator.Send(new GetBookDetailQuery() {BookDetailId = id});
             return vm;
         }
 
@@ -46,6 +47,20 @@ namespace BookstoreManagement.Api.Controllers
         {
             var createNewBook = await Mediator.Send(command);
             return Ok(createNewBook);
+        }
+
+        /// <summary>
+        /// Delete Book
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> DeleteBook(int id)
+        {
+            var response = await Mediator.Send(new DeleteBookCommand()
+            {
+                BookId = id
+            });
+            return NoContent();
         }
     }
 }

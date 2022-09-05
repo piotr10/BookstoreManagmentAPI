@@ -18,7 +18,7 @@ public class GetOrdersQueryHandler : IRequestHandler<GetOrdersQuery, OrdersVm>
     }
     public async Task<OrdersVm> Handle(GetOrdersQuery request, CancellationToken cancellationToken)
     {
-        var orders = await _bookstoreDbContext.Orders.AsNoTracking().ProjectTo<OrderDto>(_mapper.ConfigurationProvider)
+        var orders = await _bookstoreDbContext.Orders.Where(x=>x.StatusId == 1).AsNoTracking().ProjectTo<OrderDto>(_mapper.ConfigurationProvider)
             .ToListAsync();
         return new OrdersVm() {Orders = orders};
 

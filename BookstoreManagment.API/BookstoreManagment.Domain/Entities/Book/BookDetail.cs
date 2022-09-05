@@ -1,8 +1,9 @@
 ﻿using System.Text.Json.Serialization;
+using BookstoreManagement.Domain.Common;
 
 namespace BookstoreManagement.Domain.Entities.Book;
 
-public class BookDetail
+public class BookDetail : AuditableEntity
 {
     public int Id { get; set; }
     public string Name { get; set; }

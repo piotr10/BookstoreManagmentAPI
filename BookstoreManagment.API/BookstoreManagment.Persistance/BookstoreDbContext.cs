@@ -73,6 +73,20 @@ public class BookstoreDbContext : DbContext, IBookstoreDbContext
                     entry.Entity.Created = _dateTime.Now;
                     entry.Entity.StatusId = 1;
                     break;
+                default:
+                    break;
+            }
+        }
+
+        foreach (var entry in ChangeTracker.Entries<ValueObject>())
+        {
+            switch (entry.State)
+            {
+                case EntityState.Deleted:
+                    entry.State = EntityState.Modified;
+                    break;
+                default:
+                    break;
             }
         }
         return base.SaveChangesAsync(cancellationToken);

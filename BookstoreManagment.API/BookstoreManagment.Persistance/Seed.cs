@@ -136,43 +136,83 @@ public static class Seed
             new BookDetail()
             {
                 Id = 1, BookId = 1, Name = "Ogniem i Mieczem", PublishedBookDate = new DateTime(1884, 1, 1), Price = 10,
-                GenreId = 1
+                GenreId = 1,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             },
             new BookDetail()
             {
                 Id = 2, BookId = 1, Name = "Potop", PublishedBookDate = new DateTime(1886, 1, 1), Price = 15,
-                GenreId = 2
+                GenreId = 2,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             },
             new BookDetail()
             {
                 Id = 3, BookId = 1, Name = "Pan Wołodyjowski", PublishedBookDate = new DateTime(1888, 1, 1), Price = 11,
-                GenreId = 3
+                GenreId = 3,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             },
             new BookDetail()
             {
                 Id = 4, BookId = 1, Name = "Quo Vadis", PublishedBookDate = new DateTime(1896, 1, 1), Price = 12,
-                GenreId = 1
+                GenreId = 1,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             },
             new BookDetail()
             {
                 Id = 5, BookId = 1, Name = "Krzyżacy", PublishedBookDate = new DateTime(1900, 1, 1), Price = 14,
-                GenreId = 1
+                GenreId = 1,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             },
 
             new BookDetail()
             {
                 Id = 6, BookId = 2, Name = "Wejście na orbitę", PublishedBookDate = new DateTime(1962, 1, 1),
-                Price = 14, GenreId = 1
+                Price = 14, GenreId = 1,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             },
             new BookDetail()
             {
                 Id = 7, BookId = 2, Name = "Summa technologiae", PublishedBookDate = new DateTime(1964, 1, 1),
-                Price = 14, GenreId = 2
+                Price = 14, GenreId = 2,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             },
             new BookDetail()
             {
                 Id = 8, BookId = 2, Name = "Filozofia przypadku", PublishedBookDate = new DateTime(1968, 1, 1),
-                Price = 14, GenreId = 3
+                Price = 14, GenreId = 3,
+                StatusId = 1,
+                Created = DateTime.Now,
+                CreatedBy = string.Empty,
+                InactivatedBy = string.Empty,
+                ModifiedBy = string.Empty
             }
         );
 

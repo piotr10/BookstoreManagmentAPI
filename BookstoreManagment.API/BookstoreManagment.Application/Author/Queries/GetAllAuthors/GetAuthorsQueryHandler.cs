@@ -18,7 +18,7 @@ public class GetAuthorsQueryHandler : IRequestHandler<GetAuthorsQuery, AuthorsVm
     }
     public async Task<AuthorsVm> Handle(GetAuthorsQuery request, CancellationToken cancellationToken)
     {
-        var authors = await _bookstoreDbContext.Authors.AsNoTracking().ProjectTo<AuthorDto>(_mapper.ConfigurationProvider).ToListAsync();
+        var authors = await _bookstoreDbContext.Authors.Where(x => x.StatusId == 1).AsNoTracking().ProjectTo<AuthorDto>(_mapper.ConfigurationProvider).ToListAsync();
 
         return new AuthorsVm() { Authors = authors};
     }
