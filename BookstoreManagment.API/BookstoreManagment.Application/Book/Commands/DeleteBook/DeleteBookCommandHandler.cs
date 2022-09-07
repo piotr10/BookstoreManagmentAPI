@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,13 +19,32 @@ public class DeleteBookCommandHandler : IRequestHandler<DeleteBookCommand>
 
     public async Task<Unit> Handle(DeleteBookCommand request, CancellationToken cancellationToken)
     {
-        var book = await _bookstoreDbContext.Books
-            .Where(x => x.Id == request.BookId && x.StatusId == 1)
-            .FirstOrDefaultAsync(cancellationToken);
+        try
+        {
+            var book = await _bookstoreDbContext.Books
+                .Where(x => x.Id == request.BookId && x.StatusId == 1)
+                .FirstOrDefaultAsync(cancellationToken);
+            if (book == null)
+            {
+                throw new ObjectNotExistInDbException(request.BookId, "Book");
+            }
+            _bookstoreDbContext.Books.Remove(book);
 
-        _bookstoreDbContext.Books.Remove(book);
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            try
+            {
+                await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            }
+            catch (Exception e)
+            {
+                throw new DbUpdateException("Saving to database error!");
+            }
 
-        return Unit.Value;
+            return Unit.Value;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

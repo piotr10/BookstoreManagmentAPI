@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,20 +19,41 @@ public class DeleteCustomerCommandHandler : IRequestHandler<DeleteCustomerComman
 
     public async Task<Unit> Handle(DeleteCustomerCommand request, CancellationToken cancellationToken)
     {
-        var customer = await _bookstoreDbContext.Customers
-            .Where(x => x.Id == request.CustomerId && x.StatusId == 1)
-            .FirstOrDefaultAsync(cancellationToken);
+        try
+        {
+            var customer = await _bookstoreDbContext.Customers
+                .Where(x => x.Id == request.CustomerId && x.StatusId == 1)
+                .FirstOrDefaultAsync(cancellationToken);
+            if (customer == null)
+            {
+                throw new ObjectNotExistInDbException(request.CustomerId, "Customer");
+            }
+            _bookstoreDbContext.Customers.Remove(customer);
 
-        _bookstoreDbContext.Customers.Remove(customer);
+            var customerDetail = await _bookstoreDbContext.CustomerDetails
+                .Where(x => x.CustomerId == request.CustomerId && x.StatusId == 1)
+                .FirstOrDefaultAsync(cancellationToken);
+            if (customerDetail == null)
+            {
+                throw new ObjectNotExistInDbException(request.CustomerId, "Customer Detail");
+            }
+            _bookstoreDbContext.CustomerDetails.Remove(customerDetail);
 
-        var customerDetail = await _bookstoreDbContext.CustomerDetails
-            .Where(x => x.CustomerId == request.CustomerId && x.StatusId == 1)
-            .FirstOrDefaultAsync(cancellationToken);
+            try
+            {
+                await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            }
+            catch (Exception e)
+            {
+                throw new DbUpdateException("Saving to database error!");
+            }
 
-        _bookstoreDbContext.CustomerDetails.Remove(customerDetail);
-
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
-
-        return Unit.Value;
+            return Unit.Value;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

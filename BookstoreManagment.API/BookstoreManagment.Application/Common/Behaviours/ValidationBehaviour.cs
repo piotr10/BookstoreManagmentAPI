@@ -19,12 +19,13 @@ public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TReque
         if (_validators.Any())
         {
             var context = new ValidationContext<TRequest>(request);
-            var failures = _validators.Select(v => v.Validate(context)).SelectMany(result => result.Errors)
-                .Where(f => f != null).ToList();
+
+            var failures = _validators.Select(v => v.Validate(context)).SelectMany(result => result.Errors).Where(f => f != null).ToList();
+
 
             if (failures.Count != 0)
             {
-                throw new Exception();
+                throw new ValidationException(failures);
             }
         }
 
