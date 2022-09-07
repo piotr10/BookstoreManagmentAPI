@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +19,6 @@ public class GetCustomerDetailQueryHandler : IRequestHandler<GetCustomerDetailQu
 
     public async Task<CustomerDetailVm> Handle(GetCustomerDetailQuery request, CancellationToken cancellationToken)
     {
-
         var customer = await _bookstoreDbContext.Customers
             .Include(p => p.CustomerDetails)
             .ThenInclude(p => p.CustomerDetailType)
@@ -28,6 +28,11 @@ public class GetCustomerDetailQueryHandler : IRequestHandler<GetCustomerDetailQu
             .ThenInclude(p => p.CustomerContactDetailType)
             .Where(p => p.Id == request.CustomerDetailId && p.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
+
+        if (customer == null)
+        {
+            throw new ObjectNotExistInDbException(request.CustomerDetailId, "Customer");
+        }
 
         var customerVm = _mapper.Map<CustomerDetailVm>(customer);
         return customerVm;

@@ -2,6 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using BookstoreManagement.Application.Book.Queries.GetAllBooks;
 using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,8 +20,20 @@ public class GetBooksHandler : IRequestHandler<GetBooksQuery, BooksVm>
 
     public async Task<BooksVm> Handle(GetBooksQuery request, CancellationToken cancellationToken)
     {
-        var books = await _context.Books.Where(x => x.StatusId == 1).AsNoTracking().ProjectTo<BooksDto>(_mapper.ConfigurationProvider).ToListAsync();
+        try
+        {
+            var books = await _context.Books.Where(x => x.StatusId == 1).AsNoTracking().ProjectTo<BooksDto>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken);
+            if (books == null)
+            {
+                throw new ThisObjectNotExistInDbException("Books");
+            }
 
-        return new BooksVm() { Books = books};
+            return new BooksVm() { Books = books };
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

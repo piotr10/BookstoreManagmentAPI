@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,11 @@ public class GetBookQueryHandler : IRequestHandler<GetBookQuery, BookVm>
             .Include(p=>p.Genre)
             .Where(p => p.Id == request.BookId && p.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
+
+        if (book == null)
+        {
+            throw new ObjectNotExistInDbException(request.BookId, "Book");
+        }
 
         var bookVm = _mapper.Map<BookVm>(book);
         return bookVm;
