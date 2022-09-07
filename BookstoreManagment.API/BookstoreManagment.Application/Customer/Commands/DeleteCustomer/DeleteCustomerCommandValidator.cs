@@ -6,6 +6,6 @@ public class DeleteCustomerCommandValidator : AbstractValidator<DeleteCustomerCo
 {
     public DeleteCustomerCommandValidator()
     {
-        
+        RuleFor(x => x.CustomerId).NotEmpty().GreaterThan(0);
     }
 }

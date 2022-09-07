@@ -6,6 +6,6 @@ public class DeleteBookCommandValidator : AbstractValidator<DeleteBookCommand>
 {
     public DeleteBookCommandValidator()
     {
-        
+        RuleFor(x => x.BookId).NotEmpty().GreaterThan(0);
     }
 }

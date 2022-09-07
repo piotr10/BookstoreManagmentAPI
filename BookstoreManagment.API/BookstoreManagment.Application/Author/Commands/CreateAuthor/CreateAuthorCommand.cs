@@ -5,7 +5,7 @@ using MediatR;
 
 namespace BookstoreManagement.Application.Author.Commands.CreateAuthor;
 
-public class CreateAuthorCommand : IRequest<int>//, IMapFrom<CreateAuthorCommand>
+public class CreateAuthorCommand : IRequest<int>
 {
     //Author
     public string? FirstName { get; set; }
