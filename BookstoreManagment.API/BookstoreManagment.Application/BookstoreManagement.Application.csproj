@@ -14,6 +14,7 @@
     <Folder Include="Book\Commands\DeleteBook\" />
     <Folder Include="Common\Interfaces\" />
     <Folder Include="Common\Mappings\" />
+    <Folder Include="Common\Behaviours\" />
     <Folder Include="Customer\Commands\CreateCustomer\" />
     <Folder Include="Customer\Commands\DeleteCustomer\" />
     <Folder Include="Customer\Queries\GetAllCustomers\" />
