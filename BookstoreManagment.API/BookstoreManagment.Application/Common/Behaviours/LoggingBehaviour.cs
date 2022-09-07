@@ -14,7 +14,6 @@ public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest>
     public async Task Process(TRequest request, CancellationToken cancellationToken)
     {
         var requestName = typeof(TRequest).Name;
-
         _logger.LogInformation("BookstoreManagement Request: {Name} {@Request}", requestName, request);
     }
 }

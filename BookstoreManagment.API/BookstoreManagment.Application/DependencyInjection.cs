@@ -14,6 +14,7 @@ public static class DependencyInjection
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
         services.AddTransient(typeof(IRequestPreProcessor<>), typeof(LoggingBehaviour<>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformanceBehaviour<,>));
         return services;
     }
 }
