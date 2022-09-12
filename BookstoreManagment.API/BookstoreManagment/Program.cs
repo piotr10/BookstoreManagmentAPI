@@ -2,8 +2,31 @@ using BookstoreManagement.Application;
 using BookstoreManagement.Infrastructure;
 using BookstoreManagement.Persistance;
 using Microsoft.OpenApi.Models;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Serilog
+try
+{
+    Log.Information("Application is starting up.");
+}
+catch (Exception e)
+{
+    Log.Fatal(e, "Could not start up application.");
+    Console.WriteLine(e);
+    throw;
+}
+finally
+{
+    Log.CloseAndFlush();
+}
+
+builder.Host.UseSerilog((ctx, cfg) => cfg.ReadFrom.Configuration(ctx.Configuration));
 
 // Add services to the container.
 builder.Services.AddApplication();
@@ -64,6 +87,8 @@ app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bookstore M
 app.UseHealthChecks("/hc");
 
 app.UseHttpsRedirection();
+
+app.UseSerilogRequestLogging();
 
 app.UseRouting();
 
