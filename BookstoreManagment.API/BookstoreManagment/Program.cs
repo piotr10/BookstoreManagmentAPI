@@ -18,7 +18,6 @@ try
 catch (Exception e)
 {
     Log.Fatal(e, "Could not start up application.");
-    Console.WriteLine(e);
     throw;
 }
 finally
