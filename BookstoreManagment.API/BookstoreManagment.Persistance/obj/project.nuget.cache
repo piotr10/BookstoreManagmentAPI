@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NdwBlEtDrsdeZTzKQVLFIMYCpiHIQjJpPv2XBxnxiPCJH5BrlnyWA4gWPFNZSY23ImjpvgaFDI7s7KHDeOXvZw==",
+  "dgSpecHash": "o9qW/VkDR9ploZ2xFkvKjRg+haEBAs+yT8gwbJg+7/d4FihYIT5/ixD0EhZIiQEY+3cruCh+SKTgEXMfC9ZtoQ==",
   "success": true,
   "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance\\BookstoreManagement.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

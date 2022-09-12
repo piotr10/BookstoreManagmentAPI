@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,8 +19,21 @@ public class GetCustomersQueryHandler : IRequestHandler<GetCustomersQuery, Custo
     }
     public async Task<CustomersVm> Handle(GetCustomersQuery request, CancellationToken cancellationToken)
     {
-        var customers = await _bookstoreDbContext.CustomerDetails.AsNoTracking().ProjectTo<CutomerDto>(_mapper.ConfigurationProvider).ToListAsync();
+        try
+        {
+            var customers = await _bookstoreDbContext.Customers.Where(x => x.StatusId == 1)
+                .AsNoTracking().ProjectTo<CutomerDto>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken);
+            if (customers == null)
+            {
+                throw new ThisObjectNotExistInDbException("Customers");
+            }
 
-        return new CustomersVm() { Cutomers = customers };
+            return new CustomersVm() { Cutomers = customers };
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

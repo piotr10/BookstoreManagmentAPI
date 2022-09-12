@@ -2,6 +2,7 @@
 using BookstoreManagement.Application.Common.Interfaces;
 using BookstoreManagement.Domain.Entities.Book;
 using BookstoreManagement.Domain.Entities.Customer;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,9 +27,13 @@ public class GetOrderDetailQueryHandler : IRequestHandler<GetOrderDetailQuery, O
             .Include(p => p.Customer)
             .ThenInclude(p=>p.CustomerDetails)
             .Include(p => p.Book)
-            .ThenInclude(p=>p.BookDetails)
-            .Where(p => p.Id == request.OrderId)
+            .Where(p => p.Id == request.OrderId && p.StatusId == 1)
             .FirstOrDefaultAsync(cancellationToken);
+        
+        if (order == null)
+        {
+            throw new ObjectNotExistInDbException(request.OrderId, "Order");
+        }
 
         var orderVm = _mapper.Map<OrderDetailVm>(order);
         return orderVm;

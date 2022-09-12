@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Exceptions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,28 +18,50 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int
     }
     public async Task<int> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {
-        var bookId = await _bookstoreDbContext.Books.FindAsync(request.BookId);
-        var customerId = await _bookstoreDbContext.Customers.FindAsync(request.CustomerId);
-        //var bookPrice = await _bookstoreDbContext.BookDetails.FindAsync(request.BookId);
-        var bookDetailId = await _bookstoreDbContext.BookDetails.FirstOrDefaultAsync(x=>x.Id == request.BookDetailId);
-
-        Domain.Entities.Order.Order order = new Domain.Entities.Order.Order()
+        try
         {
-            Book = bookId,
-            Customer = customerId,
-            OrderTransportTypeId = request.OrderTransportTypeId,
-            PaymentMethodId = request.PaymentMethodId,
-            DeliveryDate = request.DeliveryDate,
-            OrderDate = request.OrderDate,
-            Quantity = request.Quantity,
-            OrderPrice = bookDetailId.Price * request.Quantity,
-            Name = bookDetailId.Name,
-            BookPrice = bookDetailId.Price
-        };
+            var bookId = await _bookstoreDbContext.Books.FindAsync(request.BookId);
+            var customerId = await _bookstoreDbContext.Customers.FindAsync(request.CustomerId);
+            if (bookId == null)
+            {
+                throw new ObjectNotExistInDbException(request.BookId, "Book");
+            }
 
-        _bookstoreDbContext.Orders.Add(order);
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            if (customerId == null)
+            {
+                throw new ObjectNotExistInDbException(request.CustomerId, "Customer");
+            }
 
-        return order.Id;
+            Domain.Entities.Order.Order order = new Domain.Entities.Order.Order()
+            {
+                Book = bookId,
+                Customer = customerId,
+                OrderTransportTypeId = request.OrderTransportTypeId,
+                PaymentMethodId = request.PaymentMethodId,
+                DeliveryDate = request.DeliveryDate,
+                OrderDate = request.OrderDate,
+                Quantity = request.Quantity,
+                OrderPrice = bookId.Price * request.Quantity,
+                Name = bookId.Name,
+                BookPrice = bookId.Price
+            };
+            await _bookstoreDbContext.Orders.AddAsync(order, cancellationToken);
+
+            try
+            {
+                await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            }
+            catch (Exception e)
+            {
+                throw new DbUpdateException("Saving to database error!");
+            }
+
+            return order.Id;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

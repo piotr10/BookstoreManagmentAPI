@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Interfaces;
 using BookstoreManagement.Domain.Entities.Author;
+using BookstoreManagement.Domain.Exceptions;
 using BookstoreManagement.Domain.ValueObjects;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -21,60 +22,65 @@ public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, i
 
     public async Task<int> Handle(CreateAuthorCommand request, CancellationToken cancellationToken)
     {
-        #region Bez mapowania
-        Domain.Entities.Author.Author author = new ()
+        try
         {
-            AuthorName = new PersonName()
+            Domain.Entities.Author.Author author = new()
             {
-                FirstName = request.FirstName,
-                LastName = request.LastName
+                AuthorName = new PersonName()
+                {
+                    FirstName = request.FirstName,
+                    LastName = request.LastName
+                }
+            };
+            await _bookstoreDbContext.Authors.AddAsync(author, cancellationToken);
+
+            try
+            {
+                await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
             }
-        };
+            catch (Exception e)
+            {
+                throw new DbUpdateException("Saving to database error!");
+            }
+            
+            var authorId = await _bookstoreDbContext.Authors.FindAsync(request.AuthorId);
+            if (authorId == null)
+            {
+                throw new ObjectNotExistInDbException(request.AuthorId, "Author");
+            }
 
-        _bookstoreDbContext.Authors.Add(author);
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            AuthorBiography authorBiography = new()
+            {
+                Country = request.Country,
+                DateOfBirth = request.AuthorDateOfBirth,
+                PlaceOfBirth = request.AuthorPlaceOfBirth,
+                Author = authorId
+            };
+            await _bookstoreDbContext.AuthorBiographies.AddAsync(authorBiography, cancellationToken);
 
-        var authorId = await _bookstoreDbContext.Authors.FindAsync(request.AuthorId);
+            AuthorContactDetail contactDetail = new()
+            {
+                Name = request.Contact,
+                AuthorContactDetailTypeId = request.AuthorContactDetailTypeId,
+                Author = authorId
+            };
+            await _bookstoreDbContext.AuthorContactDetails.AddAsync(contactDetail, cancellationToken);
 
-        AuthorBiography authorBiography = new ()
+            try
+            {
+                await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            }
+            catch (Exception e)
+            {
+                throw new DbUpdateException("Saving to database error!");
+            }
+
+            return author.Id;
+        }
+        catch (Exception e)
         {
-            Country = request.Country,
-            DateOfBirth = request.AuthorDateOfBirth,
-            PlaceOfBirth = request.AuthorPlaceOfBirth,
-            Author = authorId
-        };
-
-        _bookstoreDbContext.AuthorBiographies.Add(authorBiography);
-
-        AuthorContactDetail contactDetail = new ()
-        {
-            Name = request.Contact,
-            AuthorContactDetailTypeId = request.AuthorContactDetailTypeId,
-            Author = authorId
-        };
-
-        _bookstoreDbContext.AuthorContactDetails.Add(contactDetail);
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
-
-        return author.Id;
-        #endregion
-
-        #region Mapowanie
-        /*
-          var author = _mapper.Map<Domain.Entities.Author.Author>(request.AuthorId);
-          await _bookstoreDbContext.Authors.AddAsync(author);
-  
-          
-          var authorBiography = _mapper.Map<AuthorBiography>(request);
-          authorBiography.AuthorId = author.Id;
-  
-          var authorContactDetail = _mapper.Map<AuthorContactDetail>(request);
-          authorBiography.AuthorId = author.Id;
-  
-          await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
-  
-          return author.Id;
-          */
-        #endregion
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

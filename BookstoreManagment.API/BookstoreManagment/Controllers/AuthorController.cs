@@ -1,4 +1,5 @@
 ﻿using BookstoreManagement.Application.Author.Commands.CreateAuthor;
+using BookstoreManagement.Application.Author.Commands.DeleteAuthor;
 using BookstoreManagement.Application.Author.Queries.GetAllAuthors;
 using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
 using Microsoft.AspNetCore.Cors;
@@ -46,6 +47,20 @@ namespace BookstoreManagement.Api.Controllers
         {
             var createNewAuthor = await Mediator.Send(command);
             return Ok(createNewAuthor);
+        }
+
+        /// <summary>
+        /// Delete Author
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAuthor(int id)
+        {
+            var response = await Mediator.Send(new DeleteAuthorCommand()
+            {
+                AuthorId = id
+            });
+            return NoContent();
         }
     }
 }

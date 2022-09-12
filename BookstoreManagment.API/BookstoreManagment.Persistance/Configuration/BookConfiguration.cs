@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BookstoreManagement.Persistance.Configuration;
 
-public class BookDetailConfiguration : IEntityTypeConfiguration<BookDetail>
+public class BookConfiguration : IEntityTypeConfiguration<Book>
 {
-    public void Configure(EntityTypeBuilder<BookDetail> builder)
+    public void Configure(EntityTypeBuilder<Book> builder)
     {
         builder.Property(p => p.Name);
         builder.Property(p => p.Price).HasColumnType("decimal(18,4)").IsRequired();

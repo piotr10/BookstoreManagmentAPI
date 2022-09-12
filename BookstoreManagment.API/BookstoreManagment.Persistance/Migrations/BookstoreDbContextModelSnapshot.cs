@@ -62,7 +62,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8043),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9175),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -71,7 +71,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8193),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9324),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -140,7 +140,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             AuthorId = 1,
                             Country = "Poland",
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8278),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9475),
                             CreatedBy = "",
                             DateOfBirth = new DateTime(1846, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InactivatedBy = "",
@@ -153,7 +153,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 2,
                             AuthorId = 2,
                             Country = "Poland",
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8283),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9483),
                             CreatedBy = "",
                             DateOfBirth = new DateTime(1921, 9, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             InactivatedBy = "",
@@ -220,7 +220,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             AuthorContactDetailTypeId = 2,
                             AuthorId = 1,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8354),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9512),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -232,7 +232,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 2,
                             AuthorContactDetailTypeId = 3,
                             AuthorId = 2,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8357),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9515),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -293,6 +293,9 @@ namespace BookstoreManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("Inactivated")
                         .HasColumnType("datetime2");
 
@@ -307,52 +310,6 @@ namespace BookstoreManagement.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AuthorId");
-
-                    b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AuthorId = 1,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8371),
-                            CreatedBy = "",
-                            InactivatedBy = "",
-                            ModifiedBy = "",
-                            StatusId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AuthorId = 2,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8373),
-                            CreatedBy = "",
-                            InactivatedBy = "",
-                            ModifiedBy = "",
-                            StatusId = 1
-                        });
-                });
-
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.BookDetail", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GenreId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -363,86 +320,129 @@ namespace BookstoreManagement.Persistance.Migrations
                     b.Property<DateTime>("PublishedBookDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("BookId");
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("BookDetails");
+                    b.ToTable("Books");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            BookId = 1,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9540),
+                            CreatedBy = "",
                             GenreId = 1,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Ogniem i Mieczem",
                             Price = 10m,
-                            PublishedBookDate = new DateTime(1884, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1884, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 2,
-                            BookId = 1,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9543),
+                            CreatedBy = "",
                             GenreId = 2,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Potop",
                             Price = 15m,
-                            PublishedBookDate = new DateTime(1886, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1886, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 3,
-                            BookId = 1,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9546),
+                            CreatedBy = "",
                             GenreId = 3,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Pan Wołodyjowski",
                             Price = 11m,
-                            PublishedBookDate = new DateTime(1888, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1888, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 4,
-                            BookId = 1,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9548),
+                            CreatedBy = "",
                             GenreId = 1,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Quo Vadis",
                             Price = 12m,
-                            PublishedBookDate = new DateTime(1896, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1896, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 5,
-                            BookId = 1,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9551),
+                            CreatedBy = "",
                             GenreId = 1,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Krzyżacy",
                             Price = 14m,
-                            PublishedBookDate = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1900, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 6,
-                            BookId = 2,
+                            AuthorId = 1,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9554),
+                            CreatedBy = "",
                             GenreId = 1,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Wejście na orbitę",
                             Price = 14m,
-                            PublishedBookDate = new DateTime(1962, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1962, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 7,
-                            BookId = 2,
+                            AuthorId = 2,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9556),
+                            CreatedBy = "",
                             GenreId = 2,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Summa technologiae",
                             Price = 14m,
-                            PublishedBookDate = new DateTime(1964, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1964, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         },
                         new
                         {
                             Id = 8,
-                            BookId = 2,
+                            AuthorId = 2,
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9559),
+                            CreatedBy = "",
                             GenreId = 3,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
                             Name = "Filozofia przypadku",
                             Price = 14m,
-                            PublishedBookDate = new DateTime(1968, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            PublishedBookDate = new DateTime(1968, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusId = 1
                         });
                 });
 
@@ -520,7 +520,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8424),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9575),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -529,64 +529,7 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8427),
-                            CreatedBy = "",
-                            InactivatedBy = "",
-                            ModifiedBy = "",
-                            StatusId = 1
-                        });
-                });
-
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddress", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Inactivated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("InactivatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("Modified")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StatusId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CustomerAddresses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8642),
-                            CreatedBy = "",
-                            InactivatedBy = "",
-                            ModifiedBy = "",
-                            StatusId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8645),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9578),
                             CreatedBy = "",
                             InactivatedBy = "",
                             ModifiedBy = "",
@@ -623,6 +566,118 @@ namespace BookstoreManagement.Persistance.Migrations
                         });
                 });
 
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerContactDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ContactName")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CustomerContactDetailTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Inactivated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InactivatedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerContactDetailTypeId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("CustomerContactDetails");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ContactName = "piotrCz@example.com",
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9798),
+                            CreatedBy = "",
+                            CustomerContactDetailTypeId = 2,
+                            CustomerId = 1,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            StatusId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ContactName = "olaSa@example.coms",
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9854),
+                            CreatedBy = "",
+                            CustomerContactDetailTypeId = 2,
+                            CustomerId = 2,
+                            InactivatedBy = "",
+                            ModifiedBy = "",
+                            StatusId = 1
+                        });
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerContactDetailType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomerContactDetailTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "None"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Email"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Phone"
+                        });
+                });
+
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", b =>
                 {
                     b.Property<int>("Id")
@@ -646,10 +701,6 @@ namespace BookstoreManagement.Persistance.Migrations
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
-
-                    b.Property<string>("DetailContact")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -692,12 +743,11 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8451),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9607),
                             CreatedBy = "",
                             CustomerAddressTypeId = 1,
                             CustomerDetailTypeId = 1,
                             CustomerId = 1,
-                            DetailContact = "piotrCz@example.com",
                             FirstName = "Piotr",
                             InactivatedBy = "",
                             LastName = "Cz",
@@ -707,12 +757,11 @@ namespace BookstoreManagement.Persistance.Migrations
                         new
                         {
                             Id = 2,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8550),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9716),
                             CreatedBy = "",
                             CustomerAddressTypeId = 2,
                             CustomerDetailTypeId = 2,
                             CustomerId = 2,
-                            DetailContact = "olaSa@example.com",
                             FirstName = "Ola",
                             InactivatedBy = "",
                             LastName = "Sa",
@@ -831,7 +880,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 1,
                             BookId = 1,
                             BookPrice = 10m,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8732),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9918),
                             CreatedBy = "",
                             CustomerId = 1,
                             DeliveryDate = new DateTime(2022, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -850,7 +899,7 @@ namespace BookstoreManagement.Persistance.Migrations
                             Id = 2,
                             BookId = 2,
                             BookPrice = 15m,
-                            Created = new DateTime(2022, 9, 4, 21, 33, 47, 510, DateTimeKind.Local).AddTicks(8737),
+                            Created = new DateTime(2022, 9, 6, 0, 1, 16, 410, DateTimeKind.Local).AddTicks(9924),
                             CreatedBy = "",
                             CustomerId = 2,
                             DeliveryDate = new DateTime(2022, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1005,26 +1054,34 @@ namespace BookstoreManagement.Persistance.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Author");
-                });
-
-            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.BookDetail", b =>
-                {
-                    b.HasOne("BookstoreManagement.Domain.Entities.Book.Book", "Book")
-                        .WithMany("BookDetails")
-                        .HasForeignKey("BookId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("BookstoreManagement.Domain.Entities.Book.Genre", "Genre")
-                        .WithMany("BookDetails")
+                        .WithMany("Books")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Book");
+                    b.Navigation("Author");
 
                     b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerContactDetail", b =>
+                {
+                    b.HasOne("BookstoreManagement.Domain.Entities.Customer.CustomerContactDetailType", "CustomerContactDetailType")
+                        .WithMany("CustomerContactDetails")
+                        .HasForeignKey("CustomerContactDetailTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookstoreManagement.Domain.Entities.Customer.Customer", "Customer")
+                        .WithMany("CustomerContactDetails")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("CustomerContactDetailType");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetail", b =>
@@ -1172,18 +1229,18 @@ namespace BookstoreManagement.Persistance.Migrations
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Book", b =>
                 {
-                    b.Navigation("BookDetails");
-
                     b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Book.Genre", b =>
                 {
-                    b.Navigation("BookDetails");
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.Customer", b =>
                 {
+                    b.Navigation("CustomerContactDetails");
+
                     b.Navigation("CustomerDetails");
 
                     b.Navigation("Orders");
@@ -1192,6 +1249,11 @@ namespace BookstoreManagement.Persistance.Migrations
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerAddressType", b =>
                 {
                     b.Navigation("CustomerDetails");
+                });
+
+            modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerContactDetailType", b =>
+                {
+                    b.Navigation("CustomerContactDetails");
                 });
 
             modelBuilder.Entity("BookstoreManagement.Domain.Entities.Customer.CustomerDetailType", b =>

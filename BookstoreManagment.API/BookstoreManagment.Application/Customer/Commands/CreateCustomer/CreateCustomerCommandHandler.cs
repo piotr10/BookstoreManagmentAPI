@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using BookstoreManagement.Application.Common.Interfaces;
 using BookstoreManagement.Domain.Entities.Customer;
+using BookstoreManagement.Domain.Exceptions;
 using BookstoreManagement.Domain.ValueObjects;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookstoreManagement.Application.Customer.Commands.CreateCustomer;
 
@@ -18,34 +20,68 @@ public class CreateCustomerCommandHandler :IRequestHandler<CreateCustomerCommand
     }
     public async Task<int> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
     {
-        Domain.Entities.Customer.Customer customer = new Domain.Entities.Customer.Customer();
-        _bookstoreDbContext.Customers.Add(customer);
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
-
-        var customerId = await _bookstoreDbContext.Customers.FindAsync(request.CustomerId);
-
-        CustomerDetail customerDetail = new CustomerDetail()
+        try
         {
-            FirstName = request.FirstName,
-            LastName = request.LastName,
-            DetailContact = request.DetailContact,
-            CustomerDetailTypeId = request.CustomerDetailTypeId,
-            CustomerAddressTypeId = request.CustomerAddressTypeId,
-            Customer = customerId,
-
-            Adres = new Adres()
+            Domain.Entities.Customer.Customer customer = new Domain.Entities.Customer.Customer();
+            await _bookstoreDbContext.Customers.AddAsync(customer, cancellationToken);
+            try
             {
-                ApartmentNumber = request.ApartmentNumber,
-                City = request.City,
-                Country = request.Country,
-                HouseNumber = request.HouseNumber,
-                Street = request.Street,
-                ZipCode = request.ZipCode
+                await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
             }
-        };
+            catch (Exception e)
+            {
+                throw new DbUpdateException("Saving to database error!");
+            }
 
-        _bookstoreDbContext.CustomerDetails.Add(customerDetail);
-        await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
-        return customer.Id;
+            var customerId = await _bookstoreDbContext.Customers.FindAsync(request.CustomerId);
+            if (customerId == null)
+            {
+                throw new ObjectNotExistInDbException(request.CustomerId, "Customer");
+            }
+
+            CustomerDetail customerDetail = new CustomerDetail()
+            {
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                CustomerDetailTypeId = request.CustomerDetailTypeId,
+                CustomerAddressTypeId = request.CustomerAddressTypeId,
+                Customer = customerId,
+
+                Adres = new Adres()
+                {
+                    ApartmentNumber = request.ApartmentNumber,
+                    City = request.City,
+                    Country = request.Country,
+                    HouseNumber = request.HouseNumber,
+                    Street = request.Street,
+                    ZipCode = request.ZipCode
+                }
+            };
+            await _bookstoreDbContext.CustomerDetails.AddAsync(customerDetail, cancellationToken);
+
+            CustomerContactDetail contactDetail = new CustomerContactDetail()
+            {
+                ContactName = request.DetailContact,
+                CustomerContactDetailTypeId = request.CustomerContactDetailTypeId,
+                Customer = customerId
+            };
+            await _bookstoreDbContext.CustomerContactDetails.AddAsync(contactDetail, cancellationToken);
+
+            try
+            {
+                await _bookstoreDbContext.SaveChangesAsync(cancellationToken);
+            }
+            catch (Exception e)
+            {
+                throw new DbUpdateException("Saving to database error!");
+            }
+
+            return customer.Id;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

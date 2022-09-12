@@ -2,6 +2,6 @@
 
 namespace BookstoreManagement.Application.Book.Queries.GetAllBooks;
 
-public class GetBookDetailsQuery : IRequest<BookDetailsVm>
+public class GetBooksQuery : IRequest<BooksVm>
 {
 }
