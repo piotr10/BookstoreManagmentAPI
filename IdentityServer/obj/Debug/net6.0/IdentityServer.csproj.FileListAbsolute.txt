@@ -13,12 +13,9 @@ D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Au
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
-D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.Data.Sqlite.dll
-D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
@@ -45,9 +42,7 @@ D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Serilog.Sinks.Console.d
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Serilog.Sinks.File.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\SQLitePCLRaw.batteries_v2.dll
-D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\SQLitePCLRaw.nativelibrary.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\SQLitePCLRaw.core.dll
-D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\SQLitePCLRaw.provider.dynamic_cdecl.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\System.Drawing.Common.dll
 D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
@@ -97,3 +92,13 @@ D:\Projekty_VS\Bookstore\IdentityServer\obj\Debug\net6.0\refint\IdentityServer.d
 D:\Projekty_VS\Bookstore\IdentityServer\obj\Debug\net6.0\IdentityServer.pdb
 D:\Projekty_VS\Bookstore\IdentityServer\obj\Debug\net6.0\IdentityServer.genruntimeconfig.cache
 D:\Projekty_VS\Bookstore\IdentityServer\obj\Debug\net6.0\ref\IdentityServer.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Humanizer.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\runtimes\linux-mips64\native\libe_sqlite3.so
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\runtimes\linux-s390x\native\libe_sqlite3.so
+D:\Projekty_VS\Bookstore\IdentityServer\bin\Debug\net6.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
