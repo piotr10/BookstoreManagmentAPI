@@ -1,6 +1,10 @@
+using BookstoreManagement.Api.Service;
 using BookstoreManagement.Application;
+using BookstoreManagement.Application.Common.Interfaces;
 using BookstoreManagement.Infrastructure;
 using BookstoreManagement.Persistance;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -35,11 +39,35 @@ builder.Services.AddControllers();
 
 //origins/policy/cors
 builder.Services.AddCors(options =>
-    options.AddPolicy(name: "MyAllowSpecificOrigins", // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
-        builder =>
+{
+    options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin());
+});   // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
+
+#region Second origin port
+/*builder =>
+{
+    builder.WithOrigins("https://localhost:example"); //podajemy port (np. 11223) drugiego origin, który bêdzie potrzebny do po³¹czenia CORS miêdzy dwoma aplikacjami
+}));*/
+#endregion
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = "https://localhost:5001";
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            builder.WithOrigins("https://localhost:example"); //podajemy port (np. 11223) drugiego origin, który bêdzie potrzebny do po³¹czenia CORS miêdzy dwoma aplikacjami
-        }));
+            ValidateAudience = false
+        };
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "api1");
+    });
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -65,8 +93,10 @@ builder.Services.AddSwaggerGen(c =>
     });
     var filePath = Path.Combine(AppContext.BaseDirectory, "BookstoreManagement.Api.xml");
     c.IncludeXmlComments(filePath);
-}
-);
+});
+
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.TryAddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
 
 builder.Services.AddHealthChecks();
 
@@ -87,6 +117,8 @@ app.UseHealthChecks("/hc");
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+
 app.UseSerilogRequestLogging();
 
 app.UseRouting();
@@ -95,6 +127,6 @@ app.UseCors();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllers().RequireAuthorization("ApiScope");
 
 app.Run();
