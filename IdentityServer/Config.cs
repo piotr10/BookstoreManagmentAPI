@@ -51,8 +51,8 @@ namespace IdentityServer
                     AlwaysSendClientClaims = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser=true,
-                    RedirectUris = { "https://localhost:44384/swagger/oauth2-redirect.html" },
-                    AllowedCorsOrigins = { "https://localhost:44384"}
+                    RedirectUris = { "https://localhost:44312/swagger/oauth2-redirect.html" },
+                    AllowedCorsOrigins = { "https://localhost:44312" }
                 }
             };
         #region m2m client credentials flow client + interactive client using code flow + pkce

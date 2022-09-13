@@ -9,7 +9,7 @@ namespace BookstoreManagment.Api.Controllers
     /// </summary>
     [ApiController]
     [Route("[controller]")]
-    [EnableCors("MyAllowSpecificOrigins")]
+    [EnableCors("AllowAll")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

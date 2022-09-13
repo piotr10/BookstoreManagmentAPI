@@ -3,6 +3,7 @@ using BookstoreManagement.Application;
 using BookstoreManagement.Application.Common.Interfaces;
 using BookstoreManagement.Infrastructure;
 using BookstoreManagement.Persistance;
+using BookstoreManagment.Api;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -40,7 +41,8 @@ builder.Services.AddControllers();
 //origins/policy/cors
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin());
+    options.AddPolicy("AllowAll", policy => 
+        policy.AllowAnyOrigin());
 });   // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
 
 #region Second origin port
@@ -73,6 +75,23 @@ builder.Services.AddAuthorization(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
+    c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.OAuth2,
+        Flows = new OpenApiOAuthFlows
+        {
+            AuthorizationCode = new OpenApiOAuthFlow
+            {
+                AuthorizationUrl = new Uri("https://localhost:5001/connect/authorize"),
+                TokenUrl = new Uri("https://localhost:5001/connect/token"),
+                Scopes = new Dictionary<string, string>
+                {
+                    {"api1", "Demo - full access" }
+                }
+            }
+        }
+    });
+    c.OperationFilter<AuthorizeCheckOperationFilter>();
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Bookstore Management",
@@ -111,8 +130,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
 
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bookstore Management"));
-
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bookstore Management");
+    c.OAuthClientId("swagger");
+    c.OAuth2RedirectUrl("https://localhost:44312/swagger/oauth2-redirect.html");
+    c.OAuthUsePkce();//another safeguard for our website
+});
 app.UseHealthChecks("/hc");
 
 app.UseHttpsRedirection();
@@ -126,7 +150,11 @@ app.UseRouting();
 app.UseCors();
 
 app.UseAuthorization();
-
+/*
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});*/
 app.MapControllers().RequireAuthorization("ApiScope");
 
 app.Run();

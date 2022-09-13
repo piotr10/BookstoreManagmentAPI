@@ -15,7 +15,7 @@ namespace BookstoreManagement.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("MyAllowSpecificOrigins")]
+    [EnableCors("AllowAll")]
     public class CustomerController : BaseController
     {
         /// <summary>
