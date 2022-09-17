@@ -730,7 +730,7 @@
           "FluentValidation.DependencyInjectionExtensions": "11.2.1",
           "MediatR": "10.0.1",
           "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1",
-          "Microsoft.EntityFrameworkCore": "6.0.8"
+          "Microsoft.EntityFrameworkCore": "6.0.9"
         },
         "compile": {
           "bin/placeholder/BookstoreManagement.Application.dll": {}

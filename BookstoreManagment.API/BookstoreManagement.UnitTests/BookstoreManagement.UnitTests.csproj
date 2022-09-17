@@ -27,12 +27,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Author\Queries\" />
     <Folder Include="Common\" />
     <Folder Include="Mapping\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BookstoreManagment.Application\BookstoreManagement.Application.csproj" />
+    <ProjectReference Include="..\BookstoreManagment.Persistance\BookstoreManagement.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

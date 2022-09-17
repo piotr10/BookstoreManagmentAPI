@@ -19,7 +19,7 @@ public class ProfileService : IProfileService
     {
         var user = await _userManager.GetUserAsync(context.Subject);
 
-        var claims = new List<Claim>()
+        var claims = new List<Claim>
         {
             new Claim("Email", user.Email)
         };

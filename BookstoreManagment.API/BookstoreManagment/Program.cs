@@ -52,24 +52,31 @@ builder.Services.AddCors(options =>
 }));*/
 #endregion
 
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
-    {
-        options.Authority = "https://localhost:5001";
-        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-        {
-            ValidateAudience = false
-        };
-    });
-
-builder.Services.AddAuthorization(options =>
+if (builder.Environment.IsEnvironment("Test"))
 {
-    options.AddPolicy("ApiScope", policy =>
+    
+}
+else
+{
+    builder.Services.AddAuthentication("Bearer")
+        .AddJwtBearer("Bearer", options =>
+        {
+            options.Authority = "https://localhost:5001";
+            options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            {
+                ValidateAudience = false
+            };
+        });
+
+    builder.Services.AddAuthorization(options =>
     {
-        policy.RequireAuthenticatedUser();
-        policy.RequireClaim("scope", "api1");
+        options.AddPolicy("ApiScope", policy =>
+        {
+            policy.RequireAuthenticatedUser();
+            policy.RequireClaim("scope", "api1");
+        });
     });
-});
+}
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -141,10 +148,13 @@ app.UseHealthChecks("/hc");
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-
 app.UseSerilogRequestLogging();
 
+app.UseAuthentication();
+if (app.Environment.IsEnvironment("Test"))
+{
+    app.UseIdentityServer();
+}
 app.UseRouting();
 
 app.UseCors();

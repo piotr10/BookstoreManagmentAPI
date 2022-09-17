@@ -51,7 +51,7 @@ public class BookstoreDbContext : DbContext, IBookstoreDbContext
     {
         foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
         {
-            switch (entry.State)
+            switch(entry.State)
             {
                 case EntityState.Deleted:
                     entry.Entity.ModifiedBy = _userService.Email;
@@ -66,17 +66,17 @@ public class BookstoreDbContext : DbContext, IBookstoreDbContext
                     entry.Entity.Modified = _dateTime.Now;
                     break;
                 case EntityState.Added:
+                    /*
                     entry.Entity.ModifiedBy = _userService.Email;
                     entry.Entity.Modified = null;
                     entry.Entity.Inactivated = null;
                     entry.Entity.InactivatedBy = _userService.Email;
-
+                    */
                     entry.Entity.CreatedBy = _userService.Email;
                     entry.Entity.Created = _dateTime.Now;
                     entry.Entity.StatusId = 1;
                     break;
-                default:
-                    break;
+
             }
         }
 
