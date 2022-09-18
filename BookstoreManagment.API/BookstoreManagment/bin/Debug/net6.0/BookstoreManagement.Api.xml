@@ -4,27 +4,10 @@
         <name>BookstoreManagement.Api</name>
     </assembly>
     <members>
-        <member name="T:BookstoreManagment.Api.Controllers.HealthChecksController">
+        <member name="T:BookstoreManagement.Api.AuthorizeCheckOperationFilter">
             <summary>
-            Checking controller
+            
             </summary>
-        </member>
-        <member name="M:BookstoreManagment.Api.Controllers.HealthChecksController.GetAsync">
-            <summary>
-            Healthy response
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:BookstoreManagment.Api.Controllers.WeatherForecastController">
-            <summary>
-            Weather forecast controller
-            </summary>
-        </member>
-        <member name="M:BookstoreManagment.Api.Controllers.WeatherForecastController.Get">
-            <summary>
-            Get weather forecast
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:BookstoreManagement.Api.Controllers.AuthorController">
             <summary>
@@ -118,6 +101,17 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:BookstoreManagement.Api.Controllers.HealthChecksController">
+            <summary>
+            Checking controller
+            </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.HealthChecksController.GetAsync">
+            <summary>
+            Healthy response
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:BookstoreManagement.Api.Controllers.OrderController">
             <summary>
             CRUD Order
@@ -144,6 +138,17 @@
         <member name="M:BookstoreManagement.Api.Controllers.OrderController.DeleteOrder(System.Int32)">
             <summary>
             Delete Order
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagment.Api.Controllers.WeatherForecastController">
+            <summary>
+            Weather forecast controller
+            </summary>
+        </member>
+        <member name="M:BookstoreManagment.Api.Controllers.WeatherForecastController.Get">
+            <summary>
+            Get weather forecast
             </summary>
             <returns></returns>
         </member>

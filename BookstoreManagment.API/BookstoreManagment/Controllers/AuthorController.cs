@@ -13,8 +13,8 @@ namespace BookstoreManagement.Api.Controllers
     /// CRUD Author
     /// </summary>
     [Route("api/authors")]
-    [ApiController]
-    [EnableCors("AllowAll")]
+    //[ApiController]
+    //[EnableCors("AllowAll")]
     [Authorize]
     public class AuthorController : BaseController
     {

@@ -2,8 +2,11 @@
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace BookstoreManagment.Api;
+namespace BookstoreManagement.Api;
 
+/// <summary>
+/// 
+/// </summary>
 public class AuthorizeCheckOperationFilter : IOperationFilter
 {
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
@@ -27,7 +30,7 @@ public class AuthorizeCheckOperationFilter : IOperationFilter
                                 Type = ReferenceType.SecurityScheme,
                                 Id = "bearer"}
                         }
-                    ] = new[] {"api1"}
+                    ] = new[] {"api1", "user"}
                 }
             };
         }

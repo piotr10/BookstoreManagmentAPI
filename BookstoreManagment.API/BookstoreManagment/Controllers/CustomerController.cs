@@ -3,7 +3,7 @@ using BookstoreManagement.Application.Customer.Commands.DeleteCustomer;
 using BookstoreManagement.Application.Customer.Queries.GetAllCustomers;
 using BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
 using BookstoreManagment.Api;
-using BookstoreManagment.Api.Models;
+using BookstoreManagement.Api.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

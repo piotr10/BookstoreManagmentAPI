@@ -7,13 +7,13 @@ namespace BookstoreManagement.Api.Service;
 public class CurrentUserService : ICurrentUserService
 {
     public string Email { get; set; }
-        public bool IsAuthenticated { get; set; }
-        public CurrentUserService(IHttpContextAccessor httpContextAccessor)
-        {
-            var email = httpContextAccessor.HttpContext?.User?.FindFirstValue(JwtClaimTypes.Email);
+    public bool IsAuthenticated { get; set; }
+    public CurrentUserService(IHttpContextAccessor httpContextAccessor)
+    {
+        var email = httpContextAccessor.HttpContext?.User?.FindFirstValue(JwtClaimTypes.Email);
 
-            Email = email;
+        Email = email;
 
-            IsAuthenticated = !string.IsNullOrEmpty(email);
-        }
+        IsAuthenticated = !string.IsNullOrEmpty(email);
+    }
 }

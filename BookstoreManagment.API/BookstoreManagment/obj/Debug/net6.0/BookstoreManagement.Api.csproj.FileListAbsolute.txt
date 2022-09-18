@@ -204,3 +204,5 @@ D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\Serilog.Sinks.File.dll
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\Serilog.Sinks.PeriodicBatching.dll
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\Serilog.Sinks.Seq.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\IdentityModel.AspNetCore.OAuth2Introspection.dll
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagment\bin\Debug\net6.0\IdentityServer4.AccessTokenValidation.dll

@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.V5.Pages.Internal;
 using Microsoft.AspNetCore.Mvc;
-using ErrorModel = BookstoreManagment.Api.Models.ErrorModel;
+using ErrorModel = BookstoreManagement.Api.Models.ErrorModel;
 
-namespace BookstoreManagment.Api.Controllers
+namespace BookstoreManagement.Api.Controllers
 {
     /// <summary>
     /// Checking controller

@@ -1,3 +1,4 @@
+using BookstoreManagement.Api;
 using BookstoreManagement.Api.Service;
 using BookstoreManagement.Application;
 using BookstoreManagement.Application.Common.Interfaces;
@@ -45,6 +46,9 @@ builder.Services.AddCors(options =>
         policy.AllowAnyOrigin());
 });   // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
 
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.TryAddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
+
 #region Second origin port
 /*builder =>
 {
@@ -67,15 +71,6 @@ else
                 ValidateAudience = false
             };
         });
-
-    builder.Services.AddAuthorization(options =>
-    {
-        options.AddPolicy("ApiScope", policy =>
-        {
-            policy.RequireAuthenticatedUser();
-            policy.RequireClaim("scope", "api1");
-        });
-    });
 }
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -93,7 +88,8 @@ builder.Services.AddSwaggerGen(c =>
                 TokenUrl = new Uri("https://localhost:5001/connect/token"),
                 Scopes = new Dictionary<string, string>
                 {
-                    {"api1", "Demo - full access" }
+                    {"api1", "Demo - full access" },
+                    {"user", "User access"}
                 }
             }
         }
@@ -121,11 +117,16 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(filePath);
 });
 
-builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.TryAddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
-
 builder.Services.AddHealthChecks();
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "api1");
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -148,13 +149,16 @@ app.UseHealthChecks("/hc");
 
 app.UseHttpsRedirection();
 
-app.UseSerilogRequestLogging();
-
 app.UseAuthentication();
+/*
 if (app.Environment.IsEnvironment("Test"))
 {
     app.UseIdentityServer();
 }
+*/
+
+app.UseSerilogRequestLogging();
+
 app.UseRouting();
 
 app.UseCors();

@@ -11,7 +11,7 @@ namespace IdentityServer
     public static class Config
     {
         public static IEnumerable<IdentityResource> IdentityResources =>
-                   new IdentityResource[]
+                   new List<IdentityResource>
                    {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
@@ -19,7 +19,7 @@ namespace IdentityServer
                    };
 
         public static IEnumerable<ApiScope> ApiScopes =>
-            new ApiScope[]
+            new List<ApiScope>
             {
                 new ApiScope("scope1"),
                 new ApiScope("scope2"),
@@ -27,7 +27,7 @@ namespace IdentityServer
             };
 
         public static IEnumerable<Client> Clients =>
-            new Client[]
+            new List<Client>
             {
                 new Client
                 {
@@ -35,7 +35,7 @@ namespace IdentityServer
                     ClientName = "Client for Postman user",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    AllowedScopes = { "api1", "user"},
+                    AllowedScopes = { "api1", "user", "openid"},
                     AlwaysSendClientClaims = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true
@@ -47,10 +47,10 @@ namespace IdentityServer
                     ClientName = "Client for Swagger user",
                     AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
                     ClientSecrets = {new Secret("secret".Sha256())},
-                    AllowedScopes = {"api1", "user", "openid"},
+                    AllowedScopes = {"api1", "user"},
                     AlwaysSendClientClaims = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
-                    AllowAccessTokensViaBrowser=true,
+                    AllowAccessTokensViaBrowser = true,
                     RedirectUris = { "https://localhost:44312/swagger/oauth2-redirect.html" },
                     AllowedCorsOrigins = { "https://localhost:44312" }
                 }

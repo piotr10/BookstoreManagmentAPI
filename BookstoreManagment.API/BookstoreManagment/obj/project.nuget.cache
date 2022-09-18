@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0Fxbpie36T8XjUclW2JV9uaQ44u0leskvQ0+qGgwPtnvbm0EC82UIdYRoRXSfc5tI8oPOxx+JoKCdEOSerzZ2Q==",
+  "dgSpecHash": "M9+xLC5o/DRkZhGfOxFl1d3V+D2bU5XqWzBTVhwI4+W+S8PUl481/V+XSu7DSy3duSCtF5D9g9WTazy48ZiUVQ==",
   "success": true,
   "projectFilePath": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment\\BookstoreManagement.Api.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,8 @@
     "C:\\Users\\User\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\identitymodel\\5.1.0\\identitymodel.5.1.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\identitymodel.aspnetcore.oauth2introspection\\4.0.1\\identitymodel.aspnetcore.oauth2introspection.4.0.1.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\identityserver4.accesstokenvalidation\\3.0.1\\identityserver4.accesstokenvalidation.3.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
