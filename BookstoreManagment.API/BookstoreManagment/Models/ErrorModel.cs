@@ -1,4 +1,4 @@
-﻿namespace BookstoreManagment.Api.Models;
+﻿namespace BookstoreManagement.Api.Models;
 
 public class ErrorModel
 {

@@ -34,7 +34,8 @@ public static class Seed
                     InactivatedBy = string.Empty,
                     ModifiedBy = string.Empty
                 });
-                d.OwnsOne(d => d.AuthorName).HasData(new {AuthorId = 2, FirstName = "Stanisław", LastName = "Lem"});
+                d.OwnsOne(d => d.AuthorName)
+                    .HasData(new {AuthorId = 2, FirstName = "Stanisław", LastName = "Lem"});
             }
         );
 

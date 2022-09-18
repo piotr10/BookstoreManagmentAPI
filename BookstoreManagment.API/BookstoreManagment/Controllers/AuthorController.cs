@@ -2,6 +2,7 @@
 using BookstoreManagement.Application.Author.Commands.DeleteAuthor;
 using BookstoreManagement.Application.Author.Queries.GetAllAuthors;
 using BookstoreManagement.Application.Author.Queries.GetAuthorDetail;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,8 +13,9 @@ namespace BookstoreManagement.Api.Controllers
     /// CRUD Author
     /// </summary>
     [Route("api/authors")]
-    [ApiController]
-    [EnableCors("MyAllowSpecificOrigins")]
+    //[ApiController]
+    //[EnableCors("AllowAll")]
+    [Authorize]
     public class AuthorController : BaseController
     {
         /// <summary>

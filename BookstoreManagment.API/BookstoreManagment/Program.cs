@@ -1,6 +1,12 @@
+using BookstoreManagement.Api;
+using BookstoreManagement.Api.Service;
 using BookstoreManagement.Application;
+using BookstoreManagement.Application.Common.Interfaces;
 using BookstoreManagement.Infrastructure;
 using BookstoreManagement.Persistance;
+using BookstoreManagment.Api;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -18,7 +24,6 @@ try
 catch (Exception e)
 {
     Log.Fatal(e, "Could not start up application.");
-    Console.WriteLine(e);
     throw;
 }
 finally
@@ -36,16 +41,60 @@ builder.Services.AddControllers();
 
 //origins/policy/cors
 builder.Services.AddCors(options =>
-    options.AddPolicy(name: "MyAllowSpecificOrigins", // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
-        builder =>
+{
+    options.AddPolicy("AllowAll", policy => 
+        policy.AllowAnyOrigin());
+});   // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
+
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.TryAddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
+
+#region Second origin port
+/*builder =>
+{
+    builder.WithOrigins("https://localhost:example"); //podajemy port (np. 11223) drugiego origin, który bêdzie potrzebny do po³¹czenia CORS miêdzy dwoma aplikacjami
+}));*/
+#endregion
+
+if (builder.Environment.IsEnvironment("Test"))
+{
+    
+}
+else
+{
+    builder.Services.AddAuthentication("Bearer")
+        .AddJwtBearer("Bearer", options =>
         {
-            builder.WithOrigins("https://localhost:example"); //podajemy port (np. 11223) drugiego origin, który bêdzie potrzebny do po³¹czenia CORS miêdzy dwoma aplikacjami
-        }));
+            options.Authority = "https://localhost:5001";
+            options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+            {
+                ValidateAudience = false
+            };
+        });
+}
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
+    c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.OAuth2,
+        Flows = new OpenApiOAuthFlows
+        {
+            AuthorizationCode = new OpenApiOAuthFlow
+            {
+                AuthorizationUrl = new Uri("https://localhost:5001/connect/authorize"),
+                TokenUrl = new Uri("https://localhost:5001/connect/token"),
+                Scopes = new Dictionary<string, string>
+                {
+                    {"api1", "Demo - full access" },
+                    {"user", "User access"}
+                }
+            }
+        }
+    });
+    c.OperationFilter<AuthorizeCheckOperationFilter>();
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Bookstore Management",
@@ -66,11 +115,18 @@ builder.Services.AddSwaggerGen(c =>
     });
     var filePath = Path.Combine(AppContext.BaseDirectory, "BookstoreManagement.Api.xml");
     c.IncludeXmlComments(filePath);
-}
-);
+});
 
 builder.Services.AddHealthChecks();
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "api1");
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -82,11 +138,24 @@ if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
 
-app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bookstore Management"));
-
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bookstore Management");
+    c.OAuthClientId("swagger");
+    c.OAuth2RedirectUrl("https://localhost:44312/swagger/oauth2-redirect.html");
+    c.OAuthUsePkce();//another safeguard for our website
+});
 app.UseHealthChecks("/hc");
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+/*
+if (app.Environment.IsEnvironment("Test"))
+{
+    app.UseIdentityServer();
+}
+*/
 
 app.UseSerilogRequestLogging();
 
@@ -95,7 +164,11 @@ app.UseRouting();
 app.UseCors();
 
 app.UseAuthorization();
-
-app.MapControllers();
+/*
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});*/
+app.MapControllers().RequireAuthorization("ApiScope");
 
 app.Run();
