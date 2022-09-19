@@ -28,8 +28,14 @@
 
   <ItemGroup>
     <Folder Include="Author\Queries\" />
+    <Folder Include="Book\Commands\CreateBook\" />
+    <Folder Include="Book\Queries\" />
     <Folder Include="Common\" />
+    <Folder Include="Customer\Commands\CreateCustomer\" />
+    <Folder Include="Customer\Queries\" />
     <Folder Include="Mapping\" />
+    <Folder Include="Order\Commands\CreateOrder\" />
+    <Folder Include="Order\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

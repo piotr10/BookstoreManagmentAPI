@@ -42,12 +42,9 @@ builder.Services.AddControllers();
 //origins/policy/cors
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy => 
+    options.AddPolicy("AllowAll", policy =>
         policy.AllowAnyOrigin());
 });   // t¹ nazwê wklejamy do endpointu czyli controllera, który ma byæ przekazany do innego origin
-
-builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.TryAddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
 
 #region Second origin port
 /*builder =>
@@ -56,22 +53,25 @@ builder.Services.TryAddScoped(typeof(ICurrentUserService), typeof(CurrentUserSer
 }));*/
 #endregion
 
-if (builder.Environment.IsEnvironment("Test"))
-{
-    
-}
-else
-{
-    builder.Services.AddAuthentication("Bearer")
-        .AddJwtBearer("Bearer", options =>
+
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = "https://localhost:5001";
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            options.Authority = "https://localhost:5001";
-            options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
-            {
-                ValidateAudience = false
-            };
-        });
-}
+            ValidateAudience = false
+        };
+    });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("ApiScope", policy =>
+    {
+        policy.RequireAuthenticatedUser();
+        policy.RequireClaim("scope", "api1");
+    });
+});
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -88,8 +88,7 @@ builder.Services.AddSwaggerGen(c =>
                 TokenUrl = new Uri("https://localhost:5001/connect/token"),
                 Scopes = new Dictionary<string, string>
                 {
-                    {"api1", "Demo - full access" },
-                    {"user", "User access"}
+                    {"api1", "Demo - full access" }
                 }
             }
         }
@@ -117,16 +116,11 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(filePath);
 });
 
+builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+builder.Services.TryAddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
 builder.Services.AddHealthChecks();
 
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("ApiScope", policy =>
-    {
-        policy.RequireAuthenticatedUser();
-        policy.RequireClaim("scope", "api1");
-    });
-});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -10,7 +10,7 @@ namespace IdentityServer.Services;
 
 public class ProfileService : IProfileService
 {
-    private readonly UserManager<ApplicationUser> _userManager;
+    private UserManager<ApplicationUser> _userManager;
     public ProfileService(UserManager<ApplicationUser> userManager)
     {
         _userManager = userManager;

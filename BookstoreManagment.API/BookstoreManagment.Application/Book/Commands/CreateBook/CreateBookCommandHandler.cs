@@ -10,12 +10,10 @@ namespace BookstoreManagement.Application.Book.Commands.CreateBook;
 public class CreateBookCommandHandler : IRequestHandler<CreateBookCommand, int>
 {
     private readonly IBookstoreDbContext _bookstoreDbContext;
-    private readonly IMapper _mapper;
 
-    public CreateBookCommandHandler(IBookstoreDbContext bookstoreDbContext, IMapper mapper)
+    public CreateBookCommandHandler(IBookstoreDbContext bookstoreDbContext)
     {
         _bookstoreDbContext = bookstoreDbContext;
-        _mapper = mapper;
     }
     public async Task<int> Handle(CreateBookCommand request, CancellationToken cancellationToken)
     {

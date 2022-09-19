@@ -11,18 +11,16 @@ namespace BookstoreManagement.Application.Customer.Commands.CreateCustomer;
 public class CreateCustomerCommandHandler :IRequestHandler<CreateCustomerCommand, int>
 {
     private readonly IBookstoreDbContext _bookstoreDbContext;
-    private readonly IMapper _mapper;
 
-    public CreateCustomerCommandHandler(IBookstoreDbContext bookstoreDbContext, IMapper mapper)
+    public CreateCustomerCommandHandler(IBookstoreDbContext bookstoreDbContext)
     {
         _bookstoreDbContext = bookstoreDbContext;
-        _mapper = mapper;
     }
     public async Task<int> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
     {
         try
         {
-            Domain.Entities.Customer.Customer customer = new Domain.Entities.Customer.Customer();
+            var customer = new Domain.Entities.Customer.Customer();
             await _bookstoreDbContext.Customers.AddAsync(customer, cancellationToken);
             try
             {
@@ -39,7 +37,7 @@ public class CreateCustomerCommandHandler :IRequestHandler<CreateCustomerCommand
                 throw new ObjectNotExistInDbException(request.CustomerId, "Customer");
             }
 
-            CustomerDetail customerDetail = new CustomerDetail()
+            var customerDetail = new CustomerDetail()
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
@@ -59,7 +57,7 @@ public class CreateCustomerCommandHandler :IRequestHandler<CreateCustomerCommand
             };
             await _bookstoreDbContext.CustomerDetails.AddAsync(customerDetail, cancellationToken);
 
-            CustomerContactDetail contactDetail = new CustomerContactDetail()
+            var contactDetail = new CustomerContactDetail()
             {
                 ContactName = request.DetailContact,
                 CustomerContactDetailTypeId = request.CustomerContactDetailTypeId,

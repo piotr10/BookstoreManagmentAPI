@@ -1,4 +1,6 @@
 ﻿using BookstoreManagement.Application.Author.Commands.CreateAuthor;
+using BookstoreManagement.Application.Common.Interfaces;
+using BookstoreManagement.Domain.Common;
 using BookstoreManagement.UnitTests.Common;
 using Microsoft.EntityFrameworkCore;
 using Shouldly;
@@ -7,7 +9,7 @@ namespace BookstoreManagement.UnitTests.Author.Commands.CreateAuthor;
 
 public class CreateAuthorCommandHandlerTests : CommandTestBase
 {
-    /*
+    
     private readonly CreateAuthorCommandHandler _handler;
 
     public CreateAuthorCommandHandlerTests() : base()
@@ -32,7 +34,7 @@ public class CreateAuthorCommandHandlerTests : CommandTestBase
 
         var result = await _handler.Handle(command, CancellationToken.None);
 
-        var aut = await _context.Authors.FirstAsync(x => x.Id == result, CancellationToken.None);
-        aut.ShouldNotBeNull();
-    }*/
+        var author = await _context.Authors.FirstAsync(x => x.Id == result, CancellationToken.None);
+        author.ShouldNotBeNull();
+    }
 }
