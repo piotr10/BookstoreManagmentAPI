@@ -130,7 +130,7 @@ public class BookstoreDbContextFactory
             CustomerDetailTypeId = 3,
             CustomerAddressTypeId = 3,
             FirstName = "Piotr",
-            LastName = "CzerskiCustomer",
+            LastName = "Customer",
             StatusId = 1,
 
             Adres = new Adres()
