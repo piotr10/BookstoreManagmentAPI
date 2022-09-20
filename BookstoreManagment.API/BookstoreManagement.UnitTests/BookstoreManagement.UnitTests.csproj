@@ -28,14 +28,18 @@
 
   <ItemGroup>
     <Folder Include="Author\Queries\GetAuthorDetail\" />
+    <Folder Include="Author\Queries\GetAuthors\" />
     <Folder Include="Book\Commands\CreateBook\" />
     <Folder Include="Book\Queries\GetBookDetail\" />
+    <Folder Include="Book\Queries\GetBooks\" />
     <Folder Include="Common\" />
     <Folder Include="Customer\Commands\CreateCustomer\" />
     <Folder Include="Customer\Queries\GetCustomerDetail\" />
+    <Folder Include="Customer\Queries\GetCustomers\" />
     <Folder Include="Mapping\" />
     <Folder Include="Order\Commands\CreateOrder\" />
     <Folder Include="Order\Queries\GetOrderDetail\" />
+    <Folder Include="Order\Queries\GetOrders\" />
   </ItemGroup>
 
   <ItemGroup>
