@@ -20,12 +20,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetAllAuthors">
-            <summary>
-            Get all Authors
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:BookstoreManagement.Api.Controllers.AuthorController.CreateAuthor(BookstoreManagement.Application.Author.Commands.CreateAuthor.CreateAuthorCommand)">
             <summary>
             Create new Author

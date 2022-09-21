@@ -28,7 +28,6 @@ namespace BookstoreManagement.Api.Controllers
             var vm = await Mediator.Send(new GetAuthorDetailQuery() {AuthorId = id});
             return vm;
         }
-
         /// <summary>
         /// Get all Authors
         /// </summary>

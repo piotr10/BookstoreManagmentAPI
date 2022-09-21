@@ -3,5 +3,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::AAC9BD74-963F-4FEA-9335-EB2C62732630::net6.0::BookstoreManagement.UnitTests.Author.Commands.CreateAuthor.CreateAuthorCommandHandlerTests.Handle_GivenValidRequest_ShouldInsertAuthor&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::AAC9BD74-963F-4FEA-9335-EB2C62732630::net6.0::BookstoreManagement.UnitTests.Customer.Queries.GetCustomerDetail.GetCustomerDetailQueryHandlerTests.CanGetCustomerDetailById&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::11EF6DAA-34D6-4BBB-B769-F2DD107F27C8::net6.0::WebApi.IntegrationTests.Controllers.Authors.GetDetailsTests.GivenAuthorsId_ReturnsAuthorsDetail&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

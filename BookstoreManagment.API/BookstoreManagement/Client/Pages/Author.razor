@@ -1,0 +1,23 @@
+﻿@page "/authors"
+@using BookstoreManagement.Client.Components
+@using BookstoreManagement.Client.Models
+@inject HttpClient Http
+
+<h3>Author list</h3>
+
+<AuthorTable Authors="@Authors"></AuthorTable>
+
+@code {
+    //private readonly IBookstoreDbContext _dbContext;
+    private List<AuthorDto> Authors { get; set; } = new List<AuthorDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        //List<Domain.Entities.Author.Author> listAuthors = new List<Domain.Entities.Author.Author>();
+        //listAuthors = await _dbContext.Authors.ToListAsync();
+
+        ListAuthors? listAuthors = new ListAuthors();
+        listAuthors = await Http.GetFromJsonAsync<ListAuthors>("api/authors");
+        Authors = listAuthors.Authors.ToList();
+    }
+}

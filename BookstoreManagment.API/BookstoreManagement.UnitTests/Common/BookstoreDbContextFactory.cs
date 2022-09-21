@@ -30,7 +30,6 @@ public class BookstoreDbContextFactory
         var context = mock.Object;
         context.Database.EnsureCreated();
 
-        //Autora
         // Author
         var author = new Domain.Entities.Author.Author()
         {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -45,6 +45,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BookstoreManagment.Application\BookstoreManagement.Application.csproj" />
     <ProjectReference Include="..\BookstoreManagment.Persistance\BookstoreManagement.Persistance.csproj" />
+    <ProjectReference Include="..\BookstoreManagment\BookstoreManagement.Api.csproj" />
   </ItemGroup>
 
 </Project>

@@ -35,7 +35,7 @@ namespace IdentityServer
                     ClientName = "Client for Postman user",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials,
                     ClientSecrets = { new Secret("secret".Sha256()) },
-                    AllowedScopes = { "api1", "user", "openid"},
+                    AllowedScopes = { "api1", "user"},
                     AlwaysSendClientClaims = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true
@@ -47,7 +47,7 @@ namespace IdentityServer
                     ClientName = "Client for Swagger user",
                     AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
                     ClientSecrets = {new Secret("secret".Sha256())},
-                    AllowedScopes = {"api1", "user"},
+                    AllowedScopes = {"api1", "user", "openid"},
                     AlwaysSendClientClaims = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                     AllowAccessTokensViaBrowser = true,
