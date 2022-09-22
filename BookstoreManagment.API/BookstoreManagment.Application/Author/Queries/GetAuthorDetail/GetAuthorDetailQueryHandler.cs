@@ -10,13 +10,11 @@ public class GetAuthorDetailQueryHandler : IRequestHandler<GetAuthorDetailQuery,
 {
     private readonly IBookstoreDbContext _bookstoreDbContext;
     private readonly IMapper _mapper;
-    private readonly ICurrentUserService _userService;
 
-    public GetAuthorDetailQueryHandler(IBookstoreDbContext bookstoreDbContext, IMapper mapper, ICurrentUserService userService)
+    public GetAuthorDetailQueryHandler(IBookstoreDbContext bookstoreDbContext, IMapper mapper)
     {
         _bookstoreDbContext = bookstoreDbContext;
         _mapper = mapper;
-        _userService = userService;
     }
 
     public async Task<AuthorDetailVm> Handle(GetAuthorDetailQuery request, CancellationToken cancellationToken)

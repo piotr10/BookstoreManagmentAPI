@@ -8,7 +8,7 @@ public class CreateBookCommand : IRequest<int>
     public int BookId { get; set; }
     public int AuthorId { get; set; }
     //BookDetail
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public DateTime PublishedBookDate { get; set; }
     public decimal Price { get; set; }
     //Genre

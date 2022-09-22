@@ -9,12 +9,10 @@ namespace BookstoreManagement.Application.Order.Commands.CreateOrder;
 public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, int>
 {
     private readonly IBookstoreDbContext _bookstoreDbContext;
-    private readonly IMapper _mapper;
 
-    public CreateOrderCommandHandler(IBookstoreDbContext bookstoreDbContext, IMapper mapper)
+    public CreateOrderCommandHandler(IBookstoreDbContext bookstoreDbContext)
     {
         _bookstoreDbContext = bookstoreDbContext;
-        _mapper = mapper;
     }
     public async Task<int> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {

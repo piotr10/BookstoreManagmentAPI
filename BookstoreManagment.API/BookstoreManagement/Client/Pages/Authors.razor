@@ -1,0 +1,36 @@
+﻿@page "/authors"
+@using BookstoreManagement.Client.Components
+@using BookstoreManagement.Client.Models
+
+<h1>Authors list</h1>
+<a href="addAuthor">Add new</a>
+<AllAuthors Authors="@authors"></AllAuthors>
+
+@code {
+    private List<AuthorDto>? authors;
+
+    protected override async Task OnInitializedAsync()
+    {
+        authors = new List<AuthorDto>()
+        {
+            new AuthorDto()
+            {
+                AuthorFullName = "Henryk Sienkiewicz",
+                AuthorDateOfBirth = new DateTime(1965, 1, 1),
+                AuthorPlaceOfBirth = "Warsaw",
+                HomeCountry = "Poland",
+                Contact = "henry@example.com",
+                AuthorContactType = "Email"
+            },
+            new AuthorDto()
+            {
+                AuthorFullName = "Adam Mickiewicz",
+                AuthorDateOfBirth = new DateTime(1969, 1, 1),
+                AuthorPlaceOfBirth = "Cracow",
+                HomeCountry = "Poland",
+                Contact = "adam@example.com",
+                AuthorContactType = "Email"
+            }
+        };
+    }
+}

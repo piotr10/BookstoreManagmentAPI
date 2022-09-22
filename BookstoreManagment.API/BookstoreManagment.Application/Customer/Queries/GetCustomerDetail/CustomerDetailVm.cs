@@ -6,20 +6,20 @@ namespace BookstoreManagement.Application.Customer.Queries.GetCustomerDetail;
 
 public class CustomerDetailVm : IMapFrom<Domain.Entities.Customer.Customer>
 {
-    public string Name { get; set; }
-    public string Surname { get; set; }
-    public string ContactName { get; set; }
-    public string ContactType { get; set; }
-    public string DetailType { get; set; }
+    public string? Name { get; set; }
+    public string? Surname { get; set; }
+    public string? ContactName { get; set; }
+    public string? ContactType { get; set; }
+    public string? DetailType { get; set; }
 
     //Adress
     public int ApartmentNumber { get; set; }
-    public string City { get; set; }
-    public string Country { get; set; }
+    public string? City { get; set; }
+    public string? Country { get; set; }
     public int HouseNumber { get; set; }
-    public string StreetName { get; set; }
-    public string PostCode { get; set; }
-    public string AddressTypeName { get; set; }
+    public string? StreetName { get; set; }
+    public string? PostCode { get; set; }
+    public string? AddressTypeName { get; set; }
 
     public void Mapping(Profile profile)
     {

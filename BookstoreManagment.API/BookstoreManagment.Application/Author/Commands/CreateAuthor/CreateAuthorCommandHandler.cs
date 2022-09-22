@@ -12,12 +12,10 @@ namespace BookstoreManagement.Application.Author.Commands.CreateAuthor;
 public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand, int>
 {
     private readonly IBookstoreDbContext _bookstoreDbContext;
-    private readonly ICurrentUserService _userService;
 
-    public CreateAuthorCommandHandler(IBookstoreDbContext bookstoreDbContext, ICurrentUserService userService)
+    public CreateAuthorCommandHandler(IBookstoreDbContext bookstoreDbContext)
     {
         _bookstoreDbContext = bookstoreDbContext;
-        _userService = userService;
     }
 
     public async Task<int> Handle(CreateAuthorCommand request, CancellationToken cancellationToken)

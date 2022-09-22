@@ -1,0 +1,7 @@
+{
+  "BookstoreManagement.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment",
+  "BookstoreManagement.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Application",
+  "BookstoreManagement.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Domain",
+  "BookstoreManagement.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Infrastructure",
+  "BookstoreManagement.Persistance, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projekty_VS\\Bookstore\\BookstoreManagment.API\\BookstoreManagment.Persistance"
+}

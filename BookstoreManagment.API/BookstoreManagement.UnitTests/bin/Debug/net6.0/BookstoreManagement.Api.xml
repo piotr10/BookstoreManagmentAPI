@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BookstoreManagement.Api</name>
+    </assembly>
+    <members>
+        <member name="T:BookstoreManagement.Api.AuthorizeCheckOperationFilter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.AuthorController">
+            <summary>
+            CRUD Author
+            </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetDetails(System.Int32)">
+            <summary>
+            Get Author detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.GetAllAuthors">
+            <summary>
+            Get all Authors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.CreateAuthor(BookstoreManagement.Application.Author.Commands.CreateAuthor.CreateAuthorCommand)">
+            <summary>
+            Create new Author
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.AuthorController.DeleteAuthor(System.Int32)">
+            <summary>
+            Delete Author
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.BaseController">
+            <summary>
+            Base controller
+            </summary>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.BookController">
+            <summary>
+            CRUD Book
+            </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.GetDetails(System.Int32)">
+            <summary>
+            Get Book detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.GetAllBooks">
+            <summary>
+            Get all Books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.Create(BookstoreManagement.Application.Book.Commands.CreateBook.CreateBookCommand)">
+            <summary>
+            Create new Book
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.BookController.DeleteBook(System.Int32)">
+            <summary>
+            Delete Book
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.CustomerController">
+            <summary>
+            CRUD Customer
+            </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.GetDetails(System.Int32)">
+            <summary>
+            Get Customer detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.GetAllCustomers">
+            <summary>
+            Get all Customers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.Create(BookstoreManagement.Application.Customer.Commands.CreateCustomer.CreateCustomerCommand)">
+            <summary>
+            Create new Customer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.CustomerController.DeleteCustomer(System.Int32)">
+            <summary>
+            Delete Customer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.HealthChecksController">
+            <summary>
+            Checking controller
+            </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.HealthChecksController.GetAsync">
+            <summary>
+            Healthy response
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagement.Api.Controllers.OrderController">
+            <summary>
+            CRUD Order
+            </summary>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetDetails(System.Int32)">
+            <summary>
+            Get Order detalis
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.GetAllOrders">
+            <summary>
+            Get all Orders
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.Create(BookstoreManagement.Application.Order.Commands.CreateOrder.CreateOrderCommand)">
+            <summary>
+            Create new Order
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BookstoreManagement.Api.Controllers.OrderController.DeleteOrder(System.Int32)">
+            <summary>
+            Delete Order
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BookstoreManagment.Api.Controllers.WeatherForecastController">
+            <summary>
+            Weather forecast controller
+            </summary>
+        </member>
+        <member name="M:BookstoreManagment.Api.Controllers.WeatherForecastController.Get">
+            <summary>
+            Get weather forecast
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

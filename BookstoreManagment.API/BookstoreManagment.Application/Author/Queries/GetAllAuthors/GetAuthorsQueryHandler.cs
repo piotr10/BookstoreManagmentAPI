@@ -10,7 +10,7 @@ namespace BookstoreManagement.Application.Author.Queries.GetAllAuthors;
 public class GetAuthorsQueryHandler : IRequestHandler<GetAuthorsQuery, AuthorsVm>
 {
     private readonly IBookstoreDbContext _bookstoreDbContext;
-    private readonly IMapper _mapper;
+    private IMapper _mapper;
 
     public GetAuthorsQueryHandler(IBookstoreDbContext bookstoreDbContext, IMapper mapper)
     {

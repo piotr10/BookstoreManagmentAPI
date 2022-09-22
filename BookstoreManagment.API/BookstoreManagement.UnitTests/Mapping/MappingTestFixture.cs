@@ -5,6 +5,8 @@ namespace BookstoreManagement.UnitTests.Mapping;
 
 public class MappingTestFixture
 {
+    public IConfigurationProvider ConfigurationProvider { get; set; }
+    public IMapper Mapper { get; set; }
     public MappingTestFixture()
     {
         ConfigurationProvider = new MapperConfiguration(cfg =>
@@ -14,6 +16,4 @@ public class MappingTestFixture
 
         Mapper = ConfigurationProvider.CreateMapper();
     }
-    public IConfigurationProvider ConfigurationProvider { get; set; }
-    public IMapper Mapper { get; set; }
 }

@@ -18,20 +18,17 @@ public class BookstoreDbContextFactory
         var dateTimeMock = new Mock<IDateTime>();
         dateTimeMock.Setup(m => m.Now).Returns(dateTime);
 
-        var currentUserMonck = new Mock<ICurrentUserService>();
-        currentUserMonck.Setup(m => m.Email).Returns("user@example.pl");
-        currentUserMonck.Setup(m => m.IsAuthenticated).Returns(true);
+        var currentUserMock = new Mock<ICurrentUserService>();
+        currentUserMock.Setup(m => m.Email).Returns("user@user.pl");
+        currentUserMock.Setup(m => m.IsAuthenticated).Returns(true);
 
         var options = new DbContextOptionsBuilder<BookstoreDbContext>()
             .UseInMemoryDatabase(Guid.NewGuid().ToString()).Options;
 
-        var mock = new Mock<BookstoreDbContext>(options, dateTimeMock.Object, currentUserMonck.Object)
-            {CallBase = true};
+        var mock = new Mock<BookstoreDbContext>(options, dateTimeMock.Object, currentUserMock.Object) {CallBase = true};
 
         var context = mock.Object;
         context.Database.EnsureCreated();
-
-        //Tutaj musimy zamockować Autora
 
         // Author
         var author = new Domain.Entities.Author.Author()
@@ -40,8 +37,8 @@ public class BookstoreDbContextFactory
             StatusId = 1,
             AuthorName = new PersonName()
             {
-                FirstName = "Piotr",
-                LastName = "Czerski"
+                FirstName = "Person",
+                LastName = "Test"
             }
         };
         context.Authors.Add(author);
@@ -72,15 +69,12 @@ public class BookstoreDbContextFactory
             Id = 3,
             AuthorId = 3,
             AuthorContactDetailTypeId = 4,
-            Name = "pczerski@example.pl",
+            Name = "ptest@example.pl",
             StatusId = 1
         };
         context.AuthorContactDetails.Add(contactDetail);
-
-        #region Other Entites
-        /*
-        //Tutaj musimy zamockować Book 
-
+        
+        //Book 
         // Genre
         var genre = new Genre()
         {
@@ -90,7 +84,7 @@ public class BookstoreDbContextFactory
         context.Genres.Add(genre);
 
         // Book
-        var book = new Book()
+        var book = new Domain.Entities.Book.Book()
         {
             Id = 9,
             AuthorId = 3,
@@ -102,10 +96,9 @@ public class BookstoreDbContextFactory
         };
         context.Books.Add(book);
 
-        //Tutaj musimy zamockować Customer
-
+        //Customer
         // Customer
-        var customer = new Customer()
+        var customer = new Domain.Entities.Customer.Customer()
         {
             Id = 3,
             StatusId = 1,
@@ -133,10 +126,10 @@ public class BookstoreDbContextFactory
         {
             Id = 3,
             CustomerId = 3,
-            CustomerDetailTypeId = 3, //Albo to albo to pod spodem CustomerDetailTypes - do sprawdzenia
-            CustomerAddressTypeId = 3, //Albo to albo to pod spodem CustomerAddressTypes - do sprawdzenia
+            CustomerDetailTypeId = 3,
+            CustomerAddressTypeId = 3,
             FirstName = "Piotr",
-            LastName = "CzerskiCustomer",
+            LastName = "Customer",
             StatusId = 1,
 
             Adres = new Adres()
@@ -164,14 +157,13 @@ public class BookstoreDbContextFactory
         {
             Id = 3,
             ContactName = "pczerskiCustomer@example.com",
-            CustomerContactDetailTypeId = 4, //Albo to albo to pod spodem CustomerContactDetailTypes - do sprawdzenia
+            CustomerContactDetailTypeId = 4,
             CustomerId = 3,
             StatusId = 1,
         };
         context.CustomerContactDetails.Add(customerContactDetail);
 
-        //Tutaj musimy zamockować Order
-
+        //Order
         // OrderTransportType
         var orderTransportType = new OrderTransportType()
         {
@@ -189,13 +181,13 @@ public class BookstoreDbContextFactory
         context.PaymentMethods.Add(paymentMethod);
 
         //Order
-        var order = new Order()
+        var order = new Domain.Entities.Order.Order()
         {
             Id = 3,
-            CustomerId = 3, //Albo to albo to pod spodem Customers - do sprawdzenia
-            BookId = 9, //Albo to albo to pod spodem Books - do sprawdzenia
-            OrderTransportTypeId = 3, //Albo to albo to pod spodem OrderTransportTypes - do sprawdzenia
-            PaymentMethodId = 3, //Albo to albo to pod spodem PaymentMethods - do sprawdzenia
+            CustomerId = 3,
+            BookId = 9,
+            OrderTransportTypeId = 3,
+            PaymentMethodId = 3,
             StatusId = 1,
             DeliveryDate = new DateTime(2022, 1, 15),
             OrderDate = new DateTime(2022, 1, 1),
@@ -205,8 +197,6 @@ public class BookstoreDbContextFactory
             BookPrice = 15
         };
         context.Orders.Add(order);
-        */
-        #endregion
 
         context.SaveChanges();
 
