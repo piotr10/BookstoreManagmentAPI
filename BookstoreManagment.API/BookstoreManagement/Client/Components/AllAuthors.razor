@@ -1,0 +1,34 @@
+﻿@using BookstoreManagement.Client.Models
+
+<h3>AuthorTable</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full name</th>
+            <th>Date of birth</th>
+            <th>Place of birth</th>
+            <th>Country</th>
+            <th>Contact type</th>
+            <th>Contact</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Authors)
+        {
+            <tr>
+                <td>@author.AuthorFullName</td>
+                <td>@author.AuthorDateOfBirth</td>
+                <td>@author.AuthorPlaceOfBirth</td>
+                <td>@author.HomeCountry</td>
+                <td>@author.Contact</td>
+                <td>@author.AuthorContactType</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<AuthorDto> Authors { get; set; } = new List<AuthorDto>();
+}

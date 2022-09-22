@@ -27,11 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreManagement.UnitTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.IntegrationTests", "WebApi.IntegrationTests\WebApi.IntegrationTests.csproj", "{11EF6DAA-34D6-4BBB-B769-F2DD107F27C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreManagement.Server", "BookstoreManagement\Server\BookstoreManagement.Server.csproj", "{46F46EDE-E080-43B8-9389-B4C1DC1A96E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreManagement.Server", "BookstoreManagement\Server\BookstoreManagement.Server.csproj", "{46F46EDE-E080-43B8-9389-B4C1DC1A96E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreManagement.Client", "BookstoreManagement\Client\BookstoreManagement.Client.csproj", "{0C957603-6816-4AC9-AAE6-CF336E274B93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreManagement.Client", "BookstoreManagement\Client\BookstoreManagement.Client.csproj", "{0C957603-6816-4AC9-AAE6-CF336E274B93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookstoreManagement.Shared", "BookstoreManagement\Shared\BookstoreManagement.Shared.csproj", "{A6C2E738-1DF9-4E53-AC9E-93BCD45F141B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookstoreManagement.Shared", "BookstoreManagement\Shared\BookstoreManagement.Shared.csproj", "{A6C2E738-1DF9-4E53-AC9E-93BCD45F141B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

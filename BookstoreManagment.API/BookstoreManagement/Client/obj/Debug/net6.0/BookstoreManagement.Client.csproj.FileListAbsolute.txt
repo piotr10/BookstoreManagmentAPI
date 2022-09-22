@@ -881,3 +881,5 @@ D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagement\Client\obj\D
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagement\Client\obj\Debug\net6.0\build-gz\8mtBeF9i.gz
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagement\Client\obj\Debug\net6.0\build-gz\Ri+xDtZ8.gz
 D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagement\Client\obj\Debug\net6.0\build-gz\SMDSs2Y6.gz
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagement\Client\obj\Debug\net6.0\scopedcss\Components\AllAuthors.razor.rz.scp.css
+D:\Projekty_VS\Bookstore\BookstoreManagment.API\BookstoreManagement\Client\obj\Debug\net6.0\scopedcss\Pages\Authors.razor.rz.scp.css

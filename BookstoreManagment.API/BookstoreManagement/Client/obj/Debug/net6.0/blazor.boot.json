@@ -210,7 +210,7 @@
       "BookstoreManagement.Application.dll": "sha256-2BddD13PDQ0XWMfepjccGlj9itkH28N2gwMImjmnrlI=",
       "BookstoreManagement.Domain.dll": "sha256-ATg1kgtBYPjHjbE6f6tjVX1ioD1NgEcV9bmhUKaIbJE=",
       "BookstoreManagement.Shared.dll": "sha256-53OfKUhhluSgQs7nP2GbHqm+n7mBWjDZZyIKg\/YyJSg=",
-      "BookstoreManagement.Client.dll": "sha256-jXMSSXB8HFegDjY3fIoRz8vOHG8azfTep6su2EJnGY8="
+      "BookstoreManagement.Client.dll": "sha256-2i+aEHi0VfACeQtg\/HbZ0gqNBUt7usZPSOribWXqwvM="
     },
     "extensions": null,
     "lazyAssembly": null,
@@ -219,7 +219,7 @@
       "BookstoreManagement.Application.pdb": "sha256-Im1qFGcqPjYNuJAXiIpe6wGUpY2Q36iP+E+i6sFZHtQ=",
       "BookstoreManagement.Shared.pdb": "sha256-Vqxio08Ngc0xts\/nGOwg4iKpu3IrJPCwKRQAttraWMM=",
       "BookstoreManagement.Domain.pdb": "sha256-oZ1DDAy3ydWx5r79FjbKyV+VzpJBH7wncFxApblVVMU=",
-      "BookstoreManagement.Client.pdb": "sha256-m5Hn4FKUhoXqbLY8\/OK4VN6J\/TIY2lTDT16hZzQdGDc="
+      "BookstoreManagement.Client.pdb": "sha256-0uZU2cLthcBd4uCo8YU7bmKeq+fZIGyhMVPaORZ2nkY="
     },
     "runtime": {
       "dotnet.6.0.9.gvz3r6d5vz.js": "sha256-Azk5sbYFVo84h8NpIst9roIPGLH2y8ewQ9SY\/sUHvgs=",

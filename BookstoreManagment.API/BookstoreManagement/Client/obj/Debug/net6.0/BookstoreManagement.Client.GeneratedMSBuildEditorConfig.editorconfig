@@ -22,12 +22,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/Components/AuthorTable.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRob3JUYWJsZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/Pages/Author.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yLnJhem9y
+[D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/Pages/AuthorForm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yRm9ybS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/Pages/Book.razor]
@@ -61,6 +57,14 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/Components/AllAuthors.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBbGxBdXRob3JzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-0kd8h10qpf
+
+[D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/Pages/Authors.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9ycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-n26eydqm1v
 
 [D:/Projekty_VS/Bookstore/BookstoreManagment.API/BookstoreManagement/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
